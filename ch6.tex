@@ -1,0 +1,35 @@
+\chapter{Implementation Details}
+% \chapter{Detalii de implementare}
+\label{cap:implementare}
+
+
+Ponderea acestui capitol relativ la întreaga lucrare este de 20-30\%.
+
+Conține detalii de implementare: 
+\begin{itemize}
+  \item organizarea codului sursă, organizarea logică a codului (module, ierarhii de clase)
+  \item descrierea claselor, funcțiilor, API-urilor importante ale aplicației
+  \item descrierea la nivel de implementare a algoritmilor principali
+  \item descrierea părților mai dificile
+  \item alte detalii de implementare relevante, specifice fiecărei aplicații
+\end{itemize}
+
+Descrierea implementării trebuie să reflecte modul în care ea corespunde (se mapează) design-ului. 
+
+Nu se vor da detalii irelevante. Descrierea codului trebuie gândită ca un ghid de parcurgere a codului sursă de către cineva care vrea să continue proiectul vostru. 
+
+Exemplu de cod:
+\lstset{language=C,frame=single, showstringspaces=false}
+\begin{lstlisting}
+# include <stdio.h>
+  
+int main (int argc, char **argv)
+{
+  int i;
+    
+  for (i=0; i<argc; i++)
+    printf("argv[%d] = %s\n", i, argv[i]);
+    
+  return 0;
+}
+\end{lstlisting}

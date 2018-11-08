@@ -1,0 +1,69 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: ch1.aux
+A level-1 auxiliary file: ch2.aux
+A level-1 auxiliary file: ch3.aux
+A level-1 auxiliary file: ch4.aux
+A level-1 auxiliary file: ch5.aux
+A level-1 auxiliary file: ch6.aux
+A level-1 auxiliary file: ch7.aux
+A level-1 auxiliary file: ch8.aux
+A level-1 auxiliary file: ch9.aux
+The style file: IEEEtran.bst
+A level-1 auxiliary file: apendix.aux
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: thesis.bib
+-- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Name 1 in "William G.J. Halfond, Jeremy Viegas, and Alessandro Orso" has a comma at the end for entry classification_and_countermeasures
+while executing---line 2411 of file IEEEtran.bst
+
+Done.
+You've used 29 entries,
+            4024 wiz_defined-function locations,
+            993 strings with 12825 characters,
+and the built_in function-call counts, 9913 in all, are:
+= -- 688
+> -- 142
+< -- 0
++ -- 74
+- -- 31
+* -- 349
+:= -- 1678
+add.period$ -- 58
+call.type$ -- 29
+change.case$ -- 29
+chr.to.int$ -- 0
+cite$ -- 29
+duplicate$ -- 899
+empty$ -- 1052
+format.name$ -- 37
+if$ -- 2121
+int.to.chr$ -- 0
+int.to.str$ -- 29
+missing$ -- 213
+newline$ -- 138
+num.names$ -- 17
+pop$ -- 686
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 765
+stack$ -- 0
+substring$ -- 45
+swap$ -- 466
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 29
+warning$ -- 0
+while$ -- 17
+width$ -- 31
+write$ -- 253
+(There was 1 error message)

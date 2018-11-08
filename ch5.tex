@@ -1,0 +1,100 @@
+\chapter{Analysis and Design}
+%\chapter{Analiză și proiectare}
+\label{cap:analiza-si-proiectare}
+
+Acest capitol descrie design-ul proiectului și cuprinde, în general: 
+\begin{enumerate}
+  \item ilustrarea arhitecturii generale și detaliate a sistemului implementat, care să evidențieze modulele componente și relațiile dintre acestea
+  \item stările prin care trece sistemul în decursul funcționării sale (diagrame de stare)
+  \item modul de interacțiune dintre module și funcționalitatea acestora ilustrată prin diagrame de secvențe
+  \item descrierea algoritmilor/metodelor pe care se bazează funcționarea sistemului dezvoltat
+  \item descrierea organizării/structurii eventualelor baze de date folosite
+  \item justificarea alegerilor/deciziilor făcute și analiza critică a acestora (avantaje și dezavantaje), prin comparație cu alte alternative posibile
+\end{enumerate}
+
+Ca idee generală, design-ul trebuie să fie prezentat independent de o implementare anume, în general, și de cea a voastră, în particular. De asemenea, descrierea design-ului trebuie să conțină toate elementele și detaliile necesare, astfel încât altcineva decât voi să poate realiza o implementare a lui, fără a fi nevoit să ia decizii arhitecturale sau organizare (adică, de design) și să vă contacteze pentru a-și lămuri anumite aspecte neclare.
+
+Capitolul trebuie organizat pe secțiuni și subsecțiuni astfel descrierea să urmeze un cors logic și ușor de urmărit. 
+
+Ponderea acestui capitol relativ la întreaga lucrare este de 25-35\%.
+
+
+\section{Examples: lists, figures, tables, equations}
+
+Așa arată o listă de elemente nenumerotate:
+\begin{itemize}
+  \item element 1
+  \item element 2
+  \item \dots
+\end{itemize}
+
+
+Așa arată o listă de elemente numerotare:
+\begin{itemize}
+  \item element 1
+  \item element 2
+  \item \dots
+\end{itemize}
+
+
+Așa arată o listă în text: 
+\begin{inparaenum}[(\itshape 1 \upshape)]
+  \item element 1, 
+  \item element 2, 
+  \item \dots
+\end{inparaenum}
+
+\textbf{Atenție}: orice tabel, figura sau ecuație (formulă) trebuie referite \textit{explicit} în text explicit (de genul: în Figura X este ulustrat \dots, în Tabelul Y se poate vedea \dots), pentru că Latex le poate plasa chiar și pe altă pagină decât acolo unde vrem noi să ne referim la ele. Vedeți exemple de mai jos!
+
+Tabelul~\ref{table:example} ilustrează un exemplu de tabel. Un editor on-line de tabele poate fi găsit la \url{http://www.tablesgenerator.com/}. 
+
+\begin{table}[t]
+\centering                          % tabel centrat 
+\begin{tabular}{|c|c|c|c|}          % 4 coloane centrate 
+\hline\hline                        % linie orizontala dubla
+Case & Method\#1 & Method\#2 & Method\#3 \\ [0.5ex]   % inserare tabel
+%heading
+\hline                              % linie orizontal simpla
+1 & 50 & 837 & 970 \\               % corpul tabelului 
+2 & 47 & 877 & 230 \\
+3 & 31 & 25 & 415 \\[1ex]           % [1ex] adds vertical space
+\hline                              
+\end{tabular}
+\caption{Nonlinear Model Results}   % titlul tabelului
+\label{table:example}                % \label{table:nonlin} introduce eticheta folosita pentru referirea tabelului in text; referirea in text se va face cu \ref{table:nonlin}
+\end{table}
+
+În Figura~\ref{fig:exemplu} 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{image}
+    \caption{Numele figurii}
+    \label{fig:exemplu}
+\end{figure}
+
+
+Formula~(\ref{eq:example}) arată modul de calcul al lui $\Delta$:
+\begin{equation} \label{eq:example}
+    \Delta =\sum_{i=1}^N w_i (x_i - \bar{x})^2 .
+\end{equation}
+
+
+Algoritmul~\ref{alg:example} este un exemplu de descriere pseudo-cod a unui algoritm, preluat de la \href{http://en.wikibooks.org/wiki/LaTeX/Algorithms#Typesetting_using_the_algorithm2e_package}{http://en.wikibooks.org/wiki/LaTeX}. El utilizează pachetul \textit{algorithm2e}. Alternativ, puteți utiliza pachetele \textit{algorithmic} sau \textit{program}. 
+
+\begin{algorithm}
+ \KwData{this text}
+ \KwResult{how to write algorithm with \LaTeX2e }
+ initialization\;
+ \While{not at end of this document}{
+  read current\;
+  \eIf{understand}{
+   go to next section\;
+   current section becomes this one\;
+   }{
+   go back to the beginning of current section\;
+  }
+ }
+ \caption{How to write algorithms}
+ \label{alg:example}
+\end{algorithm}

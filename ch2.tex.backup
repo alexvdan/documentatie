@@ -1,0 +1,48 @@
+
+\chapter{Project's Objectives and Specification}
+% \chapter{Obiective și specificații}
+\label{cap:obiective-specificatii}
+
+Acest capitol conține descrierea detaliată a temei de cercetare propriu-zise, formulată exact, cu obiective clare și specificații, pe 2-3 pagini și eventuale figuri explicative. Titlul nu e neapărat impus și, de asemenea, capitolul poate fi inclus ca subcapitol în Capitolul~\ref{cap:Introducere}, dacă se potrivește.
+
+Reprezintă cca. 5--10\% din lucrare.
+
+\section{Obiective}
+
+Obiectivele proiectului sunt lucrurile care se dorește a fi realizate, ca urmare a abordării temei lucrării de licență. În general numărul de obiective este proporțional cu timpul de care dispunem. Exemple generice:
+\begin{enumerate}
+  \item Analiza critică a soluțiilor existente pentru problema abordată și identificarea posibile limitări ale acestora.
+  \item Propunerea unor soluții la (o parte) din problemele identificate. 
+  \item Implementarea soluției și validarea ei
+  \item Identificarea unor teme de dezvoltare și cercetare ulterioare
+  \item \dots
+\end{enumerate}
+
+
+\section{Specificații}
+
+\subsection{Specificații funcționale}
+
+Aplicația realizată:
+\begin{itemize}
+  \item va face următoarele ...
+  \item va oferi următoarea funcționalitate \dots
+  \item va afișa o o interfață
+  \item va fi bazată pe modelul \dots (client-server) 
+  \item va fi implementată în C, Java etc.
+  \item \dots
+\end{itemize}
+
+
+\subsection{Specificații non-funcționale}
+
+Aplicația trebuie, de asemenea, să aibă următoarele caracteristici non-funcționale:
+\begin{itemize}
+  \item să aibă următoarea performanță
+  \item să fie ușor/intuitiv de utilizat
+  \item să fie adoptată pe scară largă 
+  \item \dots
+\end{itemize}
+
+
+
