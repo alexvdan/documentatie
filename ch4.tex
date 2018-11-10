@@ -74,8 +74,18 @@ Procesul de interactionare cu o baza de date presupene realizarea de interogari 
 \end{figure}
 
 Figura ~\ref{fig:sqli-example} prezinta o tenatativa de atac prin SQL injection in care in campul de validare a email-ului se incearca injectarea de cod ce va fi executat in interogarea de validare a credentialelor. Prin prezenta caracterului ' se escapeaza tot textul urmat dupa acesta ca fiind cod si nu un string ce face parte din campul de email. Operatia logica "OR 1=1" va determina interpretorul sa returneze adevarat(valid) pentru orice adresa de email introdusa introdusa inaintea caractrului '. \\
+
+
 \section{Obtinerea adreselor retelei Tor}
-Reteaua Tor reprezint aun softrware gratis de anonimizare a traficului pe internet. Numele este de fapt un actonim pentru "The Onion Router"(router-ul ceapa) care sugereaza modul de functionarea al acestuia, ficare nod din retea adugand un strat extra de securitate celor precedente. 
+Reteaua Tor reprezinta un softrware gratis de anonimizare a traficului pe internet. Numele este de fapt un actonim pentru "The Onion Router"(router-ul ceapa) care sugereaza modul de functionarea al acestuia, ficare nod din retea adugand un strat extra de securitate celor precedente. Modul de functionare al retelei se bazeaza pe rutarea traficului prin cat mai multe noduri pentru a anonimiza si a face cat mai greu de urmarit traficul unei anumite persoane. Aceste noduri prin care traficul este directionat sunt sustinute gratis de catre voluntari/utilizatori de Tor din intreaga lume.
+
+Pentru criptarea traficului reteaua Tor foloseste criptarea la nivelul aplicatiei in cea ce priveste sructura retelelor de calculatoare(modelul OSI sau TCP/IP). Datele trasmise sunt criptate, incluzand destinatia, cu exceptia nodului urmator, astfel creandu-se structura de "ceapa" asupra unui pachet. Selectia nodurilor prin care se face rutarea pachetelor este aleasa random. Fiecare pachet decripteaza un "strat", afand nodul urmator pentru pachetul respectiv, nodul final decriptand datele initiale si realizand trasmisia catre destinatie, fara sa ii comunice sursa pachetului. Intrucat in comunicarea pachetelor, pe parcursul rutelor parcurse, se cunoaste in permanenta doar nodul urmator, acest lucru impiedica monitorizarea traficului intre sursa si destinatie.
+
+
+Cu toate ca reteua tor ofera anonimitate de partea clientului, acest lucru nu se realizeaza si faca de ea. Reteaua nu se ascunde fata de serviciile acesate prin intermediul ei. Astfel un site anume poate sa detecteze daca un anumit client il acceseaza folosind reteaua Tor sau nu.
+
+Intrucat reteaua Tor nu isi ascunde adresele ip folosite de catre aceasta, indentificarea lor si procurarea de date despe acestea este destul de usoara. In proiectul propus s-a folosit un serviciu care furnizeaza gratui astfel de date \cite{tot_status}(adresa ip, uptime etc.) si s-au folosit algoritmi propri pentru procesarea acestor date, eliminand astfel necorectitudinea dintre utilizatorii retelei.
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{can-you-hide-on-Tor-Network.png}
@@ -84,6 +94,8 @@ Reteaua Tor reprezint aun softrware gratis de anonimizare a traficului pe intern
 \end{figure}
 
 Figura ~\ref{fig:tor-example} prezinta principalele elemente folosite la rutarea treficului de la client la destinatie prin intermediul retelei Tor. \\
+
+
 \section{Sistem de prevenire a intruziunilor}
 Conform scurtei descrieri prezentate in capitolul anterior, un sistem de prevenire a intruziunilor are rolul de a filtra traficul dintre clientii unui server si serverul propiu zis. 
 
