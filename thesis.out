@@ -20,14 +20,18 @@
 \BOOKMARK [1][-]{section.4.5}{Sistem de prevenire a intruziunilor}{chapter.4}% 20
 \BOOKMARK [0][-]{chapter.5}{Analiza si proiectare}{}% 21
 \BOOKMARK [1][-]{section.5.1}{Cerintele sistemului}{chapter.5}% 22
-\BOOKMARK [0][-]{chapter.6}{Implementation Details}{}% 23
-\BOOKMARK [0][-]{chapter.7}{Tests and Results}{}% 24
-\BOOKMARK [1][-]{section.7.1}{Functional Tests}{chapter.7}% 25
-\BOOKMARK [1][-]{section.7.2}{Performance Tests}{chapter.7}% 26
-\BOOKMARK [0][-]{chapter.8}{User Manual}{}% 27
-\BOOKMARK [0][-]{chapter.9}{Conclusions}{}% 28
-\BOOKMARK [0][-]{chapter*.4}{Bibliografie}{}% 29
-\BOOKMARK [0][-]{chapter.1}{Diverse anexe}{}% 30
-\BOOKMARK [0][-]{chapter.2}{Demonstratii matematice detaliate \(daca exista\)}{}% 31
-\BOOKMARK [0][-]{chapter.3}{Pseudo-cod sau cod \(daca exista\)}{}% 32
-\BOOKMARK [0][-]{chapter.4}{Articole publicate}{}% 33
+\BOOKMARK [1][-]{section.5.2}{Specificatiile cazurilor de utilizare}{chapter.5}% 23
+\BOOKMARK [2][-]{subsection.5.2.1}{Actori, stakeholders si interese}{section.5.2}% 24
+\BOOKMARK [2][-]{subsection.5.2.2}{Basic flow}{section.5.2}% 25
+\BOOKMARK [2][-]{subsection.5.2.3}{Alternative flow}{section.5.2}% 26
+\BOOKMARK [0][-]{chapter.6}{Implementation Details}{}% 27
+\BOOKMARK [0][-]{chapter.7}{Tests and Results}{}% 28
+\BOOKMARK [1][-]{section.7.1}{Functional Tests}{chapter.7}% 29
+\BOOKMARK [1][-]{section.7.2}{Performance Tests}{chapter.7}% 30
+\BOOKMARK [0][-]{chapter.8}{User Manual}{}% 31
+\BOOKMARK [0][-]{chapter.9}{Conclusions}{}% 32
+\BOOKMARK [0][-]{chapter*.4}{Bibliografie}{}% 33
+\BOOKMARK [0][-]{chapter.1}{Diverse anexe}{}% 34
+\BOOKMARK [0][-]{chapter.2}{Demonstratii matematice detaliate \(daca exista\)}{}% 35
+\BOOKMARK [0][-]{chapter.3}{Pseudo-cod sau cod \(daca exista\)}{}% 36
+\BOOKMARK [0][-]{chapter.4}{Articole publicate}{}% 37

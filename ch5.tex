@@ -2,11 +2,12 @@
 \chapter{Analiză și proiectare}
 \label{cap:analiza-si-proiectare}
 
+In acest capitol este descris design-ul proiectului si cuprinde: cerintele sistemului, specificatiile cazurilor de utilizare, arhitectura sistemului, comportamentul sistemului, datele utilizate de sistem, dependintele sistemului si algoritmi esentiali si metodele folosite. Descrierea acestora se realizeaza prin asocierea cu diagramelor aferente.
 
 \section{Cerintele sistemului}
 
-
-
+Sistemul propus \textit{\thesistitle} reprezinta un software gratis care ofera clientului atat caracteristici specificie unui reverse proxy, cat si modalitati de protectie asemeni unui sistem de prevenire a intruziunilor.
+Sistemul este usor de instalat si de utilizat, chiar si de catre utilizatorii neexperimentati, oferindu-le acestora o interfata clara si sugestiva, ce mascheaza logica complicata din spate. In spate, sistemul ofera un reverse proxy ce intercepteaza tot traficul destinat catre un anumit server, de pe una sau mai multe interfete. In procesul de interceptare, acesta implementeaza si cateva modalitati de prevenire a unor tentative de intruziune. Sistemul blocheaza toate ip-urile utilizate frecevent de reteaua Tor in ultima luna si atacurile de SQL injection cu o acuratete de 90\%.
 
 Sistemul trebui sa indeplineasca urmatoarele cerinte \textbf{functionale}:
 \begin{enumerate}
@@ -29,7 +30,14 @@ Sistemul trebuie, de asemenea, să aibă următoarele caracteristici \textbf{non
 	in cazul detectiei de SQL injection sa nu aiba detectii false pozitive mai mari 2-3\%
 	si o acuratete generala de peste 90\%
 \end{enumerate}
+\newpage
 
+\section{Specificatiile cazurilor de utilizare}
+
+\subsection{Actori, stakeholders si interese}
+
+\subsection{Basic flow}
+\subsection{Alternative flow}
 %Acest capitol descrie design-ul proiectului și cuprinde, în general: 
 %\begin{enumerate}
 %  \item ilustrarea arhitecturii generale și detaliate a sistemului implementat, care să evidențieze modulele componente și relațiile dintre acestea
