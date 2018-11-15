@@ -24,15 +24,16 @@
 \contentsline {section}{\numberline {5.2}Specificatiile cazurilor de utilizare}{27}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Actori, stakeholders si interese}{27}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Basic flow}{27}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Alternative flow}{27}{subsection.5.2.3}
-\contentsline {chapter}{\numberline {6}Implementation Details}{29}{chapter.6}
-\contentsline {chapter}{\numberline {7}Tests and Results}{31}{chapter.7}
-\contentsline {section}{\numberline {7.1}Functional Tests}{31}{section.7.1}
-\contentsline {section}{\numberline {7.2}Performance Tests}{31}{section.7.2}
-\contentsline {chapter}{\numberline {8}User Manual}{33}{chapter.8}
-\contentsline {chapter}{\numberline {9}Conclusions}{35}{chapter.9}
-\contentsline {chapter}{Bibliografie}{37}{chapter*.4}
-\contentsline {chapter}{\numberline {A}Diverse anexe}{41}{chapter.1}
-\contentsline {chapter}{\numberline {B}Demonstra\IeC {{\textcommabelow t}}ii matematice detaliate (dac\IeC {\u a} exist\IeC {\u a})}{43}{chapter.2}
-\contentsline {chapter}{\numberline {C}Pseudo-cod sau cod (dac\IeC {\u a} exist\IeC {\u a})}{45}{chapter.3}
-\contentsline {chapter}{\numberline {D}Articole publicate}{47}{chapter.4}
+\contentsline {subsection}{\numberline {5.2.3}Alternative flow}{28}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Arhitectura sistemului si modulele principale}{29}{section.5.3}
+\contentsline {chapter}{\numberline {6}Implementation Details}{31}{chapter.6}
+\contentsline {chapter}{\numberline {7}Tests and Results}{33}{chapter.7}
+\contentsline {section}{\numberline {7.1}Functional Tests}{33}{section.7.1}
+\contentsline {section}{\numberline {7.2}Performance Tests}{33}{section.7.2}
+\contentsline {chapter}{\numberline {8}User Manual}{35}{chapter.8}
+\contentsline {chapter}{\numberline {9}Conclusions}{37}{chapter.9}
+\contentsline {chapter}{Bibliografie}{39}{chapter*.4}
+\contentsline {chapter}{\numberline {A}Diverse anexe}{43}{chapter.1}
+\contentsline {chapter}{\numberline {B}Demonstra\IeC {{\textcommabelow t}}ii matematice detaliate (dac\IeC {\u a} exist\IeC {\u a})}{45}{chapter.2}
+\contentsline {chapter}{\numberline {C}Pseudo-cod sau cod (dac\IeC {\u a} exist\IeC {\u a})}{47}{chapter.3}
+\contentsline {chapter}{\numberline {D}Articole publicate}{49}{chapter.4}

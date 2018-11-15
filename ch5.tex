@@ -36,8 +36,45 @@ Sistemul trebuie, de asemenea, să aibă următoarele caracteristici \textbf{non
 
 \subsection{Actori, stakeholders si interese}
 
+Principalii actori si stakeholder-i sunt administratorii de servere, respectiv de baze de date. In implementarea sistemului propus se urmareste satisfacerea nevoilor acestor persoane, oferindule un plus de securitate asupra datelor ce sunt accesate de catre clienti, respectiv impotriva clientilor rau intentionati. Interesele acestor comunitati de utilizatori sunt urmarite pentru a livra un produs care sa ofere aceste protectii intr-o maniera cat de prietenoasa pentru utilizator si cat mai eficienta.
+
 \subsection{Basic flow}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{basicflow.png}
+	\caption{Basic flow pentru evenimente}
+	\label{fig:basic-flow}
+\end{figure}
+Figura ~\ref{fig:basic-flow} prezinta cum arata basic flow-ul pentru evenimentele din sistemul propus. \\
+
+Evenimentele sistemului:
+\begin{enumerate}
+	\item \textbf{Start}: aceste cazuri de utilizare sunt initiate in momentul in care sistemul este plasat intre un server si utilizatorii acestuia.
+	\item \textbf{Pasul 1}: un client doreste si initializeze o conexiune la server.
+	\item \textbf{Pasul 2}: adresa ip a clientului este verificata ca acesta sa nu fie un utilizator de Tor.
+	\item \textbf{Pasul 3}: clientul comunica cu serverul prin reqest-uri individuale.
+	\item \textbf{Pasul 4}: reqest-urile sunt verificate ca acestea sa nu fie atacuri de SQL injection.
+	\item \textbf{Pasul 5}: request-urile sunt trimise mai departe catre server.
+	\item \textbf{Pasul 6}: conexiunea este terminata(de catre client sau server).
+	\item \textbf{End}: la sfarsitul unui sir de evenimente, utilizatorul sistemului poate sa vada daca clientul ce a initializat evenimentele a realizat actiuni considerate ca malitioase.
+	
+	
+\end{enumerate}
+
+
 \subsection{Alternative flow}
+Evenimentele alternative in cazurile de utilizare sunt urmatoarele:
+\begin{enumerate}
+	\item \textbf{Pasul 2a}: in cazul in care un utilizator cu adresa ip de Tor incearca sa realizeze conexiunea la server aceasta este refuzata. 
+	\item \textbf{Pasul 4a}: in cazul in care un utilizator incearca sa trimita la server un request ce reprezinta o tentativa de atac SQL injection, acesta este blocat.
+	\item \textbf{Pasul 4b}: pentru request-urile blocate ca si SQL injection clientului i se returneaza o pagina goala. 
+\end{enumerate}
+
+\newpage
+
+
+\section{Arhitectura sistemului si modulele principale}
 %Acest capitol descrie design-ul proiectului și cuprinde, în general: 
 %\begin{enumerate}
 %  \item ilustrarea arhitecturii generale și detaliate a sistemului implementat, care să evidențieze modulele componente și relațiile dintre acestea
