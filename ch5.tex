@@ -75,6 +75,20 @@ Evenimentele alternative in cazurile de utilizare sunt urmatoarele:
 
 
 \section{Arhitectura sistemului si modulele principale}
+
+In conformitate cu cerintele sistemului si specificatiile cazurilor de utilizare, sistemul propus este alcatuit din module specifice care sa trateze in mod individual problemele majore ridicate de sistem, printr-o implementare modulara, oferind astfel usurinta implementarii de noi functionalitati.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{module.png}
+	\caption{Principalele module ale sitemului propus}
+	\label{fig:module}
+\end{figure}
+Figura ~\ref{fig:module} prezinta care sunt pricipalele module ale sistemului propus, precum si interactiunea dintre acestea. \\
+
+\textbf{Client system} si \textbf{application server}.\\
+
+Aceste doua componente reprezinta componetele clasice intre care vin plasat sistemul propus. \textbf{Client system} este reprezentat de orice client doreste sa acceseze baza de date/parte de server a unei aplicatii. \textbf{Application server} reprezinta serverul aplicatie la care se pot conecta clientii pentru a avea acces la un anumit continut. Sistemul propus are rolul de intermediere intre cele doua tipuri de componente, prevenind astfel eventuale tentative de expluatare a unor vulnerabilitati din partea clientului catre server.
 %Acest capitol descrie design-ul proiectului și cuprinde, în general: 
 %\begin{enumerate}
 %  \item ilustrarea arhitecturii generale și detaliate a sistemului implementat, care să evidențieze modulele componente și relațiile dintre acestea
