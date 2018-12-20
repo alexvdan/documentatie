@@ -86,17 +86,23 @@ In conformitate cu cerintele sistemului si specificatiile cazurilor de utilizare
 \end{figure}
 Figura ~\ref{fig:module} prezinta care sunt pricipalele module ale sistemului propus, precum si interactiunea dintre acestea. \\
 
-Principala si teoretic singura componenta a sistemului este reprezentata de cea de \textbf{reverse proxy}, insa petru a obtine rezultatele dorite si pentru a incorpora functionalitatile de protecti in aceasta, ea a fost impartita in cele 4 submodule:\textbf{connections acceptance module} si \textbf{request interceptor module}, ce reprezinta componentele ce suporta logica unui reverse proxy si \textbf{ip address validation module} si \textbf{SQL injection prevention module}, ce reprezinta modulele cu care interactioneaza cele ce constituie structura de reverse proxy pentru a oferi functionalitatile de securitate.\\
+Principala si teoretic singura componenta a sistemului este reprezentata de cea de \textbf{reverse proxy}, insa petru a obtine rezultatele dorite si pentru a incorpora functionalitatile de protecti in aceasta, ea a fost impartita in cele 4 submodule:\textbf{connections acceptance module} si \textbf{request interceptor module}, ce reprezinta componentele ce suporta logica unui reverse proxy si \textbf{ip address validation module} si \textbf{SQL injection prevention module}, ce reprezinta modulele cu care interactioneaza cu cele ce implementeaza structura de reverse proxy pentru a oferi functionalitatile de securitate.\\
 
 
 
 
-\textbf{Client system} si  \textbf{application server}.
+\textbf{Client system} si  \textbf{application server}.\\ 
 
 Aceste doua componente reprezinta componetele clasice intre care vin plasat sistemul propus. \textbf{Client system} este reprezentat de orice client doreste sa acceseze baza de date/parte de server a unei aplicatii. \textbf{Application server} reprezinta serverul aplicatie la care se pot conecta clientii pentru a avea acces la un anumit continut. Sistemul propus are rolul de intermediere intre cele doua tipuri de componente, prevenind astfel eventuale tentative de expluatare a unor vulnerabilitati din partea clientului catre server.
 
 
+\textbf{Connections acceptance module}.\\
 
+ \textbf{Request interceptor module}.\\
+ 
+\textbf{Ip address validation module}. \\
+
+ \textbf{SQL injection prevention module}. \\
 
 %Acest capitol descrie design-ul proiectului și cuprinde, în general: 
 %\begin{enumerate}
