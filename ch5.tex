@@ -98,9 +98,17 @@ Aceste doua componente reprezinta componetele clasice intre care vin plasat sist
 
 \textbf{Connections acceptance module}.\\
 
+Acest modul este constituit din componentele oferite de biblioteca open source \textbf{twisted}, fiind modificate ulterior pentru a permite integrarea modulului \textbf{Ip address validation module} . Modulul are rolul de a crea un socket pe sistemul pe care ruleaza acesta, care sa asculte pentru posibile conexiunui. In cazul in care un client incearca sa initieze o noua conexiune acesta trasmite adresa ip a clietului catre modului \textbf{Ip address validation module}, iar in functie de raspunsul acestuia conexiunea acestuia va fi realizata sau refuzata.\\ 
+
+
  \textbf{Request interceptor module}.\\
  
+ Asemeni modulului anterior, \textbf{Connections acceptance module}, acest modul este construit peste codul oferit de biblioteca open source \textbf{twisted}. Biblioteca ofera suport pentru interceptarea reqest-urilor dintre un client si server, implementandu-se o logica suplimentarea ce incorporeaza modulul de detectie a atacurilor SQLI( \textbf{SQL injection prevention module}). In acest modul se interpreteaza natura URL-urilor trimise de catre client catre server.
+ Interpretarea constand in analiza URI-ului unui request de catre modulul de prevenire a atacurilor SQLI, iar in functie de rezultatul acestuia returnand reaspunsuri corespunzatoare atat clientului cat si serverului(in caz de tentatica de atac, la server nu ca ajunge nimic).
+ 
 \textbf{Ip address validation module}. \\
+
+
 
  \textbf{SQL injection prevention module}. \\
 
