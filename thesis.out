@@ -16,7 +16,7 @@
 \BOOKMARK [1][-]{section.4.1}{Reverse proxy}{chapter.4}% 16
 \BOOKMARK [1][-]{section.4.2}{Support vector machine}{chapter.4}% 17
 \BOOKMARK [1][-]{section.4.3}{SQL injection}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.4}{Obtinerea adreselor retelei Tor}{chapter.4}% 19
+\BOOKMARK [1][-]{section.4.4}{Adresele IP ale retelei Tor}{chapter.4}% 19
 \BOOKMARK [1][-]{section.4.5}{Sistem de prevenire a intruziunilor}{chapter.4}% 20
 \BOOKMARK [0][-]{chapter.5}{Analiza si proiectare}{}% 21
 \BOOKMARK [1][-]{section.5.1}{Cerintele sistemului}{chapter.5}% 22
@@ -25,14 +25,22 @@
 \BOOKMARK [2][-]{subsection.5.2.2}{Basic flow}{section.5.2}% 25
 \BOOKMARK [2][-]{subsection.5.2.3}{Alternative flow}{section.5.2}% 26
 \BOOKMARK [1][-]{section.5.3}{Arhitectura sistemului si modulele principale}{chapter.5}% 27
-\BOOKMARK [0][-]{chapter.6}{Implementation Details}{}% 28
-\BOOKMARK [0][-]{chapter.7}{Tests and Results}{}% 29
-\BOOKMARK [1][-]{section.7.1}{Functional Tests}{chapter.7}% 30
-\BOOKMARK [1][-]{section.7.2}{Performance Tests}{chapter.7}% 31
-\BOOKMARK [0][-]{chapter.8}{User Manual}{}% 32
-\BOOKMARK [0][-]{chapter.9}{Conclusions}{}% 33
-\BOOKMARK [0][-]{chapter*.4}{Bibliografie}{}% 34
-\BOOKMARK [0][-]{chapter.1}{Diverse anexe}{}% 35
-\BOOKMARK [0][-]{chapter.2}{Demonstratii matematice detaliate \(daca exista\)}{}% 36
-\BOOKMARK [0][-]{chapter.3}{Pseudo-cod sau cod \(daca exista\)}{}% 37
-\BOOKMARK [0][-]{chapter.4}{Articole publicate}{}% 38
+\BOOKMARK [1][-]{section.5.4}{Comportamentul sistemului. Diagrama de stare si de secventa}{chapter.5}% 28
+\BOOKMARK [1][-]{section.5.5}{Dependintele sistemului}{chapter.5}% 29
+\BOOKMARK [1][-]{section.5.6}{Algoritmi si metode}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.7}{Diagrama de desfasurare}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.8}{Justificarea design-ului}{chapter.5}% 32
+\BOOKMARK [0][-]{chapter.6}{Detalii de implementare}{}% 33
+\BOOKMARK [1][-]{section.6.1}{Structura codului sursa}{chapter.6}% 34
+\BOOKMARK [1][-]{section.6.2}{Clase, metode si API-uri}{chapter.6}% 35
+\BOOKMARK [1][-]{section.6.3}{Fluxul executie programului}{chapter.6}% 36
+\BOOKMARK [0][-]{chapter.7}{Tests and Results}{}% 37
+\BOOKMARK [1][-]{section.7.1}{Functional Tests}{chapter.7}% 38
+\BOOKMARK [1][-]{section.7.2}{Performance Tests}{chapter.7}% 39
+\BOOKMARK [0][-]{chapter.8}{User Manual}{}% 40
+\BOOKMARK [0][-]{chapter.9}{Conclusions}{}% 41
+\BOOKMARK [0][-]{chapter*.4}{Bibliografie}{}% 42
+\BOOKMARK [0][-]{chapter.1}{Diverse anexe}{}% 43
+\BOOKMARK [0][-]{chapter.2}{Demonstratii matematice detaliate \(daca exista\)}{}% 44
+\BOOKMARK [0][-]{chapter.3}{Pseudo-cod sau cod \(daca exista\)}{}% 45
+\BOOKMARK [0][-]{chapter.4}{Articole publicate}{}% 46
