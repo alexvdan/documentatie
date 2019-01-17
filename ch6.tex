@@ -2,6 +2,230 @@
  \chapter{Detalii de implementare}
 \label{cap:implementare}
 
+
+\section{Structura codului sursa}
+
+Codul folosit pentru obtinerea sistemului \textit{\thesistitle} este impartit in 3 proiecte separate:
+\begin{itemize}
+	\item \textbf{Tor activity monitor} ce constituie logica necesara obtinerii listei de adrese IP blocate de sistem.
+	\item \textbf{SQLi SVM} scopul acestuia fiind obtinerea modelului de SVM folosit pentru prevenirea atacurilor de SQL injection.
+	\item \textbf{\thesistitle} reprezantand sistemul propus si incorporeaza rezultatele obtinute de celelalte doua proiecte.
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{tor_activity_monitor.png}
+	\caption{Modulul pentru monitorizatea activitatii retelei Tor}
+	\label{fig:tor_activity_monitor}
+\end{figure}
+
+Figura ~\ref{fig:tor_activity_monitor} prezinta care sunt fisierele folosite pentru monitorizarea activitatii retelei Tor si pentru obtinerea listei cu adresele IP ce trebuie blocate de catre sistem si relatiile dintre acestea. \\
+
+\textbf{run\_Get\_new\_Tor\_ips.sh} este un fisier de bash ce are rolul de a rula Get\_new\_Tor\_ips.py. Fisierul este programat sa lanseze in executie Get\_new\_Tor\_ips.py la ore fixe, acesta ruland incontinuu pe un sistem cu acces la internet neintrerupt. Lnasarile in executie au loc o data la 6 ore, respectiv la ora 12 am si pm si 6 am si pm.
+
+\textbf{Get\_new\_Tor\_ips.py} are rolul de a documenta modificarile de uptime din ultimele 6 ore ale nodurilor retelei Tor. Datele sunt furnizate de pe pagina "Tor Network Status" \cite{tot_status} si pentru fiecare adresa IP prezenta in date, se verifica care este uptime ul din ultimele 6 ore, informatiile acestea fiind stocate in IPs\_Tor\_activity.txt.
+
+\textbf{IPs\_Tor\_activity.txt} are rolul de a stoca informatiile despre toate adresele IP utilizate de reteaua tor din ultima luna. Acestea sunt salvate in liste, pentru fiecare adresa IP in parte o lista. 
+
+\textbf{Get\_ips\_blacklist.py} are rolul de genera fisierul Tor\_ips.txt folosit de catre sistemul propus pentru blocarea adreselor IP. Acesta foloseste datele din interiorul fisierului IPs\_Tor\_activity.txt, pentru a genera o lista cu toate adresele IP ce au un uptime total mai mare de 7 zile in ultimele 30 de zile.
+
+\textbf{Tor\_ips.txt} reprezinta rezultatul proiectului. Acesta este alcatuit dintr-o lista formata din toate adresele IP ce vor fi blocate de sistemul propus in timpul rularii.
+
+\newpage
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{sqli_svm.png}
+	\caption{Modulul pentru prevenirea atacurilor SQL injection}
+	\label{fig:sqli_svm}
+\end{figure}
+Figura ~\ref{fig:sqli_svm} prezinta care sunt fisierele utilizate pentru procesarea datelor necesare in procesul de antrenare a modelului de SVM, pana la obtinerea modelului propiu-zis si care sunt realtiile dintre acestea. \\
+
+\textbf{SQLI\_URLs} reprezinta setul initial de date "infected" folosite pentru indentificarea atacurilor SQL injection. Acest set este constituit din URL-uri ce au fost indentificate de un produs autorizat ca fiind tentative de SQL injection.
+
+\textbf{Clean\_URLs} reprezinta setul initial de date "clean" folosite pentru indentificarea atacurilor SQL injection. Acest set este constituit din URL-uri ce au fost indentificate de un produs autorizat ca fiind URL-uri curate.
+
+\textbf{URL\_processor.py} primeste ca input un fisier sau string si are rolul de a procesa URL-uri intr-un format uniform(se elimina encodarile) si specific pentru pasii urmatori.
+
+\textbf{SQLI\_URIs} constituie noua lista rezultata din procesarea fisierului SQLI\_URLs de catre URL\_processor.py.
+
+\textbf{Clean\_URIs} constituie noua lista rezultata din procesarea fisierului Clean\_URLs de catre URL\_processor.py.
+
+\textbf{Get\_secial\_chars\_frequency.py} are rolul de a caldula frecvventa de aparite a unor caractere speciale in cele doua seturi de date si de a decide in functie de frecventa lor de aparite, care din acestea sunt relevante in vederea alegerii trasaturilor de clasificare.
+
+\textbf{key\_features} este o lista alcatuita din toate cuvintele cheie a limbajului SQL, dar si din caracterele speciale utilizate in acesta si considerate ca fiind relevante in urma executiei scriptului Get\_secial\_chars\_frequency.py.
+
+\textbf{URI-file\_to\_features.py} are rolul de a procesa cele doua fisiere de date si pe baza trasaturilor din key\_features sa constituie un nou fisier ce contine pentru fiecare URL din cele doua fisiere tipul acestuia si trasaturile gasite in el, precum si frecventa lor.
+
+\textbf{all\_URI\_features} este rezultatul rularii scriptului URI-file\_to\_features.py si contine pentru fiecare URL din cele doua fisiere de date, tipul acestuia si trasaturile gasite in el, precum si frecventa lor, acestea fiind folosite pentru antrenarea si testarea modelului de SVM.
+
+\textbf{get\_TestSet\_TrainSet.py} are rolul de a 
+imparti datele prezente in all\_URI\_features in doua seturi de proportie 70-30. Aceste doua seturi fiind folosite pentru antrenarea si testarea modelului.
+
+\textbf{Train\_set} constituie 70\% din totalul de exemple acumulate pentru antrenarea modelului, doar acestea fiind de fapt folosite pentru antrenarea sa.
+
+\textbf{Test\_set} constituie 30\% din exemplele acumulate, aceste date fiind folosite pentru testarea acuratetii modelului dupa antrenare.
+
+\textbf{Train\_SQLi\_model.py} realizeaza obtinerea modelului de SVM folosit de sistem pentru prevenirea atacurilor SQL injection. Pentru antrenare modelului este folosit setul de date din fisierul Test\_set si algoritmi pusi la dispozitie de biblioteca open source libsvm \cite{libsvm}.
+
+\textbf{SQLi.model} reprezinta rezultatul proiectului. Acesta este testat cu ajutorul setului de date din fisierul Test\_set si ulterior integrat in sistemul propus pentru a fi folosit pentru prevenirea atacurilo SQL injection.
+
+\newpage
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{source_code.png}
+	\caption{Interactiunea dintre interfata grafica si celelalte module}
+	\label{fig:source_code}
+\end{figure}
+Figura ~\ref{fig:source_code} prezinta care sunt fisierele, specific fiecarui modul, care sunt accesate in mod direct de catre interfata sau indirect de alte fisiere, in timpul rularii si relatiile dintre acestea. \\
+
+
+\textbf{User Interface} reprezinta intreaga componenta ce realizeaza interfata de utilizator cu toate fisierele necesare realizarii ei, incorporate in compozitia sa. Aceasta a fost realizata de un proiect dezvoltat in .Net implicand multe fisiere cu scopul realizarii elementelor grafice. Aceste elementu nu vor fi tratate in aceasta sectiune.
+
+\textbf{Proxy.py} reprezinta fisierul ce incorporeaza, respectiv leaga, tot codul ce constituie partea de "back end" a proiectului. In acest script de python se realizeara instantierea elementului de reverse proxy cu parametri de adrese IP si porturi aferente, precum si furnizarea metodelor de detectie implementate, componentei de reverse proxy.
+
+\textbf{Twisted library} este o biblioteca open source scrisa in Python, ce ofera suport pentru diferite protocoale(TCP, UDP, SSL/TLS). Biblioteca a fost folosita pentru partea de cod ce ofera implementarea unui reverse proxy. Mare parte din fisierele oferite de acesta biblioteca au fost folosite fara a fi suprascrisa sau a li se aduce modificari ulterioare, insa in vederea atingeri scopului propus, asupra unor fisiere sursa au fost aduse mici modificari(internet.tcp.py).
+
+\textbf{internet.tcp.py} este scriptul din biblioteca twisted ce ofera suportul pentru protocolul TCP. Acest fisiser a fost modificat pentru introducerea detectiei impotriva utilizatorilor de Tor. Script-ul integreaza lista realizata de proiectul "Tor activity monitor" pentru verificarea adresei utilizatorilor ce doresc sa stabileasca o conexiune TCP.
+
+
+
+
+\section{Algoritmi, metode si API-uri}
+
+In acesta sectiune se urmareste descrierea codului sursa folosit la realizarea sistemului propus si explicarea amanuntita a codului/metodelor considerate mai relevante. Abordarea codului sursa se realizeaza conform sub-proiectelor prezentate in sectiunea anterioara(Tor activity monitor, AQLi SVM, Interfata utilizator).
+
+\subsection{Tor activity monitor}
+
+Conform figurii ~\ref{fig:tor_activity_monitor}, acest proiect este realizat din 5 fisiere, acestea avand o relatie liniara intre ele.
+
+Fisierul ce incepe ciclul de executie, run\_Get\_new\_Tor\_ips.sh, este un fisier de bash ce ruleaza in bucla infinta. Fisierul trebuie sa ruleze pe un sistem ce este functional non-stop si cu acces nelimitat la internet. La ore fixe acesta (12 am si pm si 6 am si pm), acesta lanseaza in executie scriptul de python Get\_new\_Tor\_ips.py.
+
+Fisierul principal din acest proiect il reprezinta Get\_new\_Tor\_ips.py. Acesta descarca pagina "Tor Network Status" \cite{tot_status} si proceseaza datele de pe acestea, introducand in fisierul IPs\_Tor\_ activity.txt informatii referitoare la adresele IP gasite pe pagina si uptime-ul lor din ultimele 6 ore. Procesarea adreselor IP si extragerea valorii lor de uptime se poate observa in urmatoarea secventa de cod:
+
+\lstset{language=python,frame=single, showstringspaces=false}
+\begin{lstlisting}
+time_up = row.findAll('td')[4].contents[0]
+ip = row.findAll('td', attrs={'class':'iT'})[0].findAll('a',
+ attrs={'class':'who'})[0].contents[0]
+days = time\_up.split()[1]
+if days == 'd':
+    hours = 6
+else:
+    hours = int(time\_up.split()[0])
+    if hours > 6:
+        hours = 6
+
+\end{lstlisting}
+
+Rezultatele rularii fisierului Get\_new\_Tor\_ips.py sunt actualizate in IPs\_Tor\_activity.txt. Acest fisier este de fapt un json in care se realizeaza dump la noul dictionar obtinut de  Get\_new\_Tor\_ips.py. Dictionarul este constituit din adresa IP ca si cheie si o liste .Structura acestor liste este realizata dintr-o serie de numere intre 0 si 6 ce reprezinta timpul total de uptime corespunzator sfertului respectiv de zi. Dimensiunea acestei liste este fixata la 30(zile)*4(sferturi de zi), pe masura ce un element nou este adaugat, primul element din lista fiind scos.
+
+Urmatorul pas este filtrarea tuturor adreselor IP ce au un uptime mai mare de 7 zile. acest lucru este realizat de scriptul Get\_ips\_blacklist.py, iar rezultatele sunt stocate in Tor\_ips.txt, o adresa IP pe linie.
+
+\subsection{SQLi SVM}
+Desfasurarea proiectului incepe de la cele doua fisiere SQLi\_URLs si Clean\_URLs. In aceste doua fisiere se afla URL-uri complete din categoria conforma cu numele fiecarui fisier. Aceste fisiere sunt procesate de scriptul URI\_processor.py care are rolul de a uniformiza datele in aceasi encodare. Urmatoarea bucata de cod prezinta secventa ce transforma valorile hexa dintr-un URI in caractere si modul in care erorile de encodare sunt tratate(sunt printate pentru a fi tratate manual de catre programator):
+
+\lstset{language=python,frame=single, showstringspaces=false}
+\begin{lstlisting}
+for index, sub_uri in enumerate(uri.split('%')):
+    if sub_uri:
+        if index == 0:
+            new_uri = sub_uri
+            continue
+        try:
+            hex_val = bytearray.fromhex(sub_uri[:2]).decode()
+        except UnicodeDecodeError:
+            hex_val = ''
+            except ValueError:
+            print(uri + ' --- ' + sub_uri[:2])
+            return ''
+        new_uri += hex_val + sub_uri[2:]
+\end{lstlisting}
+
+In urma procesarii datelor, rezulta cele doua fisiere SQLi\_URIs si Clean\_URIs, acestea avand acelasi continut cele anterioare insa in aceasi encodare. In urma obtinerii acestor doua fisiere, a fost realizata completarea listei de trasaturi(lista initiala este constituita din toate cuvintele cheie a limbajului SQL) cu caracterele speciale intalnite in acest limbaj. Scriptul Get\_secial\_chars\_frequency.py are rolul de a determina frecventa de aparitie a fiecarui caracter special in cele doua seturi de date, iar pe baza unei observatii umane, a fost realizata determinarea caracterelor ce constituie trasaturi rentabile. Urmatoarea bucata de cod este din scriptul Get\_secial\_chars\_frequency.py si realizeaza numararea URI-urilor(pentru comparare) din setul de date si frecventa caracterelor speciale("dict" este un dictionar cu cheile fiind caracterele speciale utilizate in limbaj):
+\lstset{language=python,frame=single, showstringspaces=false}
+\begin{lstlisting}
+with open(args.f, 'r') as fd:
+    for lines in fd.readlines():
+        lines_nr += 1
+        line = lines.strip()
+        for keys in dict:
+            if keys in line:
+                dict[keys] += 1
+\end{lstlisting}
+Dupa determinarea caracterelor relevante, acestea au fost completate manual in fisierul key\_features, fisier ce insumeaza toate trasaturile ce sunt folosite in antrenarea modelului(fiecare linie contine o trasatura, numarul liniei fiind si indicele de referinta a trasaturii).
+
+Pentru obtinerea datelor intr-un format ce poate fi procesat de biblioteca libsvm \cite{libsvm} a fost necesara transformarea acestora intr-un anumit format:
+\begin{lstlisting}
++1 23:1 37:4 103:2
+-1 54:1 77:1
+\end{lstlisting}
+Convertirea URI-urilor in formatul de mai sus este realizata de scriptul URI-file\_to\_features.py. Formatul de mai sus este reprezentarea fiecarui URL in functie de tipul acestuia si indicele trasaturii gasite in interiorul sau precum si frecventa de aparite a acestora(tip trasatura:frecventa trasatura:frecventa). Urmatoarea bucata de cod este extrasa din fisierul URI-file\_to\_features.py si realizeaza conversia unui URI in echivalentul sau in trasaturi:
+\begin{lstlisting}
+for keys in keywords_aux:
+ if keys in uri:
+    if keywords_list.index(keys) > 184:
+      keywords_aux[keys] = uri.count(keys)
+      if not uri.count(keys) == 0:
+        ok = True
+      else:
+        sub_uri = uri.split(keys)
+        for index, ele in enumerate(sub_uri):
+          if index + 1 < len(sub_uri):
+            if ele and sub_uri[index + 1] and not ele[-1].
+             isalpha() and not sub_uri[index+1][0].isalpha():
+              keywords_aux[keys] += 1
+              ok = True
+          elif not ele and sub_uri[index - 1]:
+              keywords_aux[keys] += 1
+              ok = True
+\end{lstlisting}
+
+\subsection{Interfata utilizator}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{ui_home.png}
+	\caption{Meniul "Home" in interfata grafica}
+	\label{fig:ui_home}
+\end{figure}
+Figura ~\ref{fig:ui_home} prezinta design-ul paginii de "Home" din interfata grafica pusa la dispozitie utilizatorilor sistemului. \\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{ui_configure.png}
+	\caption{Meniul "Configure" in interfata grafica}
+	\label{fig:ui_configure}
+\end{figure}
+Figura ~\ref{fig:ui_configure} prezinta design-ul paginii de "Configure" din interfata grafica, in care utilizatorul sistemului poate sa seteze interfetele si porturile care vor fi tratate in timpul rularii. \\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{ui_monitor.png}
+	\caption{Meniul "Monitor" in interfata grafica}
+	\label{fig:ui_monitor}
+\end{figure}
+Figura ~\ref{fig:ui_monitor} prezinta design-ul paginii de "Monitor" din interfata grafica, in care utilizatorul poate sa urmareasca activitatea sistemului in timpul rularii. \\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{sqli_respons.png}
+	\caption{Raspunsul pentru SQL injection URL}
+	\label{fig:sqli_respons}
+\end{figure}
+
+Figura ~\ref{fig:sqli_respons} prezinta cum arata raspunsul primit de la server de catre un utilizator dupa trimiterea unui request catre server, cu intentia de a realiza un atatc de tipul SQL injection. \\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{tor_respons.png}
+	\caption{Principalele module ale sitemului propus}
+	\label{fig:tor_respons}
+\end{figure}
+Figura ~\ref{fig:tor_respons} prezinta cum arata raspunsul primit de la server de catre un utilizator al retelei Tor ce intentioneaza sa se conecteze la acesta. \\
+
+
+\section{Fluxul executie programului}
 %
 %
 %
@@ -33,6 +257,3 @@
 %  return 0;
 %}
 %\end{lstlisting}
-\section{Structura codului sursa}
-\section{Clase, metode si API-uri}
-\section{Fluxul executie programului}

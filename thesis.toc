@@ -33,15 +33,18 @@
 \contentsline {section}{\numberline {5.8}Justificarea design-ului}{35}{section.5.8}
 \contentsline {chapter}{\numberline {6}Detalii de implementare}{37}{chapter.6}
 \contentsline {section}{\numberline {6.1}Structura codului sursa}{37}{section.6.1}
-\contentsline {section}{\numberline {6.2}Clase, metode si API-uri}{37}{section.6.2}
-\contentsline {section}{\numberline {6.3}Fluxul executie programului}{37}{section.6.3}
-\contentsline {chapter}{\numberline {7}Tests and Results}{39}{chapter.7}
-\contentsline {section}{\numberline {7.1}Functional Tests}{39}{section.7.1}
-\contentsline {section}{\numberline {7.2}Performance Tests}{39}{section.7.2}
-\contentsline {chapter}{\numberline {8}User Manual}{41}{chapter.8}
-\contentsline {chapter}{\numberline {9}Conclusions}{43}{chapter.9}
-\contentsline {chapter}{Bibliografie}{45}{chapter*.4}
-\contentsline {chapter}{\numberline {A}Diverse anexe}{49}{chapter.1}
-\contentsline {chapter}{\numberline {B}Demonstra\IeC {{\textcommabelow t}}ii matematice detaliate (dac\IeC {\u a} exist\IeC {\u a})}{51}{chapter.2}
-\contentsline {chapter}{\numberline {C}Pseudo-cod sau cod (dac\IeC {\u a} exist\IeC {\u a})}{53}{chapter.3}
-\contentsline {chapter}{\numberline {D}Articole publicate}{55}{chapter.4}
+\contentsline {section}{\numberline {6.2}Algoritmi, metode si API-uri}{42}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Tor activity monitor}{42}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}SQLi SVM}{43}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Interfata utilizator}{45}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}Fluxul executie programului}{47}{section.6.3}
+\contentsline {chapter}{\numberline {7}Tests and Results}{49}{chapter.7}
+\contentsline {section}{\numberline {7.1}Functional Tests}{49}{section.7.1}
+\contentsline {section}{\numberline {7.2}Performance Tests}{49}{section.7.2}
+\contentsline {chapter}{\numberline {8}User Manual}{51}{chapter.8}
+\contentsline {chapter}{\numberline {9}Conclusions}{53}{chapter.9}
+\contentsline {chapter}{Bibliografie}{55}{chapter*.4}
+\contentsline {chapter}{\numberline {A}Diverse anexe}{59}{chapter.1}
+\contentsline {chapter}{\numberline {B}Demonstra\IeC {{\textcommabelow t}}ii matematice detaliate (dac\IeC {\u a} exist\IeC {\u a})}{61}{chapter.2}
+\contentsline {chapter}{\numberline {C}Pseudo-cod sau cod (dac\IeC {\u a} exist\IeC {\u a})}{63}{chapter.3}
+\contentsline {chapter}{\numberline {D}Articole publicate}{65}{chapter.4}
