@@ -94,7 +94,7 @@ Figura ~\ref{fig:source_code} prezinta care sunt fisierele, specific fiecarui mo
 
 \section{Algoritmi, metode si API-uri}
 
-In acesta sectiune se urmareste descrierea codului sursa folosit la realizarea sistemului propus si explicarea amanuntita a codului/metodelor considerate mai relevante. Abordarea codului sursa se realizeaza conform sub-proiectelor prezentate in sectiunea anterioara(Tor activity monitor, AQLi SVM, Interfata utilizator).
+In acesta sectiune se urmareste descrierea codului sursa folosit la realizarea sistemului propus si explicarea amanuntita a codului/metodelor considerate mai relevante, precum si a principalelor api-uri utilizate in implementarea acestuia. Abordarea codului sursa se realizeaza conform sub-proiectelor prezentate in sectiunea anterioara(Tor activity monitor, AQLi SVM, Interfata utilizator).
 
 \subsection{Tor activity monitor}
 
@@ -102,21 +102,39 @@ Conform figurii ~\ref{fig:tor_activity_monitor}, acest proiect este realizat din
 
 Fisierul ce incepe ciclul de executie, run\_Get\_new\_Tor\_ips.sh, este un fisier de bash ce ruleaza in bucla infinta. Fisierul trebuie sa ruleze pe un sistem ce este functional non-stop si cu acces nelimitat la internet. La ore fixe acesta (12 am si pm si 6 am si pm), acesta lanseaza in executie scriptul de python Get\_new\_Tor\_ips.py.
 
-Fisierul principal din acest proiect il reprezinta Get\_new\_Tor\_ips.py. Acesta descarca pagina "Tor Network Status" \cite{tot_status} si proceseaza datele de pe acestea, introducand in fisierul IPs\_Tor\_ activity.txt informatii referitoare la adresele IP gasite pe pagina si uptime-ul lor din ultimele 6 ore. Procesarea adreselor IP si extragerea valorii lor de uptime se poate observa in urmatoarea secventa de cod:
+Fisierul principal din acest proiect il reprezinta Get\_new\_Tor\_ips.py. Acesta descarca pagina "Tor Network Status" \cite{tot_status} si proceseaza datele de pe acestea, introducand in fisierul IPs\_Tor\_ activity.txt informatii referitoare la adresele IP gasite pe pagina si uptime-ul lor din ultimele 6 ore. Procesarea adreselor IP si extragerea valorii lor de uptime se poate observa in urmatoarele doua secvente de cod.
 
 \lstset{language=python,frame=single, showstringspaces=false}
 \begin{lstlisting}
 time_up = row.findAll('td')[4].contents[0]
 ip = row.findAll('td', attrs={'class':'iT'})[0].findAll('a',
  attrs={'class':'who'})[0].contents[0]
-days = time\_up.split()[1]
+
+
+\end{lstlisting}
+
+Pentru prelucrarea continutului paginii, acesta a fost downloadat in memoria programului, iar codul HTML rezultant a fost prelucrat cu ajutorul bibliotecii de python open source, BeautifulSoup. Codul de mai sus reprezinta extragerea valori de timp(uptime) si adresa IP careia aceasta corespunde. Variabila "row" fiind un elemnet din obiectul iterabil rezultat din initializarea bibliotecii BeautifulSoup cu codul HTML al paginii.
+
+\lstset{language=python,frame=single, showstringspaces=false}
+\begin{lstlisting}
+days = time_up.split()[1]
 if days == 'd':
     hours = 6
 else:
-    hours = int(time\_up.split()[0])
+    hours = int(time_up.split()[0])
     if hours > 6:
         hours = 6
 
+\end{lstlisting}
+
+In secventa de mai sus de cod, este indentificata valoarea corecta de uptime din ultimele 6 ore. Pentru cazul in care valoare de uptime este sub forma de zile sau aceasta este mai mare de 6 ore, ea se seteaza pe 6 ore, intrucat nu ne intereseaza decat activitatea din ultimele 6 ore.
+\begin{lstlisting}
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
+
+pagesource = urlopen(page)
+soup = BeautifulSoup(pagesource.read())
+table = soup.findAll('table', attrs={'class': 'displayTable'})
 \end{lstlisting}
 
 Rezultatele rularii fisierului Get\_new\_Tor\_ips.py sunt actualizate in IPs\_Tor\_activity.txt. Acest fisier este de fapt un json in care se realizeaza dump la noul dictionar obtinut de  Get\_new\_Tor\_ips.py. Dictionarul este constituit din adresa IP ca si cheie si o liste .Structura acestor liste este realizata dintr-o serie de numere intre 0 si 6 ce reprezinta timpul total de uptime corespunzator sfertului respectiv de zi. Dimensiunea acestei liste este fixata la 30(zile)*4(sferturi de zi), pe masura ce un element nou este adaugat, primul element din lista fiind scos.
@@ -136,12 +154,12 @@ for index, sub_uri in enumerate(uri.split('%')):
         try:
             hex_val = bytearray.fromhex(sub_uri[:2]).decode()
         except UnicodeDecodeError:
-            hex_val = ''
-            except ValueError:
             print(uri + ' --- ' + sub_uri[:2])
             return ''
         new_uri += hex_val + sub_uri[2:]
 \end{lstlisting}
+Intrucat intr-un URL caracterul '\%' nu poate sa apara decat daca acesta este encodat('\%25'- valoarea pentru encodarea caracterului '\%'), indentificarea tuturor caracterelor encodate a fost facuta prin indentificarea tuturor caracterelor de tipul '\%' in URI. In cazul in care un astfel de caracter este gasit, se incearca conversia urmatoarelor doua caractere(asteptandu-se, conform conventiei, sa fie cifre), din valoarea in hexa corespunzatoare unui anumit caracter in caracterul in sine.
+
 
 In urma procesarii datelor, rezulta cele doua fisiere SQLi\_URIs si Clean\_URIs, acestea avand acelasi continut cele anterioare insa in aceasi encodare. In urma obtinerii acestor doua fisiere, a fost realizata completarea listei de trasaturi(lista initiala este constituita din toate cuvintele cheie a limbajului SQL) cu caracterele speciale intalnite in acest limbaj. Scriptul Get\_secial\_chars\_frequency.py are rolul de a determina frecventa de aparitie a fiecarui caracter special in cele doua seturi de date, iar pe baza unei observatii umane, a fost realizata determinarea caracterelor ce constituie trasaturi rentabile. Urmatoarea bucata de cod este din scriptul Get\_secial\_chars\_frequency.py si realizeaza numararea URI-urilor(pentru comparare) din setul de date si frecventa caracterelor speciale("dict" este un dictionar cu cheile fiind caracterele speciale utilizate in limbaj):
 \lstset{language=python,frame=single, showstringspaces=false}
@@ -153,7 +171,11 @@ with open(args.f, 'r') as fd:
         for keys in dict:
             if keys in line:
                 dict[keys] += 1
+                
 \end{lstlisting}
+
+Pentru indentificarea caracterelor relevante din limbajul SQL in comparatie cu cele folosite intr-un URL obijnuit, s-a ales numararea frecventei de aparitie a acestora in URL-uri normale, dar si in URL-uri ce contin atacuri de SQL injection. Numararea se face alternativ, rezultatele fiind furnizate ca doua seturi de date separate, bucata anterioara de cod reprezentand procesul doar pentru una dintre cele doua categorii. Dictionarul referit in cod este alcatuit dintr-un dictionar ce are ca si chei valoarea caracterelor specialae cautate, iar ca valoarea acestea sunt initializate pe zero pentru a fi incrementate o data cu numarul de aparitii ale caracterelor cautate. Pentru uniformizarea setului de date, intrucat distributia acestor caractere nu este tot timpul uniforma, se tine cont si de numarul de linii(pe fiecare linie se afla un URI distinct) in care au fost indentificate frecventele lor de aparitie.
+
 Dupa determinarea caracterelor relevante, acestea au fost completate manual in fisierul key\_features, fisier ce insumeaza toate trasaturile ce sunt folosite in antrenarea modelului(fiecare linie contine o trasatura, numarul liniei fiind si indicele de referinta a trasaturii).
 
 Pentru obtinerea datelor intr-un format ce poate fi procesat de biblioteca libsvm \cite{libsvm} a fost necesara transformarea acestora intr-un anumit format:

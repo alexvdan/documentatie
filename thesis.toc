@@ -37,7 +37,7 @@
 \contentsline {subsection}{\numberline {6.2.1}Tor activity monitor}{42}{subsection.6.2.1}
 \contentsline {subsection}{\numberline {6.2.2}SQLi SVM}{43}{subsection.6.2.2}
 \contentsline {subsection}{\numberline {6.2.3}Interfata utilizator}{45}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}Fluxul executie programului}{47}{section.6.3}
+\contentsline {section}{\numberline {6.3}Fluxul executie programului}{46}{section.6.3}
 \contentsline {chapter}{\numberline {7}Tests and Results}{49}{chapter.7}
 \contentsline {section}{\numberline {7.1}Functional Tests}{49}{section.7.1}
 \contentsline {section}{\numberline {7.2}Performance Tests}{49}{section.7.2}
