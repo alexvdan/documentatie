@@ -83,7 +83,7 @@ Figura ~\ref{fig:source_code} prezinta care sunt fisierele, specific fiecarui mo
 
 \textbf{User Interface} reprezinta intreaga componenta ce realizeaza interfata de utilizator cu toate fisierele necesare realizarii ei, incorporate in compozitia sa. Aceasta a fost realizata de un proiect dezvoltat in .Net implicand multe fisiere cu scopul realizarii elementelor grafice. Aceste elementu nu vor fi tratate in aceasta sectiune.
 
-\textbf{Proxy.py} reprezinta fisierul ce incorporeaza, respectiv leaga, tot codul ce constituie partea de "back end" a proiectului. In acest script de python se realizeara instantierea elementului de reverse proxy cu parametri de adrese IP si porturi aferente, precum si furnizarea metodelor de detectie implementate, componentei de reverse proxy.
+\textbf{Proxy.py} reprezinta fisierul ce incorporeaza, respectiv leaga, tot codul ce constituie partea de "back end" a proiectului. In acest script de python se realizeara instantierea elementului de reverse proxy cu parametri de adrese IP si porturi aferente, precum si furnizarea metodelor de detectie componentei de reverse proxy.
 
 \textbf{Twisted library} este o biblioteca open source scrisa in Python, ce ofera suport pentru diferite protocoale(TCP, UDP, SSL/TLS). Biblioteca a fost folosita pentru partea de cod ce ofera implementarea unui reverse proxy. Mare parte din fisierele oferite de acesta biblioteca au fost folosite fara a fi suprascrisa sau a li se aduce modificari ulterioare, insa in vederea atingeri scopului propus, asupra unor fisiere sursa au fost aduse mici modificari(internet.tcp.py).
 
@@ -137,6 +137,8 @@ soup = BeautifulSoup(pagesource.read())
 table = soup.findAll('table', attrs={'class': 'displayTable'})
 \end{lstlisting}
 
+Pentru procesarea continutului unei pagini web("Tor Network Status" \cite{tot_status}) s-au folosit bibliotecile de python, open source, urllib si BeautifulSoup \cite{btf_soup}. Biblioteca urllib ofera functii si clase ce pot fi folosite pentru deschiderea de URL-uri(urlopen). Functia folosita in codul de mai sus primeste ca parametru "page" adresa sub forma de string a paginii ce se doreste a fi citita. Biblioteca BeautifulSoup este o biblioteca de python folosita pentru extragerea de date din fisiere de HTML sau XML. Acesta este initializata cu un document HTML/XML si ca rezultat ofera un obiect ce permite navigarea prin codul sursa asemeni unei structuri de date imbricate. Astfel, spre exemplu, pentru indentificarea structurii corespunzatoare tabelei de adrese IP din codul sursa al paginii, s-a folosit o singura linie de cod, in care s-au specificat numele si atributele specifice acesteia.
+
 Rezultatele rularii fisierului Get\_new\_Tor\_ips.py sunt actualizate in IPs\_Tor\_activity.txt. Acest fisier este de fapt un json in care se realizeaza dump la noul dictionar obtinut de  Get\_new\_Tor\_ips.py. Dictionarul este constituit din adresa IP ca si cheie si o liste .Structura acestor liste este realizata dintr-o serie de numere intre 0 si 6 ce reprezinta timpul total de uptime corespunzator sfertului respectiv de zi. Dimensiunea acestei liste este fixata la 30(zile)*4(sferturi de zi), pe masura ce un element nou este adaugat, primul element din lista fiind scos.
 
 Urmatorul pas este filtrarea tuturor adreselor IP ce au un uptime mai mare de 7 zile. acest lucru este realizat de scriptul Get\_ips\_blacklist.py, iar rezultatele sunt stocate in Tor\_ips.txt, o adresa IP pe linie.
@@ -158,6 +160,7 @@ for index, sub_uri in enumerate(uri.split('%')):
             return ''
         new_uri += hex_val + sub_uri[2:]
 \end{lstlisting}
+
 Intrucat intr-un URL caracterul '\%' nu poate sa apara decat daca acesta este encodat('\%25'- valoarea pentru encodarea caracterului '\%'), indentificarea tuturor caracterelor encodate a fost facuta prin indentificarea tuturor caracterelor de tipul '\%' in URI. In cazul in care un astfel de caracter este gasit, se incearca conversia urmatoarelor doua caractere(asteptandu-se, conform conventiei, sa fie cifre), din valoarea in hexa corespunzatoare unui anumit caracter in caracterul in sine.
 
 
@@ -179,47 +182,71 @@ Pentru indentificarea caracterelor relevante din limbajul SQL in comparatie cu c
 Dupa determinarea caracterelor relevante, acestea au fost completate manual in fisierul key\_features, fisier ce insumeaza toate trasaturile ce sunt folosite in antrenarea modelului(fiecare linie contine o trasatura, numarul liniei fiind si indicele de referinta a trasaturii).
 
 Pentru obtinerea datelor intr-un format ce poate fi procesat de biblioteca libsvm \cite{libsvm} a fost necesara transformarea acestora intr-un anumit format:
+
 \begin{lstlisting}
 +1 23:1 37:4 103:2
 -1 54:1 77:1
 \end{lstlisting}
-Convertirea URI-urilor in formatul de mai sus este realizata de scriptul URI-file\_to\_features.py. Formatul de mai sus este reprezentarea fiecarui URL in functie de tipul acestuia si indicele trasaturii gasite in interiorul sau precum si frecventa de aparite a acestora(tip trasatura:frecventa trasatura:frecventa). Urmatoarea bucata de cod este extrasa din fisierul URI-file\_to\_features.py si realizeaza conversia unui URI in echivalentul sau in trasaturi:
+
+Convertirea URI-urilor in formatul de mai sus este realizata de scriptul URI-file\_to\_features.py. Formatul de mai sus este reprezentarea fiecarui URL in functie de tipul acestuia si indicele trasaturii gasite in interiorul sau precum si frecventa de aparite a acestora(tip trasatura:frecventa trasatura:frecventa). Urmatoarele bucati de cod sunt extrasa din fisierul URI-file\_to\_features.py si realizeaza conversia unui URI in echivalentul sau in trasaturi:
+
 \begin{lstlisting}
-for keys in keywords_aux:
- if keys in uri:
-    if keywords_list.index(keys) > 184:
-      keywords_aux[keys] = uri.count(keys)
-      if not uri.count(keys) == 0:
-        ok = True
-      else:
-        sub_uri = uri.split(keys)
-        for index, ele in enumerate(sub_uri):
-          if index + 1 < len(sub_uri):
-            if ele and sub_uri[index + 1] and not ele[-1].
-             isalpha() and not sub_uri[index+1][0].isalpha():
-              keywords_aux[keys] += 1
-              ok = True
-          elif not ele and sub_uri[index - 1]:
-              keywords_aux[keys] += 1
-              ok = True
+if keys in uri:
+ if keywords_list.index(keys) > 184:
+  keywords[keys] = uri.count(keys)
+  if not uri.count(keys) == 0:
+    ok = True
+\end{lstlisting}
+
+In lista cu trasaturi, primele 184 de pozitii corespund cuvintelor cheie ale limbajului SQL, urmatoarele 8 pozitii apartinand trasaturilor de tipul caracter special(determinate la pasul anterior de sciptul "Get\_special\_chars\_frequency.py"). In cazul in care o astfel de trasatura este gasita intr-un URI, pur si simplu se gaseste numarul total de aparitii a caracterului respectiv in URI.
+
+
+\begin{lstlisting}
+ sub_uri = uri.split(keys)
+ for index, ele in enumerate(sub_uri):
+  if index + 1 < len(sub_uri):
+    if ele and sub_uri[index + 1] and not ele[-1].
+     isalpha() and not sub_uri[index+1][0].isalpha():
+      keywords_aux[keys] += 1
+  elif not ele and sub_uri[index - 1]:
+      keywords_aux[keys] += 1
+\end{lstlisting}
+
+Pentru trasaturile de pe primele 184 de pozitii, adica cuvintele cheie ale limbajului SQL, s-a abordat o logica mai complexa de procesre. O data ce un cuvant este gasit intr-un URI, pentru fiecare aparite a acestui cuvant se verifica ca primul caracter anterior cuvantului si primul urmator cuvantului sa nu fie litera, astfel eliminandu-se cazurile in care unele cuvinte sunt incluse in altele(ex: \textbf{all} si de\textbf{all}ocate).
+
+In urma procesarii fisierelor de date, rezulta un fisier(all\_URI\_features) ce insumeaza toate datele utilizate in antrenarea modelului(exemple atat pozitive cat si negative), insa sub forma prezentata anterior(tip trasatura:frecventa trasatura:frecventa). Acest fisier este impartit in doua fisiere cu proportia de 70\% pentru Train\_set si 30\% Tes\_set de scriptul get\_Trainset\_Testset.py. cu scopul de a obtine un grup de date atat pentru antrenarea modelului cat si pentru testarea ulterioara a acestuia.
+
+Pentru antrenarea modeluli, s-a folosit biblioteca open sourece libsvm. Aceasta biblioteca furnizeaza fisierele necesare antrenarii modelului de svm si de prezicere a unui rezultat pe un model existent. Apelul catre executabilul "svm-train.exe" se face prin intermediul scriptului de python Train\_SQLi\_model.py.
+Executabilul de windows furnizat de biblioteca libsvm poate fi apelat conform exemplului urmator:
+
+\begin{lstlisting} 
+svm-train.exe [options] training_set_file [model_file]
 \end{lstlisting}
 
 \subsection{Interfata utilizator}
+
+Componenta de interfata reprezinta atat proiectul in .net in care a fost realizata interfata sistemului, dar si fisierele/script-urile ce au rolul de a interconecta rezultatele celor doua proiecte anterioare cu acesta.
+
+Scriptul Proxy.py incapsuleaza toate elemntele, din partea de back end, a proiectului propus. Acesta de asemenea furnizeaza ca output intr-un format specific(format ce este cunoscut si interpretat de interfata grafica) toate evenimentele ce apar in timpiul rularii sistemului. In acest script se realizeara instantierea elementului de reverse proxy cu parametri de adrese IP si porturi aferente, precum si furnizarea metodelor de detectie componentei de reverse proxy. Initializarea elementului de reverse proxy se realizeaza cu ajutorul codului oferit de biblioteca twisted. Acest cod este prezentat in "Anexa 1" a acestei lucrari.
+
+In urmatoarele imagini sunt prezentate posibilele pagini ale interfatei utilizator precum si o scurta descriere ce ilustreaza functionalitatile oferite de paginile respective pentru utilizator.
+\newpage]
+ 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{ui_home.png}
 	\caption{Meniul "Home" in interfata grafica}
 	\label{fig:ui_home}
 \end{figure}
-Figura ~\ref{fig:ui_home} prezinta design-ul paginii de "Home" din interfata grafica pusa la dispozitie utilizatorilor sistemului. \\
+Figura ~\ref{fig:ui_home} prezinta design-ul paginii de "Home" din interfata grafica pusa la dispozitie utilizatorilor sistemului. Acesta pagina este afisata la lansarea in executie a aplicatie, dar poate fi acesata de catre utlizator si prin apasarea butonului in forma de "casuta" din dreapta logoului aplicatiei.\\
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{ui_configure.png}
+	\includegraphics[width=0.7\textwidth]{ui_configure.png}
 	\caption{Meniul "Configure" in interfata grafica}
 	\label{fig:ui_configure}
 \end{figure}
-Figura ~\ref{fig:ui_configure} prezinta design-ul paginii de "Configure" din interfata grafica, in care utilizatorul sistemului poate sa seteze interfetele si porturile care vor fi tratate in timpul rularii. \\
+Figura ~\ref{fig:ui_configure} prezinta design-ul paginii de "Configure" din interfata grafica, in care utilizatorul sistemului poate sa seteze interfetele si porturile care vor fi tratate in timpul rularii. Partea superioara a meniului reprezinta setarile aferente partii de server, precum sugereaza si eticheta din stanga sus "Server Settings". In partea inferioara se pot seta detaliile interfetelor ce se pot conecta la server-ul setat mai sus.(aceste interfete pot fi multiple). \\
 
 \begin{figure}[h]
 	\centering
@@ -227,16 +254,17 @@ Figura ~\ref{fig:ui_configure} prezinta design-ul paginii de "Configure" din int
 	\caption{Meniul "Monitor" in interfata grafica}
 	\label{fig:ui_monitor}
 \end{figure}
-Figura ~\ref{fig:ui_monitor} prezinta design-ul paginii de "Monitor" din interfata grafica, in care utilizatorul poate sa urmareasca activitatea sistemului in timpul rularii. \\
+Figura ~\ref{fig:ui_monitor} prezinta design-ul paginii de "Monitor" din interfata grafica, in care utilizatorul poate sa urmareasca activitatea sistemului in timpul rularii. In aceasta fereastra apar evenimentele aparute in timpul rularii aplicatiei, evenimente ce sunt sub forma de detectii.\\
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{sqli_respons.png}
+	\includegraphics[width=0.9\textwidth]{sqli_respons.png}
 	\caption{Raspunsul pentru SQL injection URL}
 	\label{fig:sqli_respons}
 \end{figure}
 
-Figura ~\ref{fig:sqli_respons} prezinta cum arata raspunsul primit de la server de catre un utilizator dupa trimiterea unui request catre server, cu intentia de a realiza un atatc de tipul SQL injection. \\
+Figura ~\ref{fig:sqli_respons} prezinta cum arata raspunsul primit de la server de catre un utilizator dupa trimiterea unui request catre server, cu intentia de a realiza un atac de tipul SQL injection. Utilizatorului i se returneaza o pagina goala.\\
+\newpage
 
 \begin{figure}[h]
 	\centering
@@ -244,11 +272,9 @@ Figura ~\ref{fig:sqli_respons} prezinta cum arata raspunsul primit de la server 
 	\caption{Principalele module ale sitemului propus}
 	\label{fig:tor_respons}
 \end{figure}
-Figura ~\ref{fig:tor_respons} prezinta cum arata raspunsul primit de la server de catre un utilizator al retelei Tor ce intentioneaza sa se conecteze la acesta. \\
+Figura ~\ref{fig:tor_respons} prezinta cum arata raspunsul primit de la server de catre un utilizator al retelei Tor ce intentioneaza sa se conecteze la acesta. Acestor utilizatori li se refuza conexiunea. \\
 
 
-\section{Fluxul executie programului}
-%
 %
 %
 %Conține detalii de implementare: 
