@@ -36,13 +36,17 @@
 \BOOKMARK [2][-]{subsection.6.2.1}{Tor activity monitor}{section.6.2}% 36
 \BOOKMARK [2][-]{subsection.6.2.2}{SQLi SVM}{section.6.2}% 37
 \BOOKMARK [2][-]{subsection.6.2.3}{Interfata utilizator}{section.6.2}% 38
-\BOOKMARK [0][-]{chapter.7}{Tests and Results}{}% 39
-\BOOKMARK [1][-]{section.7.1}{Functional Tests}{chapter.7}% 40
-\BOOKMARK [1][-]{section.7.2}{Performance Tests}{chapter.7}% 41
-\BOOKMARK [0][-]{chapter.8}{User Manual}{}% 42
-\BOOKMARK [0][-]{chapter.9}{Conclusions}{}% 43
-\BOOKMARK [0][-]{chapter*.4}{Bibliografie}{}% 44
-\BOOKMARK [0][-]{chapter.1}{Diverse anexe}{}% 45
-\BOOKMARK [0][-]{chapter.2}{Demonstratii matematice detaliate \(daca exista\)}{}% 46
-\BOOKMARK [0][-]{chapter.3}{Pseudo-cod sau cod \(daca exista\)}{}% 47
-\BOOKMARK [0][-]{chapter.4}{Articole publicate}{}% 48
+\BOOKMARK [0][-]{chapter.7}{Teste si rezultate experimentale}{}% 39
+\BOOKMARK [1][-]{section.7.1}{Teste de functionalitate}{chapter.7}% 40
+\BOOKMARK [1][-]{section.7.2}{Teste de performanta}{chapter.7}% 41
+\BOOKMARK [0][-]{chapter.8}{Manual utilizator}{}% 42
+\BOOKMARK [1][-]{section.8.1}{Instalarea proiectului}{chapter.8}% 43
+\BOOKMARK [1][-]{section.8.2}{Utilizare}{chapter.8}% 44
+\BOOKMARK [0][-]{chapter.9}{Conluzii}{}% 45
+\BOOKMARK [1][-]{section.9.1}{Privire de ansamblu asupra sistemului}{chapter.9}% 46
+\BOOKMARK [1][-]{section.9.2}{Dezvoltari ulterioare}{chapter.9}% 47
+\BOOKMARK [0][-]{chapter*.4}{Bibliografie}{}% 48
+\BOOKMARK [0][-]{chapter.1}{Diverse anexe}{}% 49
+\BOOKMARK [0][-]{chapter.2}{Demonstratii matematice detaliate \(daca exista\)}{}% 50
+\BOOKMARK [0][-]{chapter.3}{Pseudo-cod sau cod \(daca exista\)}{}% 51
+\BOOKMARK [0][-]{chapter.4}{Articole publicate}{}% 52

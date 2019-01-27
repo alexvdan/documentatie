@@ -37,13 +37,17 @@
 \contentsline {subsection}{\numberline {6.2.1}Tor activity monitor}{42}{subsection.6.2.1}
 \contentsline {subsection}{\numberline {6.2.2}SQLi SVM}{43}{subsection.6.2.2}
 \contentsline {subsection}{\numberline {6.2.3}Interfata utilizator}{46}{subsection.6.2.3}
-\contentsline {chapter}{\numberline {7}Tests and Results}{51}{chapter.7}
-\contentsline {section}{\numberline {7.1}Functional Tests}{51}{section.7.1}
-\contentsline {section}{\numberline {7.2}Performance Tests}{51}{section.7.2}
-\contentsline {chapter}{\numberline {8}User Manual}{53}{chapter.8}
-\contentsline {chapter}{\numberline {9}Conclusions}{55}{chapter.9}
-\contentsline {chapter}{Bibliografie}{57}{chapter*.4}
-\contentsline {chapter}{\numberline {A}Diverse anexe}{61}{chapter.1}
-\contentsline {chapter}{\numberline {B}Demonstra\IeC {{\textcommabelow t}}ii matematice detaliate (dac\IeC {\u a} exist\IeC {\u a})}{63}{chapter.2}
-\contentsline {chapter}{\numberline {C}Pseudo-cod sau cod (dac\IeC {\u a} exist\IeC {\u a})}{65}{chapter.3}
-\contentsline {chapter}{\numberline {D}Articole publicate}{67}{chapter.4}
+\contentsline {chapter}{\numberline {7}Teste \IeC {{\textcommabelow s}}i rezultate experimentale}{51}{chapter.7}
+\contentsline {section}{\numberline {7.1}Teste de func\IeC {{\textcommabelow t}}ionalitate}{51}{section.7.1}
+\contentsline {section}{\numberline {7.2}Teste de performan\IeC {{\textcommabelow t}}\IeC {\u a}}{53}{section.7.2}
+\contentsline {chapter}{\numberline {8}Manual utilizator}{55}{chapter.8}
+\contentsline {section}{\numberline {8.1}Instalarea proiectului}{55}{section.8.1}
+\contentsline {section}{\numberline {8.2}Utilizare}{55}{section.8.2}
+\contentsline {chapter}{\numberline {9}Conluzii}{59}{chapter.9}
+\contentsline {section}{\numberline {9.1}Privire de ansamblu asupra sistemului}{59}{section.9.1}
+\contentsline {section}{\numberline {9.2}Dezvoltari ulterioare}{59}{section.9.2}
+\contentsline {chapter}{Bibliografie}{61}{chapter*.4}
+\contentsline {chapter}{\numberline {A}Diverse anexe}{65}{chapter.1}
+\contentsline {chapter}{\numberline {B}Demonstra\IeC {{\textcommabelow t}}ii matematice detaliate (dac\IeC {\u a} exist\IeC {\u a})}{67}{chapter.2}
+\contentsline {chapter}{\numberline {C}Pseudo-cod sau cod (dac\IeC {\u a} exist\IeC {\u a})}{69}{chapter.3}
+\contentsline {chapter}{\numberline {D}Articole publicate}{71}{chapter.4}

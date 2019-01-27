@@ -202,11 +202,11 @@ In lista cu trasaturi, primele 184 de pozitii corespund cuvintelor cheie ale lim
 
 
 \begin{lstlisting}
- sub_uri = uri.split(keys)
- for index, ele in enumerate(sub_uri):
+sub_uri = uri.split(keys)
+for index, ele in enumerate(sub_uri):
   if index + 1 < len(sub_uri):
-    if ele and sub_uri[index + 1] and not ele[-1].
-     isalpha() and not sub_uri[index+1][0].isalpha():
+    if ele and sub_uri[index + 1] and not ele[-1].isalpha()
+     and not sub_uri[index+1][0].isalpha():
       keywords_aux[keys] += 1
   elif not ele and sub_uri[index - 1]:
       keywords_aux[keys] += 1
