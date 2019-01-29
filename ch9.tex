@@ -4,7 +4,18 @@
 \label{cap:concluzii}
 \section{Privire de ansamblu asupra sistemului}
 
+In urma eforturilor depuse, s-a realizat un sistem de prevenirea a intruziunilor care indeplineste aproape in intregime obiectivele initial propuse, mici inconveniente fiind la partea de performanta in detectie a sistemului. In cea ce priveste performanta sistemului, in cazul detectiei atacurilor de SQL injection(precum se poate vedea si in capitolul 7) procentul de fals pozitiv este mult mai mare decat se intentiona initial(12.66\% in loc de 3-4\%), insa acest lucru datorandu-se in principal setului mic de date de antrenare avute la dispozitie.
+
+Prin implementarea detectiei atacurilor SQL injection folosind tehnici de machine learning, s-au dobandit cunostinte valoroase si experienta ce pot fi folosite in viitoare proiecte. Intrucat in practica, abordarea acestui subiect a reprezentat un lucru nou, o mare parte din timpul investit in dezvoltarea sistemului a reprezentat documentarea si acumularea de noi cunostinte si experienta pentru rezolvarea unor probleme cu tehnici de machine learning.
+
 \section{Dezvoltari ulterioare}
+
+Datorita unei abordari modulare a dezvoltarii sistemului, acestuia ii pot fi adaugate cu usurinta noi functionalitati.
+ 
+Sistemul prezinta doua posibilitati majore de dezvoltari ulterioare, acestea fiind aferente celor doua tipuri de protectie implementata. In cazul protectiei impotriva adreselor IP malitioase, lista folosita momentan si poate extinde cu usurinta sau prin mici modificari in cod se pot adauga noi liste.
+
+Protectia bazata pe detectia unui anumit continut in URL poate fi cu usurinta extinsa, prin adaugarea de noi model de machine learning sau noi logici de detectie, ambele cazuri necesitand mici modificari in codul sursa.
+
 %Cuprinde:
 %
 %\begin{itemize}
