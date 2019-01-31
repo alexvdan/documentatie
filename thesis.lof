@@ -1,6 +1,6 @@
 \babel@toc {romanian}{}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Incapsula diagrama reverse proxy}}{1}{figure.1.1}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Diagrama reverse proxy}}{1}{figure.1.1}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Cutia neagra a sistemului}}{7}{figure.2.1}
 \addvspace {10\p@ }
@@ -23,11 +23,11 @@
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Modulul pentru monitorizatea activitatii retelei Tor}}{37}{figure.6.1}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Modulul pentru prevenirea atacurilor SQL injection}}{39}{figure.6.2}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Interactiunea dintre interfata grafica si celelalte module}}{41}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Meniul "Home" in interfata grafica}}{48}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Meniul "Configure" in interfata grafica}}{48}{figure.6.5}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Meniul "Monitor" in interfata grafica}}{49}{figure.6.6}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Raspunsul pentru SQL injection URL}}{49}{figure.6.7}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Principalele module ale sitemului propus}}{50}{figure.6.8}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Meniul "Home" in interfata grafica}}{47}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Meniul "Configure" in interfata grafica}}{47}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Meniul "Monitor" in interfata grafica}}{48}{figure.6.6}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Raspunsul pentru SQL injection URL}}{48}{figure.6.7}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Principalele module ale sitemului propus}}{49}{figure.6.8}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Raportul dintre numarul IP-urilor de pe Blacklist si Whitelist dintr-o luna}}{52}{figure.7.1}
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Raportul dintre uptime-ul IP-urile de pe Blacklist si Whitelist din aceasi luna}}{52}{figure.7.2}

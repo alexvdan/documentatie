@@ -1,6 +1,5 @@
 \babel@toc {romanian}{}
-\contentsline {chapter}{List\u {a} de tabele}{iii}{chapter*.2}
-\contentsline {chapter}{List\u {a} de figuri}{v}{chapter*.3}
+\contentsline {chapter}{List\u {a} de figuri}{iii}{chapter*.2}
 \contentsline {chapter}{\numberline {1}Introducere}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Context}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Motiva\IeC {{\textcommabelow t}}ie}{2}{section.1.2}
@@ -35,7 +34,7 @@
 \contentsline {section}{\numberline {6.1}Structura codului sursa}{37}{section.6.1}
 \contentsline {section}{\numberline {6.2}Algoritmi, metode si API-uri}{42}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}Tor activity monitor}{42}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}SQLi SVM}{44}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.2}SQLi SVM}{43}{subsection.6.2.2}
 \contentsline {subsection}{\numberline {6.2.3}Interfata utilizator}{46}{subsection.6.2.3}
 \contentsline {chapter}{\numberline {7}Teste \IeC {{\textcommabelow s}}i rezultate experimentale}{51}{chapter.7}
 \contentsline {section}{\numberline {7.1}Teste de func\IeC {{\textcommabelow t}}ionalitate}{51}{section.7.1}
@@ -46,7 +45,7 @@
 \contentsline {chapter}{\numberline {9}Conluzii}{59}{chapter.9}
 \contentsline {section}{\numberline {9.1}Privire de ansamblu asupra sistemului}{59}{section.9.1}
 \contentsline {section}{\numberline {9.2}Dezvoltari ulterioare}{59}{section.9.2}
-\contentsline {chapter}{Bibliografie}{61}{chapter*.4}
+\contentsline {chapter}{Bibliografie}{61}{chapter*.3}
 \contentsline {chapter}{\numberline {A}Diverse anexe}{65}{chapter.1}
 \contentsline {chapter}{\numberline {B}Demonstra\IeC {{\textcommabelow t}}ii matematice detaliate (dac\IeC {\u a} exist\IeC {\u a})}{67}{chapter.2}
 \contentsline {chapter}{\numberline {C}Pseudo-cod sau cod (dac\IeC {\u a} exist\IeC {\u a})}{69}{chapter.3}

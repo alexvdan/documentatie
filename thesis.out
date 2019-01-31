@@ -1,52 +1,51 @@
-\BOOKMARK [0][-]{chapter*.2}{Lista de tabele}{}% 1
-\BOOKMARK [0][-]{chapter*.3}{Lista de figuri}{}% 2
-\BOOKMARK [0][-]{chapter.1}{Introducere}{}% 3
-\BOOKMARK [1][-]{section.1.1}{Context}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.2}{Motivatie}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.3}{Structura lucrarii}{chapter.1}% 6
-\BOOKMARK [0][-]{chapter.2}{Obiective si specificatii}{}% 7
-\BOOKMARK [1][-]{section.2.1}{Obiective}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.2}{Specificatii}{chapter.2}% 9
-\BOOKMARK [2][-]{subsection.2.2.1}{Specificatii functionale}{section.2.2}% 10
-\BOOKMARK [2][-]{subsection.2.2.2}{Specificatii non-functionale}{section.2.2}% 11
-\BOOKMARK [0][-]{chapter.3}{Studiu bibliografic}{}% 12
-\BOOKMARK [1][-]{section.3.1}{Abordari similare}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.2}{Tehnici/Tehnologii/Surse folosite}{chapter.3}% 14
-\BOOKMARK [0][-]{chapter.4}{Fundamente teoretice}{}% 15
-\BOOKMARK [1][-]{section.4.1}{Reverse proxy}{chapter.4}% 16
-\BOOKMARK [1][-]{section.4.2}{Support vector machine}{chapter.4}% 17
-\BOOKMARK [1][-]{section.4.3}{SQL injection}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.4}{Adresele IP ale retelei Tor}{chapter.4}% 19
-\BOOKMARK [1][-]{section.4.5}{Sistem de prevenire a intruziunilor}{chapter.4}% 20
-\BOOKMARK [0][-]{chapter.5}{Analiza si proiectare}{}% 21
-\BOOKMARK [1][-]{section.5.1}{Cerintele sistemului}{chapter.5}% 22
-\BOOKMARK [1][-]{section.5.2}{Specificatiile cazurilor de utilizare}{chapter.5}% 23
-\BOOKMARK [2][-]{subsection.5.2.1}{Actori, stakeholders si interese}{section.5.2}% 24
-\BOOKMARK [2][-]{subsection.5.2.2}{Basic flow}{section.5.2}% 25
-\BOOKMARK [2][-]{subsection.5.2.3}{Alternative flow}{section.5.2}% 26
-\BOOKMARK [1][-]{section.5.3}{Arhitectura sistemului si modulele principale}{chapter.5}% 27
-\BOOKMARK [1][-]{section.5.4}{Comportamentul sistemului. Diagrama de stare si de secventa}{chapter.5}% 28
-\BOOKMARK [1][-]{section.5.5}{Dependintele sistemului}{chapter.5}% 29
-\BOOKMARK [1][-]{section.5.6}{Algoritmi si metode}{chapter.5}% 30
-\BOOKMARK [1][-]{section.5.7}{Diagrama de desfasurare}{chapter.5}% 31
-\BOOKMARK [1][-]{section.5.8}{Justificarea design-ului}{chapter.5}% 32
-\BOOKMARK [0][-]{chapter.6}{Detalii de implementare}{}% 33
-\BOOKMARK [1][-]{section.6.1}{Structura codului sursa}{chapter.6}% 34
-\BOOKMARK [1][-]{section.6.2}{Algoritmi, metode si API-uri}{chapter.6}% 35
-\BOOKMARK [2][-]{subsection.6.2.1}{Tor activity monitor}{section.6.2}% 36
-\BOOKMARK [2][-]{subsection.6.2.2}{SQLi SVM}{section.6.2}% 37
-\BOOKMARK [2][-]{subsection.6.2.3}{Interfata utilizator}{section.6.2}% 38
-\BOOKMARK [0][-]{chapter.7}{Teste si rezultate experimentale}{}% 39
-\BOOKMARK [1][-]{section.7.1}{Teste de functionalitate}{chapter.7}% 40
-\BOOKMARK [1][-]{section.7.2}{Teste de performanta}{chapter.7}% 41
-\BOOKMARK [0][-]{chapter.8}{Manual utilizator}{}% 42
-\BOOKMARK [1][-]{section.8.1}{Instalarea proiectului}{chapter.8}% 43
-\BOOKMARK [1][-]{section.8.2}{Utilizare}{chapter.8}% 44
-\BOOKMARK [0][-]{chapter.9}{Conluzii}{}% 45
-\BOOKMARK [1][-]{section.9.1}{Privire de ansamblu asupra sistemului}{chapter.9}% 46
-\BOOKMARK [1][-]{section.9.2}{Dezvoltari ulterioare}{chapter.9}% 47
-\BOOKMARK [0][-]{chapter*.4}{Bibliografie}{}% 48
-\BOOKMARK [0][-]{chapter.1}{Diverse anexe}{}% 49
-\BOOKMARK [0][-]{chapter.2}{Demonstratii matematice detaliate \(daca exista\)}{}% 50
-\BOOKMARK [0][-]{chapter.3}{Pseudo-cod sau cod \(daca exista\)}{}% 51
-\BOOKMARK [0][-]{chapter.4}{Articole publicate}{}% 52
+\BOOKMARK [0][-]{chapter*.2}{Lista de figuri}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Introducere}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Context}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Motivatie}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Structura lucrarii}{chapter.1}% 5
+\BOOKMARK [0][-]{chapter.2}{Obiective si specificatii}{}% 6
+\BOOKMARK [1][-]{section.2.1}{Obiective}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.2}{Specificatii}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.2.1}{Specificatii functionale}{section.2.2}% 9
+\BOOKMARK [2][-]{subsection.2.2.2}{Specificatii non-functionale}{section.2.2}% 10
+\BOOKMARK [0][-]{chapter.3}{Studiu bibliografic}{}% 11
+\BOOKMARK [1][-]{section.3.1}{Abordari similare}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.2}{Tehnici/Tehnologii/Surse folosite}{chapter.3}% 13
+\BOOKMARK [0][-]{chapter.4}{Fundamente teoretice}{}% 14
+\BOOKMARK [1][-]{section.4.1}{Reverse proxy}{chapter.4}% 15
+\BOOKMARK [1][-]{section.4.2}{Support vector machine}{chapter.4}% 16
+\BOOKMARK [1][-]{section.4.3}{SQL injection}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.4}{Adresele IP ale retelei Tor}{chapter.4}% 18
+\BOOKMARK [1][-]{section.4.5}{Sistem de prevenire a intruziunilor}{chapter.4}% 19
+\BOOKMARK [0][-]{chapter.5}{Analiza si proiectare}{}% 20
+\BOOKMARK [1][-]{section.5.1}{Cerintele sistemului}{chapter.5}% 21
+\BOOKMARK [1][-]{section.5.2}{Specificatiile cazurilor de utilizare}{chapter.5}% 22
+\BOOKMARK [2][-]{subsection.5.2.1}{Actori, stakeholders si interese}{section.5.2}% 23
+\BOOKMARK [2][-]{subsection.5.2.2}{Basic flow}{section.5.2}% 24
+\BOOKMARK [2][-]{subsection.5.2.3}{Alternative flow}{section.5.2}% 25
+\BOOKMARK [1][-]{section.5.3}{Arhitectura sistemului si modulele principale}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.4}{Comportamentul sistemului. Diagrama de stare si de secventa}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.5}{Dependintele sistemului}{chapter.5}% 28
+\BOOKMARK [1][-]{section.5.6}{Algoritmi si metode}{chapter.5}% 29
+\BOOKMARK [1][-]{section.5.7}{Diagrama de desfasurare}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.8}{Justificarea design-ului}{chapter.5}% 31
+\BOOKMARK [0][-]{chapter.6}{Detalii de implementare}{}% 32
+\BOOKMARK [1][-]{section.6.1}{Structura codului sursa}{chapter.6}% 33
+\BOOKMARK [1][-]{section.6.2}{Algoritmi, metode si API-uri}{chapter.6}% 34
+\BOOKMARK [2][-]{subsection.6.2.1}{Tor activity monitor}{section.6.2}% 35
+\BOOKMARK [2][-]{subsection.6.2.2}{SQLi SVM}{section.6.2}% 36
+\BOOKMARK [2][-]{subsection.6.2.3}{Interfata utilizator}{section.6.2}% 37
+\BOOKMARK [0][-]{chapter.7}{Teste si rezultate experimentale}{}% 38
+\BOOKMARK [1][-]{section.7.1}{Teste de functionalitate}{chapter.7}% 39
+\BOOKMARK [1][-]{section.7.2}{Teste de performanta}{chapter.7}% 40
+\BOOKMARK [0][-]{chapter.8}{Manual utilizator}{}% 41
+\BOOKMARK [1][-]{section.8.1}{Instalarea proiectului}{chapter.8}% 42
+\BOOKMARK [1][-]{section.8.2}{Utilizare}{chapter.8}% 43
+\BOOKMARK [0][-]{chapter.9}{Conluzii}{}% 44
+\BOOKMARK [1][-]{section.9.1}{Privire de ansamblu asupra sistemului}{chapter.9}% 45
+\BOOKMARK [1][-]{section.9.2}{Dezvoltari ulterioare}{chapter.9}% 46
+\BOOKMARK [0][-]{chapter*.3}{Bibliografie}{}% 47
+\BOOKMARK [0][-]{chapter.1}{Diverse anexe}{}% 48
+\BOOKMARK [0][-]{chapter.2}{Demonstratii matematice detaliate \(daca exista\)}{}% 49
+\BOOKMARK [0][-]{chapter.3}{Pseudo-cod sau cod \(daca exista\)}{}% 50
+\BOOKMARK [0][-]{chapter.4}{Articole publicate}{}% 51
