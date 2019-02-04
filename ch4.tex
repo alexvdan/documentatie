@@ -15,7 +15,7 @@ In acest capitol sunt evidentiate si explicate pe scurt aspectele teoretice pe c
 %Reprezintă cca. 10--15\% din lucrare.
 \section{Reverse proxy}
 
-Un reverse proxy este un server intermediar care trimite mai departe request-urile pentru continut de la mai multi clienti nedefiniti catre unul sau mai multe servere. Un reverse proxy este un tip de proxy care in mod normal este situat in spatele unui firewall intr-o retea interna si redirectioneaza traficul clientilor catre serverele asociate. Acesta introduce un nivel in plus de abstractizare si control, asigurand controlul fluxului de trafic \cite{rev_proxy_server}.
+Un reverse proxy este un server intermediar care trimite mai departe request-urile pentru continut, de la mai multi clienti nedefiniti, catre unul sau mai multe servere. Un reverse proxy este un tip de proxy care in mod normal este situat in spatele unui firewall intr-o retea interna si redirectioneaza traficul clientilor catre serverele asociate. Acesta introduce un nivel in plus de abstractizare si control, asigurand controlul fluxului de trafic \cite{rev_proxy_server}.
 
 \begin{figure}[h]
 	\centering
@@ -37,13 +37,13 @@ Cele mai obisnuite caracteristici ce pot fi oferite de utilizarea unui reverse p
 
 \section{Support vector machine}
 
-Algoritmul de machine learning, support vector machine reprezinta un model obtinut prin folosire a diversi algoritmi pentru antrenarea acestuia, folosit pentru a clasifica date. Acest model intra in categoria de invatare supravegheata('supervised learning'), intrucat pentru obtinerea lui se foloseste un set de date ca si exemplu, date pe care modelul le va folosi ca referinta pentru clasificarea noilor evenimente.
+Algoritmul de machine learning, support vector machine reprezinta un model obtinut prin folosirea de diversi algoritmi pentru antrenarea acestuia, folosit pentru a clasifica date. Acest model intra in categoria de invatare supravegheata('supervised learning'), intrucat pentru obtinerea lui se foloseste un set de date ca si exemplu, date pe care modelul le va folosi ca referinta pentru clasificarea noilor evenimente.
 
 Realizarea unui astfel de model se obtine in urma executarii unui proces elaborat ce implica mai multi pasi:
 \begin{itemize}
-	\item  Primul pas reprezinta indentificarea datelor relevante in cea ce priveste problema tratata(setul de antrenare). In conformitate cu scopul clasificarii unor evenimente/date in doua(sau mai multe) categorii, initial trebuie indentificate o serie de astfel de evenimente si categorizate de catre utilizator in evenimente ce sigur apartin fiecarei dintre categoriile tinta.
+	\item  Primul pas reprezinta indentificarea datelor relevante in cea ce priveste problema tratata(setul de antrenare). In conformitate cu scopul clasificarii unor evenimente/ date, in doua(sau mai multe) categorii, initial trebuie indentificate o serie de astfel de evenimente si categorizate de catre utilizator in evenimente ce sigur apartin fiecarei dintre categoriile tinta.
 	\item Dupa  obtinerea datelor de antrenare, trebuie indentificate toate trasaturile relevante din aceste date, trasaturi care sa fie cat se poate de specifice fiecarei categorii in parte. Fiind recomandata evitarea trasaturilor ce sunt prezente in mare parte din date sub aceasi forma (ex:caracterul '=' sau'?' intr-un URI folosit pentru clasificarea atacurilor SQL injection), indiferent de categoria din care acestea fac parte.
-	\item Dupa obtinerea trasaturilor specifice datelor de antrenare, se realizeaza antrenarea modelului folosind un algoritm specific. In cazul proiectului propus s-a folsoit algoritmul gata implementat, furnizat de biblioteca open source LIBSVM \cite{libsvm}. Pentru obtinerea modelului datele de antrenare au fost procesate folosind un kernel gausian. Un kernel gausian reprezinta modul in care modelul proceseaza datele de antrenare astfel incat clasificarea noilor date sa fie realizata prin calcularea similaritatilor dintre acestea si cele de antrenare. In calcularea similaritatii dintre aceste doua tipuri de date, un parametru foare important este sigma. Acest parametru este ales pentru intrg setul de date, iar valoarea lui este diret proportionala cu gradul de similaritate pe care algoritmul il va asocia la doua evenimente/date diferite.
+	\item Dupa obtinerea trasaturilor specifice datelor de antrenare, se realizeaza antrenarea modelului folosind un algoritm specific. In cazul proiectului propus s-a folsoit algoritmul gata implementat, furnizat de biblioteca open source LIBSVM \cite{libsvm}. Pentru obtinerea modelului, datele de antrenare au fost procesate folosind un kernel gausian. Un kernel gausian reprezinta modul in care modelul proceseaza datele de antrenare astfel incat clasificarea noilor date sa fie realizata prin calcularea similaritatilor dintre acestea si cele de antrenare. In calcularea similaritatii dintre aceste doua tipuri de date, un parametru foare important este sigma. Acest parametru este ales pentru intrg setul de date, iar valoarea lui este diret proportionala cu gradul de similaritate pe care algoritmul il va asocia la doua evenimente/date diferite.
 \end{itemize}
 
 
@@ -54,6 +54,7 @@ Realizarea unui astfel de model se obtine in urma executarii unui proces elabora
 	\caption{Influentele aduse algoritmului de modifiacrea parametrului sigma in algoritmul de antrenare.}
 	\label{fig:rev-proxy}
 \end{figure}
+
 
 Figura ~\ref{fig:rev-proxy} prezinta cum inflenteaza clasificarea unui nou eveniment valoarea parametrului sigma din formula algoritmului de support vector machine. Figura ~\ref{fig:rev-proxy} a fost preluata din slide-urile cursului de machine leraning sustinut de Andrew Ng \cite{andrew_ng} \\
 
@@ -82,9 +83,9 @@ Reteaua Tor reprezinta un softrware gratis de anonimizare a traficului pe intern
 Pentru criptarea traficului reteaua Tor foloseste criptarea la nivelul aplicatiei in cea ce priveste sructura retelelor de calculatoare(modelul OSI sau TCP/IP). Datele trasmise sunt criptate, incluzand destinatia, cu exceptia nodului urmator, astfel creandu-se structura de "ceapa" asupra unui pachet. Selectia nodurilor prin care se face rutarea pachetelor este aleasa random. Fiecare pachet decripteaza un "strat", afand nodul urmator pentru pachetul respectiv, nodul final decriptand datele initiale si realizand trasmisia catre destinatie, fara sa ii comunice sursa pachetului. Intrucat in comunicarea pachetelor, pe parcursul rutelor parcurse, se cunoaste in permanenta doar nodul urmator, acest lucru impiedica monitorizarea traficului intre sursa si destinatie.
 
 
-Cu toate ca reteua tor ofera anonimitate de partea clientului, acest lucru nu se realizeaza si faca de ea. Reteaua nu se ascunde fata de serviciile acesate prin intermediul ei. Astfel un site anume poate sa detecteze daca un anumit client il acceseaza folosind reteaua Tor sau nu.
+Cu toate ca reteua tor ofera anonimitate de partea clientului, acest lucru nu se realizeaza si fata de ea. Reteaua nu se ascunde fata de serviciile acesate prin intermediul ei. Astfel un site anume poate sa detecteze daca un anumit client il acceseaza folosind reteaua Tor sau nu.
 
-Intrucat reteaua Tor nu isi ascunde adresele ip folosite de catre aceasta, indentificarea lor si procurarea de date despe acestea este destul de usoara. In proiectul propus s-a folosit un serviciu care furnizeaza gratui astfel de date \cite{tot_status}(adresa ip, uptime etc.) si s-au folosit algoritmi propri pentru procesarea acestor date, eliminand astfel necorectitudinea dintre utilizatorii retelei.
+Intrucat reteaua Tor nu isi ascunde adresele IP folosite de catre aceasta, indentificarea lor si procurarea de date despe acestea este destul de usoara. In proiectul propus s-a folosit un serviciu care furnizeaza gratui astfel de date \cite{tot_status}(adresa IP, uptime etc.) si s-au folosit algoritmi propri pentru procesarea acestor date, eliminand astfel necorectitudinea dintre utilizatorii retelei.
 
 \begin{figure}[h]
 	\centering
@@ -101,7 +102,7 @@ Conform scurtei descrieri prezentate in capitolul anterior, un sistem de preveni
 
 Acest sistem functioneaza liniar, adica este plasat direct intre server si clienti acestuia. In cazul proiectului propus, componenta de baza pentru interceptarea traficului este realizata prin implementarea unui reverse proxy, oferind astfel caracteristica de interceptare si decriptare a traficului, ce permite analiza acestuia, dar si avantajele specifice utilizarii unui reverse proxy.
 
-Pentru filtrarea traficului, un sistem de prevenire a intruziunilor implementeaza anumiti senzori care au rolul sa inspecteze tot traficul ce trece prin sistem, realizand aceasta inspectie in timp real. Datorita acestei verificari, orice pachet considerat malitios este oprit din a ajunge la serverul destinatie. In proiectul propus, implementarea acestor senzori este realizata in doua moduri. In cazul validarii adreselor ip impotriva utilizatorilor de Tor se folosete o lista de ip-uri ce contine adrese frecvent utilizate de reteaua Tor. In interiorul reverse proxy-ului, in momentul crearii unei noi conexiuni, acesta verfica ca adresa ip ce solicita conectarea la server sa nu fie continuta de lista mentionata. In cazul detectiei impotriva atacurilor de SQL injection, senzorul este implementat prin utilizeaza un model de support vector machine. In interiorul reverse proxy-ului in momentul interceptarii unui request venit din exterior catre reteaua interna, acesta verifa daca reqestul poate fi clasificat ca si tentativa de atac, in caz afirmativ blocand trecerea acestuia mai departe catre server.
+Pentru filtrarea traficului, un sistem de prevenire a intruziunilor implementeaza anumiti senzori care au rolul sa inspecteze tot traficul ce trece prin sistem, realizand aceasta inspectie in timp real. Datorita acestei verificari, orice pachet considerat malitios este oprit din a ajunge la serverul destinatie. In proiectul propus, implementarea acestor senzori este realizata in doua moduri. In cazul validarii adreselor IP impotriva utilizatorilor de Tor se folosete o lista de IP-uri ce contine adrese frecvent utilizate de reteaua Tor. In interiorul reverse proxy-ului, in momentul crearii unei noi conexiuni, acesta verfica ca adresa IP ce solicita conectarea la server sa nu fie continuta de lista mentionata. In cazul detectiei impotriva atacurilor de SQL injection, senzorul este implementat utilizand un model de support vector machine. In interiorul reverse proxy-ului in momentul interceptarii unui request venit din exterior catre reteaua interna, acesta verifica daca reqestul poate fi clasificat ca si tentativa de atac. In caz afirmativ blocand trecerea acestuia mai departe catre server.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{IPS.png}
@@ -110,12 +111,13 @@ Pentru filtrarea traficului, un sistem de prevenire a intruziunilor implementeaz
 \end{figure}
 
 Figura ~\ref{fig:ips-2nd-example} prezinta arhitectura unei retele interne ce integreaza un sistem de prevenire a intruziunilor pentru protejarea acesteia. \\
+
 Un sistem de prevenire a intruziunilor poate sa efectueze oricare din urmatoarele actiuni in momentul detectarii unui eveniment malitios \cite{ips_fire}:
 \begin{itemize}
 %	Terminates the TCP session that is being exploited by an outsider for the attack. It blocks the offending user account or source IP address that attempts to access the target host, application, or other resources unethically.
-	\item Sa intrerupa sesiunea dintre client si server, in cazul in care clientul desfasoara sau incearca sa desfasoare activitati malitioase in reteaua protejata de sistem. Acest lucru se poate realiza prin blocarea anumitor credentiale asociate cu utilizatorul respectiv sau prin blocarea adresei ip a acestuia.
-	\item In conditiile in care un sistem de prevenire a intruziunilor detecteaza clasifica o activitate ca fiind malitioasa, acesta poate sa ia masuri automat pentru a preveni un astfel de atac pe viitor(ex: in momentul detectarii unei tentative de atac prin SQL injection, sistemul de prevenire a intruziunilor poate sa blocheze in mod automat adresa ip a utilizatorului ce inceraca sa faca atacul, nepermitandu-i acestuia sa se mai conecteze la serverul destinatie pentru un anumit interval de timp sau pana la interventia unui administrator).
-	\item O alata abordare posibila in momentul declansarii unui eveniment malitios este alterarea traficului astfel incat sa elimine continutul malitios din acesta. Pentru realizarea acestui lucru, un sistem de prevenire a intruziunilor poate sa stearga atasamente infectate din interiorul unui mail, sa altereze continutul uni pachet sau sa omita trasmiterea mai departe a unor pachete.
+	\item Sa intrerupa sesiunea dintre client si server, in cazul in care clientul desfasoara sau incearca sa desfasoare activitati malitioase in reteaua protejata de sistem. Acest lucru se poate realiza prin blocarea anumitor credentiale asociate cu utilizatorul respectiv sau prin blocarea adresei IP a acestuia.
+	\item In conditiile in care un sistem de prevenire a intruziunilor detecteaza/clasifica o activitate ca fiind malitioasa, acesta poate sa ia masuri automat pentru a preveni un astfel de atac pe viitor(ex: in momentul detectarii unei tentative de atac prin SQL injection, sistemul de prevenire a intruziunilor poate sa blocheze in mod automat adresa IP a utilizatorului ce inceraca sa faca atacul, nepermitandu-i acestuia sa se mai conecteze la serverul destinatie pentru un anumit interval de timp sau pana la interventia unui administrator).
+	\item O alata abordare posibila in momentul declansarii unui eveniment malitios este alterarea traficului astfel incat sa elimine continutul malitios din acesta. Pentru realizarea acestui lucru, un sistem de prevenire a intruziunilor poate sa stearga atasamente infectate din interiorul unui mail, sa altereze continutul unui pachet sau sa omita trasmiterea mai departe a unor pachete.
 	
 \end{itemize}
 
