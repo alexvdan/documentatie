@@ -8,7 +8,7 @@
 %Referințele bibliografice se vor face pentru fiecare carte, articol sau material folosit pentru elaborarea lucrării de licență. 
 %
 %Reprezintă cca. 10--15\% din lucrare.
-In acest capitol sunt prezentate alte abordari similare ale problemelor tratate de proiectul propus, prin evidentierea asemanarilor si diferentelor dintre acestea si se explica tehnologiile si metodele folosite de proiect.
+În acest capitol sunt prezentate alte abordări similare ale problemelor tratate de proiectul propus, prin evidențierea asemănărilor și diferențelor dintre acestea și se explică tehnologiile și metodele folosite de proiect. 
 
 %\section{Related Work}
  \section{Abordări similare}
@@ -27,20 +27,20 @@ In acest capitol sunt prezentate alte abordari similare ale problemelor tratate 
 
 %\section{Technologies and Methods}
 
-Precum Richard Bassett, Cesar Urrutia si 	 Nick Ierace sustin in articolul \textbf{Intrusion prevention systems} \cite{ips} "sistemele de prevenire a intruziunilor sunt o componenta importanata a sistemelor de protectie IT, iar fara aceasta tehnologie, datele noastre si retelele ar fi mult mai predispuse activitatilor malitioase".
+Precum Richard Bassett, Cesar Urrutia si 	 Nick Ierace sustin in articolul \textbf{Intrusion prevention systems} \cite{ips}  "sistemele de prevenire a intruziunilor sunt o componentă importanata a sistemelor de protecție IT, iar fără această tehnologie, datele noastre și rețelele ar fi mult mai predispuse activităților malițioase". 
 
-In general tentativele de expluatare a vulnerabilitatilor unei aplicatii vin sub forma de input catre o aplicatia tinta. Acest input fiind generat de catre un atacator ce intentioneaza o controleze sau sa ii intrerupa activitatea. In cazul unui atac reusit, un astfel de atacator poate sa dezactiveze temporar aplicatia (atacuri de tipul denial of service) sau poate accesa, altera sau executa date/cod in interiorul aplicatiei. Un sistem de prevenire a intruziunilor are rolul de a examina traficul destinat unei aplicatii si de intercepta si bloca astfel de tentative \cite{what_is_ips}.
+În general tentativele de expluatare a vulnerabilităților unei aplicații vin sub formă de input către o aplicația țintă. Acest input fiind generat de către un atacator ce intenționează o controleze sau să îi întrerupă activitatea. În cazul unui atac reușit, un astfel de atacator poate să dezactiveze temporar aplicația (atacuri de tipul denial of service) sau poate accesa, altera sau executa date/cod în interiorul aplicației. Un sistem de prevenire a intruziunilor are rolul de a examina traficul destinat unei aplicații și de intercepta și bloca astfel de tentative  \cite{what_is_ips}.
 
-Un sistem de prevenire a intruziunilor este de regula folosit alaturi de un sistem firewall respectiv alaturi de un sistem de detectare a intruziunilor. Desi au scopuri asemanatoarea, aceste sisteme au functionalitati diferite si rezolva diferite probleme de securitate. Un sistem de preventie a instructiunilor este cel mai bine comaprat cu sistemele de tip firewall. Un sistem firewall tipic este constituit dintr-o serie de reguli ce permit traficului sa treaca. Aceste regului sunt sub forma "daca traficul indeplineste anumite conditii poate trece", insa daca nu exista nici o regula care sa potriveasca anumite pachete, acestea sunt blocate. Asemeni sistemelor firewall, sistemele de prevenire a intruziunilor prezinta un set de regului de filtrare a pachetelor, reqest-urilor  sau a clientilor, insa aceste regului sunt de regula reguli de blocare. Astfel, daca un anumit pachet nu potriveste nici o regula sistemul de prevenire a intruziunilor il lasa sa treaca \cite{ips_ids}.
+Un sistem de prevenire a intruziunilor este de regulă folosit alături de un sistem firewall respectiv alături de un sistem de detectare a intruziunilor. Deși au scopuri asemănătoarea, aceste sisteme au funcționalități diferite și rezolvă diferite probleme de securitate. Un sistem de prevenție a instrucțiunilor este cel mai bine comaprat cu sistemele de tip firewall. Un sistem firewall tipic este constituit dintr-o serie de reguli ce permit traficului să treacă. Aceste regului sunt sub forma "dacă traficul îndeplinește anumite condiții poate trece", însă dacă nu există nici o regulă care să potrivească anumite pachete, acestea sunt blocate. Asemeni sistemelor firewall, sistemele de prevenire a intruziunilor prezintă un set de regului de filtrare a pachetelor, reqest-urilor  sau a clienților, însă aceste regului sunt de regulă reguli de blocare. Astfel, dacă un anumit pachet nu potrivește nici o regulă sistemul de prevenire a intruziunilor îl lasă să treacă  \cite{ips_ids}.
 
-Spre deosebire de sistemele de tip firewall sau cele de prevenire a intruziunilor, care ofera control utilizatorului asupra traficului ce trece prin retea, sistemele de detectie a intruziunilor permite acestuia sa vizualizeze evenimentele din retea. Precum si Joel Snyder sustine in articolul \textbf{Do you need an IDS or IPS, or both?} \cite{ips_ids}  sistemele de detectie a intruziunilor ofera unui utilizator facilitati asemanatoare unui analizator de pachete \cite{net_an}, insa din perspectiva de securitate a retelei. Aceste informatii furnizate de catre sistem ii permit utilizatorului sa decopere: 
+Spre deosebire de sistemele de tip firewall sau cele de prevenire a intruziunilor, care oferă control utilizatorului asupra traficului ce trece prin rețea, sistemele de detecție a intruziunilor permite acestuia să vizualizeze evenimentele din rețea. Precum și Joel Snyder susține în articolul  \textbf{Do you need an IDS or IPS, or both?} \cite{ips_ids}  sistemele  de detecție a intruziunilor oferă unui utilizator facilități asemănătoare unui analizator de pachete  \cite{net_an},  însă din perspectiva de securitate a rețelei. Aceste informații furnizate de către sistem îi permit utilizatorului să decopere:  
  
 \begin{itemize}
-	\item Incalcari ale politicilor de securitate, precum utilizatori sau siteme ce desfasoara activitati ce incalca politicile prestabilite.
-	\item Posibile sisteme infectate ce folosesc reteaua pentru a se raspandi sau sa atace alte sisteme.
-	\item Scurgeri de informatie cauzate de infectarea unor sisteme cu malwarei sau de utilizatori rau intentionati.
-	\item Erori de configurare in sisteme sau aplicatii cu setari de securitate incorecte sau configurari proaste ce consuma prea multa banda de retea.
-	\item Detectarea unor clienti sau servere ce acceseaza sau sunt accesate in mod neautorizat, respectiv aplicatii malitioase ce fac asta.
+	\item  Încălcări ale politicilor de securitate, precum utilizatori sau siteme ce desfășoară activități ce încalcă politicile prestabilite. 
+	\item  Posibile sisteme infectate ce folosesc rețeaua pentru a se răspândi sau să atace alte sisteme. 
+	\item  Scurgeri de informație cauzate de infectarea unor sisteme cu malwarei sau de utilizatori rău intenționați. 
+	\item  Erori de configurare în sisteme sau aplicații cu setări de securitate incorecte sau configurări proaste ce consumă prea multă bandă de rețea. 
+	\item  Detectarea unor clienți sau servere ce accesează sau sunt accesate în mod neautorizat, respectiv aplicații malițioase ce fac asta. 
 \end{itemize}
 \begin{figure}[h]
 	\centering
@@ -49,9 +49,9 @@ Spre deosebire de sistemele de tip firewall sau cele de prevenire a intruziunilo
 	\label{fig:ips-example}
 \end{figure}
 
-Figura ~\ref{fig:ips-example} prezinta administrarea securitatii unei aplicatii folosind combinatia dintre cele trei sisteme. \\
+Figura ~\ref{fig:ips-example}  prezintă administrarea securității unei aplicații folosind combinația dintre cele trei sisteme.  \\
 
-In comparatie cu sistemele de detectie a intruziunilor care sunt sisteme pasive si scaneaza reteaua fara sa interferezu cu traficul, sistemele de prevenire a intruziunilor sunt plasate intre server si cilenti, alterand in mod automat traficul in cazul in care acesta declanseaza una din regulile prezente in sistem. Precum sunt prezentate si in articolul \textbf{What is an intrusion prevention system?} \cite{what_is_ips}, printre functionalitatile unui sistem de prevenire a intruziunilor se numara:
+În comparație cu sistemele de detecție a intruziunilor care sunt sisteme pasive și scanează rețeaua fără să interferezu cu traficul, sistemele de prevenire a intruziunilor sunt plasate între server și cilenti, alterând în mod automat traficul în cazul în care acesta declanșează una din regulile prezente în sistem. Precum sunt prezentate și în articolul  \textbf{What is an intrusion prevention system?} \cite{what_is_ips},  printre funcționalitățile unui sistem de prevenire a intruziunilor se număra:
 \begin{itemize}
 	\item Notificarea unui administrator de retea in cazul in care un sau mai multe reguli sunt declansate.
 	\item Oprirea pachetelor considerate malitioase pentru retea.

@@ -7,7 +7,7 @@
 %
 %Reprezintă cca. 5--10\% din lucrare.
 
-Acest capitol prezinta obiectivele lucrarii, motivand deciziile luate in implementarea sistemului, specificatiile sitemului, cerintele functionale si nonfunctionale necesare implementarii sistemului.
+Acest capitol prezintă obiectivele lucrării, motivând deciziile luate în implementarea sistemului, specificațiile sitemului, cerințele funcționale și nonfunctionale necesare implementării sistemului. 
 
 %\section{Objectives}
  \section{Obiective}
@@ -20,27 +20,27 @@ Acest capitol prezinta obiectivele lucrarii, motivand deciziile luate in impleme
 %  \item Identificarea unor teme de dezvoltare și cercetare ulterioare
 %  \item \dots
 %\end{enumerate}
-Elaborarea unor masuri de securitate impotriva anumitor tipuri de atacuri sau dezvoltarea unei logici de filtrare a clientilor serviti de catre aplicatie este posibila si in partea de implementare a serverului, cea ce ar putea oferi si o eventuala crestere in performantele aplicatiei, eliminand astfel posibile interceptari suplimentare si validari ale traficului. Insa o astfel de implementare presupune o arhitectura mult mai complexa pentru partea de server si individual cunostinte avansate despre securitate, posibilele vulnerabilitati la care acesta poate sa fie predispus, precum si modalitati de combatere ale acestora. 
+Elaborarea unor măsuri de securitate împotriva anumitor tipuri de atacuri sau dezvoltarea unei logici de filtrare a clienților serviți de către aplicație este posibilă și în partea de implementare a serverului, cea ce ar putea oferi și o eventuală creștere în performanțele aplicației, eliminând astfel posibile interceptări suplimentare și validări ale traficului. Însă o astfel de implementare presupune o arhitectură mult mai complexă pentru partea de server și individual cunoștințe avansate despre securitate, posibilele vulnerabilități la care acesta poate să fie predispus, precum și modalități de combatere ale acestora.  
+  
+O soluție mult mai simplă la această problemă este folosirea unui modul care să implementeze aceste funcționalități separat. Mare parte din produsele de pe piață, ce îndeplinesc aceste caracteristici sunt destul de scumpe și nu oferă foarte multă libertate din punctul de vedera al configurări securității dorite de către utilizator asupra produsului sau. În cazul IP-urilor blocate, multe aplicații nu oferă liberatatea utilizatorilor de a edita listele de referință ale detecțiilor, acetea fiind actualizate automat conform unor date interne, iar eventualele abateri de la aceste reguli se realizează prin adăugarea de excepții. În cea ce privește validarea request-urilor primite de la clineti, mare parte din aceste sisteme nu oferă o protecție configurabilă. Cum sa precizat mai sus, acest tip de sisteme pot să introducă mici întârzieri datoreate validărilor suplimentare asupra request-urilor primite de la clienții produsului, însă în unele cazuri anumite validări sunt făcute inutil întrucât produsele respective neputând să prezinte vulnerabilități de acel fel. 
 
-O solutie mult mai simpla la aceasta problema este folosirea unui modul care sa implementeze aceste functionalitati separat. Mare parte din produsele de pe piata, ce indeplinesc aceste caracteristici sunt destul de scumpe si nu ofera foarte multa libertate din punctul de vedera al configurari securitatii dorite de catre utilizator asupra produsului sau. In cazul IP-urilor blocate, multe aplicatii nu ofera liberatatea utilizatorilor de a edita listele de referinta ale detectiilor, acetea fiind actualizate automat conform unor date interne, iar eventualele abateri de la aceste reguli se realizeaza prin adaugarea de exceptii. In cea ce priveste validarea request-urilor primite de la clineti, mare parte din aceste sisteme nu ofera o protectie configurabila. Cum sa precizat mai sus, acest tip de sisteme pot sa introduca mici intarzieri datoreate validarilor suplimentare asupra request-urilor primite de la clientii produsului, insa in unele cazuri anumite validari sunt facute inutil intrucat produsele respective neputand sa prezinte vulnerabilitati de acel fel.
-
- \textit{\thesistitle} are obiectivul de a oferi o componenta gratuita cat mai usor de integrat si de configurat de catre utilizator dupa preferintele produsului sau, care sa facilizeze o protectie cat mai eficienta cu suport pentru imbunatatiri. Sistemtul trebuie sa fie usor de instalat si de configurat, oferindu-i utilizatorului o interfata clara, sugestiva si usor de folosit prin care sa interactioneze cu acesta. Detectiile sistemului trebuie sa fie activabile, utilizator putand alege in momentul  pornirii sistemului ce vulnerabilitati sa fie tratate de acesta. Lista IP-urilor blocate trebuie sa fie usor de vizualizat si editabila, permitand utilizatorului sa isi impuna cu usurinta propiile reguli asupra modului de functionare a sistemului. Pentru realizarea detectiei impotriva atacurilor de tipul SQL injection se impune prelucrarea unor date reale pentru antrenarea modelului de machine learning. Prin folosirea unor date provenite din atacuri reusite sau tentative de atacuri reale, se poate crea o precizie mult mai buna pentru o clasificarea cat mai precisa a posibilelor atacuri. Sistemul trebuie de asemenea sa fie construit modular pentru a permite realizarea de modificari cu usurinta, iar incarcarea detectiilor realizata dinamic, permitand astfel ca adaugarea de noi detectii sa fie cat mai simpla.
+ \textit{\thesistitle}  are obiectivul de a oferi o componentă gratuită cât mai ușor de integrat și de configurat de către utilizator după preferințele produsului sau, care să facilizeze o protecție cât mai eficientă cu suport pentru îmbunătățiri. Sistemtul trebuie să fie ușor de instalat și de configurat, oferindu-i utilizatorului o interfață clară, sugestivă și ușor de folosit prin care să interacționeze cu acesta. Detecțiile sistemului trebuie să fie selectabile, utilizator putând alege în momentul pornirii sistemului ce vulnerabilități să fie tratate de acesta. Lista IP-urilor blocate trebuie sa fie ușor de vizualizat și editabila, permițând utilizatorului să își impună cu ușurință propiile reguli asupra modului de funcționare a sistemului. Pentru realizarea detecției împotriva atacurilor de tipul SQL injection se impune prelucrarea unor date reale pentru antrenarea modelului de machine learning. Prin folosirea unor date provenite din atacuri reușite sau tentative de atacuri reale, se poate crea o precizie mult mai bună pentru o clasificarea cât mai precisă a posibilelor atacuri. Sistemul trebuie de asemenea să fie construit modular pentru a permite realizarea de modificări cu ușurință, iar încărcarea detecțiilor realizată dinamic, permițând astfel că adăugarea de noi detecții să fie cât mai simplă. 
 
 
 
 
 %\section{Project Specification}
  \section{Specificații}
-\textit{\thesistitle} trebuie sa fie capabil sa serveasca ca si un reverse proxy pentru un server, sa blocheze atacurile de tip SQL injection asupra lui si sa nu permita conectarea clientilor cu IP-uri utilizate de reteaua tor la acesta.
+\textit{\thesistitle}  trebuie să fie capabil să servească ca și un reverse proxy pentru un server, să blocheze atacurile de tip SQL injection asupra lui și să nu permită conectarea clienților cu IP-uri continute in lista neagra. 
 
-\textit{\thesistitle} va procura utilizatorului o interfata grafica prietenoasa, usor de folosit, prin intermediul careia, acesta va putea sa seteze mediul de rulare al sistemului. Interfata va permite setarea specificatiilor server-ului, adresa si portul pe care acesta accepta conexiuni, dar si a interfetelor prin intermediul carora se pot realiza conexiuni la server. 
+\textit{\thesistitle}  va procura utilizatorului o interfață grafica prietenoasă, ușor de folosit, prin intermediul căreia, acesta va putea să seteze mediul de rulare al sistemului. Interfața va permite setarea specificațiilor server-ului, adresa și portul pe care acesta acceptă conexiuni, dar și a interfețelor prin intermediul cărora se pot realiza conexiuni la server. 
+  
+În interfață grafica se vor afișa și eventualele detecții realizate de produs. Într-o fereastră separată utilizatorul trebuie să aibă posibilitatea să vizualizeze toate deciziile sistemului și motivele din spatele deciziilor, permițând astfel acestuia să înțeleagă modul de funcționare, respectiv să raporteze sau să modifice sistemul(în cazurile în care i se oferă această posibilitate) când comportamentul acestuia nu se află în conformitate cu nevoile sau cerințele sale. 
 
-In interfata grafica se vor afisa si eventualele detectii realizate de produs. Intr-o fereastra separata utilizatorul trebuie sa aiba posibilitatea sa vizualizeze toate deciziile sistemului si motivele din spatele deciziilor, permitand astfel acestuia sa inteleaga modul de functionare, respectiv sa raporteze sau sa modifice sistemul(in cazurile in care i se ofera aceasta posibilitate) cand comportamentul acestuia nu se afla in conformitate cu nevoile sau cerintele sale.
-
-In momentul configurarii modului de rulare al sistemului, utilizatorul trebui sa aiba si posibilitatea de a impune ce module de securitate sa fie folosite de acesta in timpul rularii. Pentru a eficientiza cat mai mult sitemul, utilizatorul poate sa aleaga care sunt modulele de interes pentru propria aplicate, evitand astfel validarea unor evenimente ce nu prezinta interes pentru acesta.
+În momentul configurării modului de rulare al sistemului, utilizatorul trebui să aibă și posibilitatea de a impune ce module de securitate să fie folosite de acesta în timpul rulării. Pentru a eficientiza cât mai mult sitemul, utilizatorul poate să aleagă care sunt modulele de interes pentru propria aplicate, evitând astfel validarea unor evenimente ce nu prezintă interes pentru acesta. 
 
  
-In timpul rularii sistemul va asculta pe interfetele setate de catre utilizator pentu posibile cereri de conexiuni la server-ul setat. In functie de modulele alese in momentul porniri, acesta va verifica sau nu adresa clientului validand astfel conexiunea. In cazul in care adresa clientului se afla pe lista neagra de adrese, conexiunea acestuia este refuzata, iar aplicatia inregistreaza aceasta decizie in fereastra de evenimente vizibila utilizatorului. Dupa ralizarea conexiunii la server, fiecare request trimis de clienti catre acesta va fi evaluat conform modulelor configurate. Daca reqesturile sunt considerate ca fiind "curate" acestea sunt trimise mai departe la server. In caz contrar, clientului i se intoarce un cod de eroare, iar reqestul nu va mai fi trimis mai departe catre server, de asemenea inregistrand evenimentul in fereastra de evenimente vizibila utilizatorului.
+În timpul rulării sistemul va asculta pe interfețele setate de către utilizator pentu posibile cereri de conexiuni la server-ul setat. În funcție de modulele alese în momentul porniri, acesta va verifica sau nu adresa clientului validând astfel conexiunea. În cazul în care adresa clientului se află pe lista neagră de adrese, conexiunea acestuia este refuzată, iar aplicația înregistrează această decizie în fereastra de evenimente vizibilă utilizatorului. După ralizarea conexiunii la server, fiecare request trimis de clienți către acesta va fi evaluat conform modulelor configurate. Dacă reqesturile sunt considerate că fiind "curate" acestea sunt trimise mai departe la server. În caz contrar, clientului i se întoarce un cod de eroare, iar reqestul nu va mai fi trimis mai departe către server, de asemenea înregistrând evenimentul în fereastra de evenimente vizibilă utilizatorului. 
 
 
 \begin{figure}[h]
@@ -55,30 +55,30 @@ Figura ~\ref{fig:black-box} prezinta cutia neagra a sistemului propus. \\
 %\subsection{Functional Specification}
  \subsection{Specificații funcționale}
 
-Sistemul trebui sa prezinte o interfata grafica usor de folosit de catre utilizator si sa fie capabil sa redirectioneze traficul interceptat catre un anumit server, clasificand si filtrand traficul malitios. Pentru a atinge obiectivele proiectului, urmatoarele cerinte functionale trebuie indeplinite:
+Sistemul trebui să prezinte o interfață grafică ușor de folosit de către utilizator și să fie capabil să redirectioneze traficul interceptat către un anumit server, clasificând și filtrând traficul malițios. Pentru a atinge obiectivele proiectului, următoarele cerințe funcționale trebuie îndeplinite: 
 \begin{itemize}
-  \item Sa realizere conexiunea la un server HTTP/HTTPS si sa redirectioneze traficul primit catre acesta.
-  \item Sa intercepteze traficul venit pe o anumita interfata si port prestabilit.
-  \item Sa prelucreze request-urile primite de la clineti intr-un format specific clasificatorului de SQL injection.
-  \item Sa nu redirectioneze reqest-urile clasificate ca si SQL injection.
-  \item Sa blocheze conectarea clientilor ce folosesc IP-uri clasificate ca IP-uri de Tor.
-  \item Sa permita utilizatorului sa editez si sa vizualizeze lista IP-urilor de Tor.
-  \item Sa prezinte in interfata grafica toate interventiile rezlizate asupra traficului(blocari de conexiuni sau de request-uri).
-  \item Sa permita utilizatorului sa configureze modul de operare al sistemului.
+  \item  Să realizere conexiunea la un server HTTP/HTTPS și să redirectioneze traficul primit către acesta. 
+  \item  Să intercepteze traficul venit pe o anumită interfață și port prestabilit. 
+  \item  Să prelucreze request-urile primite de la clineti într-un format specific clasificatorului de SQL injection. 
+  \item  Să nu redirectioneze reqest-urile clasificate ca și SQL injection. 
+  \item  Să blocheze conectarea clienților ce folosesc IP-uri clasificate ca IP-uri de Tor. 
+  \item  Să permită utilizatorului să editez și să vizualizeze lista IP-urilor de Tor. 
+  \item  Să prezinte în interfața grafică toate intervențiile rezlizate asupra traficului(blocări de conexiuni sau de request-uri). 
+  \item  Să permită utilizatorului să configureze modul de operare al sistemului. 
 \end{itemize}
 
 
 %\subsection{Non-Functional Specification}
  \subsection{Specificații non-funcționale}
 
-Sistemul trebuie, de asemenea, să aibă următoarele caracteristici non-funcționale pentru a realiza obiectivele specificate:
+Sistemul trebuie, de asemenea, să aibă următoarele caracteristici non-funcționale pentru a realiza obiectivele specificate: 
 \begin{itemize}
-  \item Sa fie usor de instalat si de folosit pentru orice utilizator, oricat de neexperimentat.
-  \item Sa poata intercepta traficul de pe orice/oricate interfete disponibile.
-  \item Sa poata rula pe orice sistem de operare Windows cu Python2 instalat.
-  \item Sa aiba o rata de blocare de 100\% a IP-urilor de pe lista neagra, iar
-  in cazul detectiei de SQL injection sa nu aiba detectii false pozitive mai mari 2-3\%
-  si o acuratete generala de peste 90\%
+  \item Să fie ușor de instalat și de folosit pentru orice utilizator, oricât de neexperimentat .
+  \item  Să poată intercepta traficul de pe orice/oricâte interfețe disponibile. 
+  \item  Să poată rula pe orice sistem de operare Windows cu Python2 instalat. 
+  \item  Să aibă o rată de blocare de 100\% a IP-urilor de pe lista neagră, iar 
+  în cazul detecției de SQL injection să nu aibă detecții false pozitive mai mari 2-3\% 
+  și o acuratețe generală de peste 90\%.
 \end{itemize}
 
 
