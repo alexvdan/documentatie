@@ -2,33 +2,33 @@
 \chapter{Analiză și proiectare}
 \label{cap:analiza-si-proiectare}
 
-In acest capitol este descris design-ul proiectului si cuprinde: cerintele sistemului, specificatiile cazurilor de utilizare, arhitectura sistemului, comportamentul sistemului, datele utilizate de sistem, dependintele sistemului si algoritmi esentiali si metodele folosite. Descrierea acestora se realizeaza prin asocierea cu diagramelor aferente.
+În acest capitol este descris design-ul proiectului și cuprinde: cerințele sistemului, specificațiile cazurilor de utilizare, arhitectura sistemului, comportamentul sistemului, datele utilizate de sistem, dependințele sistemului și algoritmii esențiali și metodele folosite. Descrierea acestora se realizează prin asocierea cu diagramelor aferente. 
 
 \section{Cerintele sistemului}
 
-Sistemul propus \textit{\thesistitle} reprezinta un software gratis care ofera clientului atat caracteristici specificie unui reverse proxy, cat si modalitati de protectie asemeni unui sistem de prevenire a intruziunilor.
-Sistemul este usor de instalat si de utilizat, chiar si de catre utilizatorii neexperimentati, oferindu-le acestora o interfata clara si sugestiva, ce mascheaza logica complicata din spate. In spate, sistemul ofera un reverse proxy ce intercepteaza tot traficul destinat catre un anumit server, de pe una sau mai multe interfete. In procesul de interceptare, acesta implementeaza si cateva modalitati de prevenire a unor tentative de intruziune. Sistemul blocheaza toate ip-urile utilizate frecevent de reteaua Tor in ultima luna si atacurile de SQL injection cu o acuratete de 90\%.
+Sistemul propus \textit{\thesistitle}  reprezintă un software gratis care oferă clientului atât caracteristici specificie unui reverse proxy, cât și modalități de protecție asemeni unui sistem de prevenire a intruziunilor. 
+Sistemul este ușor de instalat și de utilizat, chiar și de către utilizatorii neexperimentați, oferindu-le acestora o interfață clară și sugestivă, ce maschează logica complicată din spate. În spate, sistemul oferă un reverse proxy ce interceptează tot traficul destinat către un anumit server, de pe una sau mai multe interfețe. În procesul de interceptare, acesta implementează și câteva modalități de prevenire a unor tentative de intruziune. Sistemul blochează toți clienții ce folosesc adrese IP aflate pe o lista neagră (IP-urile utilizate frecevent de rețeaua Tor) și reqest-uri ce prezintă un URI cu conținut malițios (atacurile de SQL injection). 
 
-Sistemul trebui sa indeplineasca urmatoarele cerinte \textbf{functionale}:
+Sistemul trebui să îndeplinească următoarele cerințe  \textbf{functionale}:
 \begin{enumerate}
-	\item Sa realizere conexiunea la un server HTTP/HTTPS si sa redirectioneze traficul primit catre acesta.
-	\item Sa intercepteze traficul venit pe o anumita interfata si port prestabilit.
-	\item Sa prelucreze request-urile primite de la clineti intr-un format specific clasificatorului de SQL injection.
-	\item Sa nu redirectioneze reqesturile clasificate ca si SQL injection.
-	\item Sa blocheze conectarea clientilor ce folosesc ip-uri clasificate ca ip-uri de Tor.
-	\item Sa permita utilizatorului sa editez si sa vizualizeze lista ip-urilor de Tor.
-	\item Sa prezinte in interfata grafica toate interventiile rezlizate asupra traficului(blocari de conexiuni sau de request-uri).
-	\item Sa permita utilizatorului sa configureze modul de operare al sistemului.
+	\item Să realizere conexiunea la un server HTTP/HTTPS și să redirectioneze traficul primit către acesta. 
+	\item Să intercepteze traficul venit pe o anumită interfață și port prestabilit. 
+	\item Să prelucreze request-urile primite de la clineti într-un format specific pentru clasificatorul de URI-uri. 
+	\item Să nu redirectioneze reqesturile clasificate că și malițioase. 
+	\item Să blocheze conectarea clienților ce folosesc IP-uri conținute de lista neagră de referință. 
+	\item Să permită utilizatorului să editez și să vizualizeze lista adreselor IP blocate. 
+	\item Să prezinte în interfața grafică toate intervențiile rezlizate asupra traficului(blocări de conexiuni sau de request-uri). 
+	\item Să permită utilizatorului să configureze modul de operare al sistemului. 
 \end{enumerate}
 
 Sistemul trebuie, de asemenea, să aibă următoarele caracteristici \textbf{non-funcționale}:
 \begin{enumerate}
-	\item Sa fie usor de instalat si de folosit pentru orice utilizator, oricat de neexperimentat.
-	\item Sa poata intercepta traficul de pe orice/oricate interfete disponibile.
-	\item Sa poata rula pe orice sistem de operare Windows cu Python2 instalat.
-	\item Sa aiba o rata de blocare de 100\% a ip-urilor de pe lista neagra, iar
-	in cazul detectiei de SQL injection sa nu aiba detectii false pozitive mai mari 2-3\%
-	si o acuratete generala de peste 90\%
+	\item Să fie ușor de instalat și de folosit pentru orice utilizator, oricât de neexperimentat. 
+	\item Să poată intercepta traficul de pe orice/oricâte interfețe disponibile. 
+	\item Să poată rula pe orice sistem de operare Windows cu Python2 instalat. 
+	\item Să aibă o rată de blocare de 100\% a IP-urilor de pe lista neagră, iar 
+	în cazul detecției de SQL injection să nu aibă detecții false pozitive mai mari 2-3\% 
+	și o acuratețe generală de peste 90\% 
 \end{enumerate}
 \newpage
 
@@ -36,7 +36,7 @@ Sistemul trebuie, de asemenea, să aibă următoarele caracteristici \textbf{non
 
 \subsection{Actori, stakeholders si interese}
 
-Principalii actori si stakeholder-i sunt administratorii de servere, respectiv de baze de date. In implementarea sistemului propus se urmareste satisfacerea nevoilor acestor persoane, oferindule un plus de securitate asupra datelor ce sunt accesate de catre clienti, respectiv impotriva clientilor rau intentionati. Interesele acestor comunitati de utilizatori sunt urmarite pentru a livra un produs care sa ofere aceste protectii intr-o maniera cat de prietenoasa pentru utilizator si cat mai eficienta.
+Principalii actori și stakeholder-i sunt administratorii de servere, respectiv de baze de date. În implementarea sistemului propus se urmărește satisfacerea nevoilor acestor persoane, oferindu-le un plus de securitate asupra datelor ce sunt accesate de către clienți, respectiv împotriva clienților rău intenționați. Interesele acestor comunități de utilizatori sunt urmărite pentru a livra un produs care să ofere aceste protecții într-o manieră cât de prietenoasă pentru utilizator și cât mai eficientă. 
 
 \subsection{Basic flow}
 
@@ -46,29 +46,29 @@ Principalii actori si stakeholder-i sunt administratorii de servere, respectiv d
 	\caption{Basic flow pentru evenimente}
 	\label{fig:basic-flow}
 \end{figure}
-Figura ~\ref{fig:basic-flow} prezinta cum arata basic flow-ul pentru evenimentele din sistemul propus. \\
-
+Figura ~\ref{fig:basic-flow}  prezintă cum arată basic flow-ul pentru evenimentele din sistemul propus. \\
+\newpage
 Evenimentele sistemului:
 \begin{enumerate}
-	\item \textbf{Start}: aceste cazuri de utilizare sunt initiate in momentul in care sistemul este plasat intre un server si utilizatorii acestuia.
-	\item \textbf{Pasul 1}: un client doreste si initializeze o conexiune la server.
-	\item \textbf{Pasul 2}: adresa ip a clientului este verificata ca acesta sa nu fie un utilizator de Tor.
-	\item \textbf{Pasul 3}: clientul comunica cu serverul prin reqest-uri individuale.
-	\item \textbf{Pasul 4}: reqest-urile sunt verificate ca acestea sa nu fie atacuri de SQL injection.
-	\item \textbf{Pasul 5}: request-urile sunt trimise mai departe catre server.
-	\item \textbf{Pasul 6}: conexiunea este terminata(de catre client sau server).
-	\item \textbf{End}: la sfarsitul unui sir de evenimente, utilizatorul sistemului poate sa vada daca clientul ce a initializat evenimentele a realizat actiuni considerate ca malitioase.
+	\item \textbf{Start}: aceste cazuri de utilizare sunt inițiate în momentul în care sistemul este plasat între un server și utilizatorii acestuia. 
+	\item \textbf{Pasul 1}: un client dorește și inițializeze o conexiune la server. 
+	\item \textbf{Pasul 2}: adresa IP a clientului este verificată că acesta să nu fie un utilizator de Tor. 
+	\item \textbf{Pasul 3}: clientul comunică cu serverul prin reqest-uri individuale. 
+	\item \textbf{Pasul 4}: reqest-urile sunt verificate că acestea să nu fie atacuri de SQL injection. 
+	\item \textbf{Pasul 5}: request-urile sunt trimise mai departe către server. 
+	\item \textbf{Pasul 6}: conexiunea este terminată(de către client sau server). 
+	\item \textbf{End}: la sfârșitul unui șir de evenimente, utilizatorul sistemului poate să vadă dacă clientul ce a inițializat evenimentele a realizat acțiuni considerate ca malițioase. 
 	
 	
 \end{enumerate}
 
 
 \subsection{Alternative flow}
-Evenimentele alternative in cazurile de utilizare sunt urmatoarele:
+Evenimentele alternative în cazurile de utilizare sunt următoarele: 
 \begin{enumerate}
-	\item \textbf{Pasul 2a}: in cazul in care un utilizator cu adresa ip de Tor incearca sa realizeze conexiunea la server aceasta este refuzata. 
-	\item \textbf{Pasul 4a}: in cazul in care un utilizator incearca sa trimita la server un request ce reprezinta o tentativa de atac SQL injection, acesta este blocat.
-	\item \textbf{Pasul 4b}: pentru request-urile blocate ca si SQL injection clientului i se returneaza o pagina goala. 
+	\item \textbf{Pasul 2a}: în cazul în care un utilizator cu adresă IP de Tor încearcă să realizeze conexiunea la server aceasta este refuzată.  
+	\item \textbf{Pasul 4a}: în cazul în care un utilizator încearcă să trimită la server un request ce reprezintă o tentativă de atac SQL injection, acesta este blocat. 
+	\item \textbf{Pasul 4b}: pentru request-urile blocate ca și SQL injection clientului i se returnează o pagină goală. 
 \end{enumerate}
 
 \newpage
@@ -76,7 +76,7 @@ Evenimentele alternative in cazurile de utilizare sunt urmatoarele:
 
 \section{Arhitectura sistemului si modulele principale}
 
-In conformitate cu cerintele sistemului si specificatiile cazurilor de utilizare, sistemul propus este alcatuit din module specifice care sa trateze in mod individual problemele majore ridicate de sistem, printr-o implementare modulara, oferind astfel usurinta implementarii de noi functionalitati.
+În conformitate cu cerințele sistemului și specificațiile cazurilor de utilizare, sistemul propus este alcătuit din module specifice care să trateze în mod individual problemele majore ridicate de sistem, printr-o implementare modulară, oferind astfel ușurința implementării de noi funcționalități. 
 
 \begin{figure}[h]
 	\centering
@@ -84,35 +84,35 @@ In conformitate cu cerintele sistemului si specificatiile cazurilor de utilizare
 	\caption{Principalele module ale sitemului propus}
 	\label{fig:module}
 \end{figure}
-Figura ~\ref{fig:module} prezinta care sunt pricipalele module ale sistemului propus, precum si interactiunea dintre acestea. \\
+Figura ~\ref{fig:module}  prezintă care sunt pricipalele module ale sistemului propus, precum și interacțiunea dintre acestea. \\
 
-Principala si teoretic singura componenta a sistemului este reprezentata de cea de \textbf{reverse proxy}, insa petru a obtine rezultatele dorite si pentru a incorpora functionalitatile de protecti in aceasta, logica ei a fost impartita in cele 4 mari submodule:\textbf{connections acceptance module} si \textbf{request interceptor module}, ce reprezinta componentele ce suporta logica unui reverse proxy si \textbf{ip address validation module} si \textbf{SQL injection prevention module}, ce reprezinta modulele care interactioneaza cu cele ce implementeaza structura de reverse proxy pentru a oferi functionalitatile de securitate.\\
-
-
+Principala și teoretic singura componentă a sistemului este reprezentată de cea de \textbf{reverse proxy}, insă pentru a obține rezultatele dorite și pentru a incorpora functionalitătile de protecti în aceasta, logică ei a fost impărtită în cele 4 mari submodule :\textbf{modulul de inițiat conexiuni} și \textbf{modulul de interceptat request-uri}, ce reprezintă componentele ce suportă logica unui reverse proxy și \textbf{modulul de validare a adreselor IP} și \textbf{modulul de validare a URI-urilor}, ce reprezintă modulele care interacționează cu cele ce implementează structura de reverse proxy pentru a oferi funcționalitățile de securitate. \\
 
 
-\textbf{Client system} si  \textbf{application server}.\\ 
-
-Aceste doua componente reprezinta componetele clasice intre care vin plasat sistemul propus. \textbf{Client system} este reprezentat de orice client doreste sa acceseze baza de date/parte de server a unei aplicatii. \textbf{Application server} reprezinta serverul aplicatie la care se pot conecta clientii pentru a avea acces la un anumit continut. Sistemul propus are rolul de intermediere intre cele doua tipuri de componente, prevenind astfel eventuale tentative de expluatare a unor vulnerabilitati din partea clientului catre server.
 
 
-\textbf{Connections acceptance module}.\\
+\textbf{Sistemul Client} și  \textbf{application server}.\\ 
 
-Acest modul este constituit din componentele oferite de biblioteca open source \textbf{twisted}, fiind modificate ulterior pentru a permite integrarea modulului \textbf{Ip address validation module} . Modulul are rolul de a crea un socket pe sistemul pe care ruleaza acesta, care sa asculte pentru posibile conexiunui. In cazul in care un client incearca sa initieze o noua conexiune acesta trasmite adresa ip a clietului catre modului \textbf{Ip address validation module}, iar in functie de raspunsul acestuia conexiunea acestuia va fi realizata sau refuzata.\\ 
+Aceste două componente reprezintă componetele clasice între care vin plasat sistemul propus. \textbf{Sistemul client} este reprezentat de orice client dorește să acceseze baza de date/partea de server a unei aplicații. \textbf{Application server} reprezintă serverul aplicație la care se pot conecta clienții pentru a avea acces la un anumit conținut. Sistemul propus are rolul de intermediere între cele două tipuri de componente, prevenind astfel eventuale tentative de expluatare a unor vulnerabilități din partea clientului către server.
 
 
- \textbf{Request interceptor module}.\\
+\textbf{Modulul de inițiat conexiuni}.\\
+
+Acest modul este constituit din componentele oferite de biblioteca open source \textbf{twisted}, fiind modificate ulterior pentru a permite integrarea modulului \textbf{Modulul de validare a adreselor IP} . Modulul are rolul de a crea un socket pe sistemul pe care rulează acesta, care să asculte pentru posibile conexiunui. În cazul în care un client încearcă să inițieze o nouă conexiune acesta trasmite adresa IP a clietului către modulul \textbf{Modulul de validare a adreselor IP}, iar în funcție de răspunsul acestuia conexiunea acestuia va fi realizată sau refuzată. \\ 
+
+
+ \textbf{Modulul de interceptat request-uri}.\\
  
- Asemeni modulului anterior, \textbf{Connections acceptance module}, acest modul este construit peste codul oferit de biblioteca open source \textbf{twisted}. Biblioteca ofera suport pentru interceptarea reqest-urilor dintre un client si server, implementandu-se o logica suplimentarea ce incorporeaza modulul de detectie a atacurilor SQLI( \textbf{SQL injection prevention module}). In acest modul se interpreteaza natura URL-urilor trimise de catre client catre server.
- Interpretarea constand in analiza URI-ului unui request de catre modulul de prevenire a atacurilor SQLI, iar in functie de rezultatul acestuia returnand raspunsuri corespunzatoare atat clientului cat si serverului(in caz de tentatica de atac, la server nu ca ajunge nimic). \\
+Asemeni modulului anterior, \textbf{Modulul de inițiat conexiuni}, acest modul este construit peste codul oferit de biblioteca open source \textbf{twisted}. Biblioteca oferă suport pentru interceptarea reqest-urilor dintre un client și server, implementându-se o logică suplimentarea ce încorporează modulul de detecție a atacurilor SQLI( \textbf{Modulul de validare a URI-urilor}). În acest modul se interpretează natura URL-urilor trimise de către client către server.
+Interpretarea constând în analiza URI-ului unui request de către modulul de validare a request-urilor, iar în funcție de rezultatul acestuia returnând răspunsuri corespunzătoare atât clientului cât și serverului(în caz de tentatica de atac, la server nu va ajunge nimic).  \\
  
-\textbf{Ip address validation module}. \\
+	\textbf{Modulul de validare a adreselor IP}. \\
 
-Rolul acestui modul este de a valida o adresa ip impotriva adreselor folosite frecvent de reteaua Tor. La pornirea sistemului modulul incarca in memorie o lista cu toate adresele ip care trebuie sa fie blocate. Aceasta lista este construita la pornirea sistemului pe baza unor date salvate local si reactualizate periodic. Pentru validarea unei adrese, in cazul in care aceasta se afla in lista cu ip-uri blocate modulul returneaza valoarea "false" codului apelant, iar in caz contrar valoarea "true". \\
+Rolul acestui modul este de  a valida o adresă IP în conformitate cu adresele conținute pe lista neagră de referință a sistemului. La pornirea sistemului modulul încărca în memorie o lista cu toate adresele IP care trebuie să fie blocate. Această lista este construită la pornirea sistemului pe baza unor date salvate local și reactualizate periodic. Pentru validarea unei adrese, în cazul în care această se află în lista cu IP-uri blocate modulul returnează valoarea "false" codului apelant, iar în caz contrar valoarea "true".  \\
 
- \textbf{SQL injection prevention module}. \\
+ \textbf{Modulul de validare a URI-urilor}. \\
   
- Logica modulului de prevenire a atacurilor SQL injection este impartita in doua componente. In prima parte acesta indentifica trasaturile specifice unui atac SQL injection intr-un URI. Aceste trasaturi sunt reprezentate de caractere si cuvinte cheie ce pot fi gasite in acesta. In cazul indentificarii unor astfel de trasaturi, URI-ul este pasat mai departe celei de a doua componenta. Aceasta din urma este reprezentata de un model de support vector machine antrenat anterior, care va decide daca URI-ul primit se incadreaza in cele specifice atacurilor de SQL injection sau nu. Asemeni modulului anterior \textbf{Ip address validation module}, in functie de rezultatul obtinut acesta va returna "true" sau "false" codului apelant.
+Modulul de validare a URI-urilor este constituit din modelul de detectare a atacurilor SQL injection. Logica modelului de detecție a atacurilor SQL injection este împărțită în două componente. În prima parte acesta indentifică trăsăturile specifice unui atac SQL injection într-un URI. Aceste trăsături sunt reprezentate de caractere și cuvinte cheie ce pot fi găsite în acesta. În cazul indentificarii unor astfel de trăsături, URI-ul este pasat mai departe celei de a doua componentă. Aceasta din urmă este reprezentată de un model de support vector machine antrenat anterior, care va decide dacă URI-ul primit se încadrează în cele specifice atacurilor de SQL injection sau nu. Asemeni modulului anterior \textbf{Modulul de validare a adreselor IP}, în funcție de rezultatul obținut acesta va returna "true" sau "false" codului apelant. 
 
 \section{Comportamentul sistemului. Diagrama de stare si de secventa}
 \begin{figure}[h]
@@ -121,66 +121,67 @@ Rolul acestui modul este de a valida o adresa ip impotriva adreselor folosite fr
 	\caption{Diagrama de stare a sistemului propus.}
 	\label{fig:state}
 \end{figure}
-Figura ~\ref{fig:state} prezinta diagrama de stare a sistemului propus.
+Figura ~\ref{fig:state} prezintă diagrama de stare a sistemului propus.
 
-Dupa pornirea aplicatiei reprezentata prin initializare, utilizatorului i se pune la dispozitie interfata de utilizator in care sistemul asteapta sa fie configurat si portnit("Idle state"). Dupa configurarea aplicatiei in meniul "Configure",prin setarea specificatiilor serverului de reverse proxy, prin apasarea butonului "start", sistemul trece in urmatoarea stare "Listaning state". In aceasta stare sistemul accepta noi conexiuni de la diferiti clienti ce doresc sa acceseze server-ele protejate de acesta. Tot aici are loc si verificarea adreselor ip ale clientilor pentru protejarea importiva utilizatorilor Tor. Dupa stabilirea unei noi conexiuni, sistemul intra in starea "Connected state", in care acesta asculta pentru noi request-uri intre client si server si le trasmite mai departe catre destinatia dorita. Tot aici are loc si validarea request-urilor trimise de clienti catre server pentru prevenirea atacurilor SQL injection.
-In aceasta stare utilizatorul poate sa urmareasca activitatea sistemului in meniul "Monitor" din interfata de utilizator, unde sunt logate toate evenimentele generate de sistem. Pentru oprirea aplicatiei, utilizatorul poate pur si simplu sa o inchida de la butonul din drapta sus, aceasta terminandu-si toata activitatea indiferent de starea in care se afla.
+După pornirea aplicației reprezentată prin inițializare, utilizatorului i se pune la dispoziție interfața de utilizator în care sistemul așteaptă să fie configurat și portnit("Stare inactivă"). După configurarea aplicației în meniul "Configure",prin setarea specificațiilor serverului de reverse proxy, prin apăsarea butonului "start", sistemul trece în următoarea stare "Strare de ascultare". În această stare sistemul acceptă noi conexiuni de la diferiți clienți ce doresc să acceseze server-ele protejate de acesta. Tot aici are loc și verificarea adreselor IP ale clienților pentru protejarea importiva utilizatorilor Tor. După stabilirea unei noi conexiuni, sistemul intră în starea "Satre de conexiune", în care acesta ascultă pentru noi request-uri între client și server și le trasmite mai departe către destinația dorită. Tot aici are loc și validarea request-urilor trimise de clienți către server pentru prevenirea atacurilor SQL injection. În această stare utilizatorul poate să urmărească activitatea sistemului în meniul "Monitor" din interfața de utilizator, unde sunt logate toate evenimentele generate de sistem. Pentru oprirea aplicației, utilizatorul poate pur și simplu să o închidă de la butonul din drapta sus, aceasta terminându-și toată activitatea indiferent de starea în care se află. 
+
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\textwidth]{sequence_diagram.png}
-	\caption{Diagrama de secventa a sitemului propus.}
+	\caption{ Diagrama de secvența a sitemului propus. }
 	\label{fig:sequence}
 \end{figure}
-Figura ~\ref{fig:sequence} prezinta diagrama de secventa a sitemului propus. \\
-Dupa pornirea sistemului, utilizatorul configureaza setarile pentru server-ul de reverse proxy din interfata de utilizator(in meniul "Configure"). Dupa configurarea sistemului, prin apasarea butonului de start, este lansata in executie server-ul de reverse proxy cu caracteristicele specificate de utilizator. Scriptul de pornire a server-ului de reverse proxy face apel la fisierele bibliotecii Twisted, care vor returna catre acesta o instanta a serverului initializat. In interiorul server-ului de reverse proxy, aparitia de noi evenimente este semnalata catre interfata grafica. Aceste evenimente sunt puse la dispozitia utilizatorului pentru vizualizare.
+Figura ~\ref{fig:sequence}  prezintă diagrama de secvență a sitemului propus.  \\
+
+După pornirea sistemului, utilizatorul configurează setările pentru server-ul de reverse proxy din interfața de utilizator(în meniul "Configure"). După configurarea sistemului, prin apăsarea butonului de start, este lansată în execuție server-ul de reverse proxy cu caracteristicele specificate de utilizator. Scriptul de pornire a server-ului de reverse proxy face apel la fișierele bibliotecii Twisted, care vor returna către acesta o instanță a serverului inițializat. În interiorul server-ului de reverse proxy, apariția de noi evenimente este semnalată către interfața grafică. Aceste evenimente sunt puse la dispoziția utilizatorului pentru vizualizare. 
 \\
 \section{Dependintele sistemului}
 
-Pentru functionarea corecta a sistemului propus, acesta are nevoie de urmatoarele dependinte:
+Pentru funcționarea corectă a sistemului propus, acesta are nevoie de următoarele dependințe: 
 \begin{enumerate}
-	\item Sistem de operare Windows cu Python2 instalat pe sistem.
-	\item Conexiune stabila la internet pentru rularea script-urilor ce obtin adresele ip utilizate de Tor.
-	\item Sistemul sa aiba acces direct la interfetele prin care clientii se pot conecta la server-ul protejat
-	\item Sistemul sa aiba o conexiune directa la server-ul ce trebuie protejat.
+	\item Sistem de operare Windows cu Python2 instalat pe sistem. 
+	\item Conexiune stabilă la internet pentru rularea script-urilor ce obțin adresele IP utilizate de Tor. 
+	\item Sistemul să aibă acces direct la interfețele prin care clienții se pot conecta la server-ul protejat 
+	\item Sistemul să aibă o conexiune directă la server-ul ce trebuie protejat. 
 \end{enumerate}
 \section{Algoritmi si metode}
 
-Pentru prevenirea atacurilor de SQL injection s-a folosit un algoritm de machine learning, support vector machine. Acest algoritm presupune antrenarea anterioara a unui model cu un set de date de referinta etichetate in prealabil corect de catre utilizator. Aceste date sunt folosite de algoritm pentru a raporta noi seturi de date, natura acestora fiind necunoscuta, incercand sa gaseasca similitudin intre cele noi si cele de referinta, determinandu-le astfel natura celor noi. Algoritmul de support vector machine rezulta intr-un model obtinut prin folosire a diversi algoritmi pentru antrenarea acestuia, folosit pentru a clasifica date.
+Pentru prevenirea atacurilor de SQL injection s-a folosit un algoritm de machine learning, support vector machine. Acest algoritm presupune antrenarea anterioară a unui model cu un set de date de referință etichetate în prealabil corect de către utilizator. Aceste date sunt folosite de algoritm pentru a raporta noi seturi de date, natura acestora fiind necunoscută, încercând să găsească similitudin între cele noi și cele de referință, determinându-le astfel natură celor noi. Algoritmul de support vector machine rezultă într-un model obținut prin folosire a diverși algoritmi pentru antrenarea acestuia, folosit pentru a clasifica date. 
 
-Realizarea unui astfel de model sa realizat in urma executarii unui proces elaborat ce implica mai multi pasi:
+Realizarea unui astfel de model sa realizat în urmă executării unui proces elaborat ce implică mai mulți păși: 
 \begin{itemize}
-	\item  Primul pas reprezinta indentificarea datelor relevante in cea ce priveste problema tratata(prevenirea atacurilor SQL injection). In conformitate cu scopul clasificarii evenimentelor/datelor in doua categorii (tentativa de atac si request-uri clean) initial au fost  indentificate o serie de astfel de evenimente si categorizate in evenimente ce sigur apartin fiecarei dintre categoriile tinta. 
-	\item Dupa  obtinerea datelor de antrenare, au fost indentificate toate trasaturile relevante din aceste date, trasaturi care sa fie cat se poate de specifice fiecarei categorii in parte. Aceste trasaturi au reprezentat cuvintele cheie a limbajului SQL dar si caractere specifice folosite frecvent de acesta.
-	\item Dupa obtinerea trasaturilor specifice datelor de antrenare, sa realizat antrenarea modelului folosind un algoritm specific. In cazul proiectului propus s-a folsoit algoritmul gata implementat, furnizat de biblioteca open source LIBSVM \cite{libsvm}. Pentru obtinerea modelului datele de antrenare au fost procesate folosind un kernel gausian. Un kernel gausian reprezinta modul in care modelul proceseaza datele de antrenare astfel incat clasificarea noilor date sa fie realizata prin calcularea similaritatilor dintre acestea si cele de antrenare. In calcularea similaritatii dintre aceste doua tipuri de date, un parametru foare important este sigma. Acest parametru este ales pentru intrg setul de date, iar valoarea lui este diret proportionala cu gradul de similaritate pe care algoritmul il va asocia la doua evenimente/date diferite.
+	 \item  Primul pas reprezintă indentificarea datelor relevante în cea ce privește problema tratată(prevenirea atacurilor SQL injection). În conformitate cu scopul clasificării evenimentelor/datelor în două categorii (tentativă de atac și request-uri clean) inițial au fost  indentificate o serie de astfel de evenimente și categorizate în evenimente ce sigur aparțin fiecărei dintre categoriile țintă.  
+	\item După  obținerea datelor de antrenare, au fost indentificate toate trăsăturile relevante din aceste date, trăsături care să fie cât se poate de specifice fiecărei categorii în parte. Aceste trăsături au reprezentat cuvintele cheie a limbajului SQL dar și caractere specifice folosite frecvent de acesta. 
+	\item După obținerea trăsăturilor specifice datelor de antrenare, sa realizat antrenarea modelului folosind un algoritm specific. În cazul proiectului propus s-a folsoit algoritmul gata implementat, furnizat de biblioteca open source LIBSVM \cite{libsvm}. Pentru obținerea modelului datele de antrenare au fost procesate folosind un kernel gausian. Un kernel gausian reprezintă modul în care modelul procesează datele de antrenare astfel încât clasificarea noilor date să fie realizată prin calcularea similarităților dintre acestea și cele de antrenare. În calcularea similarității dintre aceste două tipuri de date, un parametru foare important este sigma. Acest parametru este ales pentru intrg setul de date, iar valoarea lui este diret proporțională cu gradul de similaritate pe care algoritmul îl va asocia la două evenimente/date diferite. 
 \end{itemize}
 
-Pentru blocarea ip-urilor utilizate de reteua Tor s-a folosit un script scris in Python3. Programul interogheaza periodic(din 6 in 6 ore) informatiile oferite de \textit{Tor Network Status} \cite{tot_status}, salvand uptime-ul fiecarei adrese din ultimele 6 ore. Indentifiacrea adreselor malitioase se face prin insumarea timpului total din ultima luna de uptime, iar cele cu o valoare mai mare de 7 zile sunt considerate malitioase. Blocarea ip-urilor se realizeaza prin compoararea cu o astfel de lista generata lunar.
+Pentru blocarea IP-urilor utilizate de reteua Tor s-a folosit un script scris în Python3. Programul interoghează periodic(din 6 în 6 ore) informațiile oferite de \textit{Tor Network Status} \cite{tot_status}, salvând uptime-ul fiecărei adrese din ultimele 6 ore. Indentifiacrea adreselor malițioase se face prin însumarea timpului total din ultima lună de uptime, iar cele cu o valoare mai mare de 7 zile sunt considerate malițioase. Blocarea IP-urilor se realizează prin compoararea cu o astfel de lista generată lunar. 
 
 \section{Diagrama de desfasurare}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{deployment.png}
-	\caption{Diagrama de desfasurare a sitemului propus.}
+	\caption{ Diagrama de desfășurare a sitemului propus. }
 	\label{fig:deployment}
 \end{figure}
 
-Figura ~\ref{fig:deployment} prezinta diagrama de desfasurare a sitemului propus. \\
-Pentru a putea rula sistemul \textit{\thesistitle} pe un sistem, acesta trebuie sa aiba acces direct la server-ul ce se doreste a fi protejat. Sistemuli trebuie sa ii fie frunizate modelul de SVM folosit pentru prevenirea atacurilor de SQL injection. De asemenea scriptul pentru monitorizarea activitatii retelei Tor si cel pentru generarea listei de adrese IP cu un uptime mai mare de 7 zile, trebuie sa se afle pe sistem, pentru ca acesta sa utilizeze date "up-to-date".
+Figura ~\ref{fig:deployment}  prezintă diagrama de desfășurare a sitemului propus.  \\
+Pentru a putea rula sistemul \textit{\thesistitle}  pe un sistem, acesta trebuie să aibă acces direct la server-ul ce se dorește a fi protejat. Sistemuli trebuie să îi fie frunizate modelul de SVM folosit pentru prevenirea atacurilor de SQL injection. De asemenea scriptul pentru monitorizarea activității rețelei Tor și cel pentru generarea listei de adrese IP cu un uptime mai mare de 7 zile, trebuie să se afle pe sistem, pentru ca acesta să utilizeze date "up-to-date". 
 
 \section{Justificarea design-ului}
  
 
-Totate deciziile de design au fost luate in vederea obtinerii unor functionalitati cat mai importante pentru utilizatorii tinta, dar si pentru a obtine o eficienta cat mai mare a sistemulu, atat din punct de vedere al corectitudinii cat si a timpului de executie.
+ Totate deciziile de design au fost luate în vederea obținerii unor funcționalități cât mai importante pentru utilizatorii țintă, dar și pentru a obține o eficientă cât mai mare a sistemulu, atât din punct de vedere al corectitudinii cât și a timpului de execuție. 
 
 
-Pentru o acuratete cat mai mare in prevenirea atacurilor de SQL injection s-a ales folosirea unui abordari bazate pe machine learning, intrucat detectiile statice prezinta o logica foarte complicata, pot omite multe cazuri esentiale si sunt limitate de capacitatea de observare a programatorului. 
+Pentru o acuratețe cât mai mare în prevenirea atacurilor de SQL injection s-a ales folosirea unui abordări bazate pe machine learning, întrucât detecțiile statice prezintă o logică foarte complicată, pot omite multe cazuri esențiale și sunt limitate de capacitatea de observare a programatorului.  
 
 
-Pentru indentificarea adreselor utilizate de reteaua Tor se putea aborda o implementare cu lista fixa, intrucat aceste liste prezinta un set mic de adrese ce raman neschimbate in timp, insa pentru o acuratete cat mai mare, s-a ales folosirea celor doua scripturi suplimentare ce vor obtine periodic toate adresele utilizate de retea perioada respectiva de timp.
+Pentru indentificarea adreselor utilizate de rețeaua Tor se putea aborda o implementare cu lista fixă, întrucât aceste liste prezintă un set mic de adrese ce rămân neschimbate în timp, însă pentru o acuratețe cât mai mare, s-a ales folosirea celor două scripturi suplimentare ce vor obține periodic toate adresele utilizate de rețea în perioada respectivă de timp. 
 
 
-De asemenea dezvoltarea modulara a sistemului asigura usurinta de adaugare de noi module sau functionalitati fara a necesita modificari majore sistemului actual.
+De asemenea dezvoltarea modulară a sistemului asigură ușurința de adăugare de noi module sau funcționalități fără a necesita modificări majore sistemului actual. 
 
 %Acest capitol descrie design-ul proiectului și cuprinde, în general: 
 %\begin{enumerate}

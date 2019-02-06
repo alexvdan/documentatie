@@ -1,33 +1,33 @@
 \babel@toc {romanian}{}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Diagrama reverse proxy}}{1}{figure.1.1}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Diagram\IeC {\u a} reverse proxy }}{1}{figure.1.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Cutia neagra a sistemului}}{7}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Cutia neagr\IeC {\u a} a sistemului.}}{7}{figure.2.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Administrarea securitatii unei aplicatii}}{10}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Tipuri de trasaturi ale limbajului SQL}}{13}{figure.3.2}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Administrarea securit\IeC {\u a}\IeC {{\textcommabelow t}}ii unei aplica\IeC {{\textcommabelow t}}ii }}{10}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Tipuri de tr\IeC {\u a}s\IeC {\u a}turi ale limbajului SQL }}{13}{figure.3.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Arhitectura unui sistem de clasificare a request-urilor HTTP}}{15}{figure.3.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Folosirea unui reverse proxy in arhitectura unei aplicatii.}}{17}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Influentele aduse algoritmului de modifiacrea parametrului sigma in algoritmul de antrenare.}}{19}{figure.4.2}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Folosirea unui reverse proxy \IeC {\^\i }n arhitectura unei aplica\IeC {{\textcommabelow t}}ii.}}{17}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Influen\IeC {{\textcommabelow t}}ele aduse algoritmului de modifiacrea parametrului sigma \IeC {\^\i }n algoritmul de antrenare. }}{19}{figure.4.2}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Exemplu de atac realizat prin SQL injection.}}{20}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Exemplu de trafic realizat prin reteaua Tor.}}{21}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Integrarea unui sistem de prevenire a intruziunilor intr-o retea.}}{22}{figure.4.5}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Exemplu de trafic realizat prin re\IeC {{\textcommabelow t}}eaua Tor. }}{21}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Integrarea unui sistem de prevenire a intruziunilor \IeC {\^\i }ntr-o re\IeC {{\textcommabelow t}}ea. }}{22}{figure.4.5}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Basic flow pentru evenimente}}{27}{figure.5.1}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Principalele module ale sitemului propus}}{29}{figure.5.2}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Diagrama de stare a sistemului propus.}}{31}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Diagrama de secventa a sitemului propus.}}{32}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama de desfasurare a sitemului propus.}}{34}{figure.5.5}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Diagrama de secven\IeC {{\textcommabelow t}}a a sitemului propus. }}{32}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama de desf\IeC {\u a}\IeC {{\textcommabelow s}}urare a sitemului propus. }}{34}{figure.5.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Modulul pentru monitorizatea activitatii retelei Tor}}{37}{figure.6.1}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Modulul pentru monitorizatea activit\IeC {\u a}\IeC {{\textcommabelow t}}ii re\IeC {{\textcommabelow t}}elei Tor}}{37}{figure.6.1}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Modulul pentru prevenirea atacurilor SQL injection}}{39}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Interactiunea dintre interfata grafica si celelalte module}}{41}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Meniul "Home" in interfata grafica}}{48}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Meniul "Configure" in interfata grafica}}{48}{figure.6.5}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Meniul "Monitor" in interfata grafica}}{49}{figure.6.6}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Raspunsul pentru SQL injection URL}}{49}{figure.6.7}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Principalele module ale sitemului propus}}{50}{figure.6.8}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Interac\IeC {{\textcommabelow t}}iunea dintre interfa\IeC {{\textcommabelow t}}a grafic\IeC {\u a} \IeC {{\textcommabelow s}}i celelalte module }}{41}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Meniul "Home" in interfata grafica}}{47}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Meniul "Configure" in interfata grafica}}{47}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Meniul "Monitor" in interfata grafica}}{48}{figure.6.6}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Raspunsul pentru SQL injection URL}}{48}{figure.6.7}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Principalele module ale sitemului propus}}{49}{figure.6.8}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Raportul dintre numarul IP-urilor de pe Blacklist si Whitelist dintr-o luna}}{52}{figure.7.1}
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Raportul dintre uptime-ul IP-urile de pe Blacklist si Whitelist din aceasi luna}}{52}{figure.7.2}
