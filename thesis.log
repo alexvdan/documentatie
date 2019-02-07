@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.14)  6 FEB 2019 19:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.14)  7 FEB 2019 15:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -987,7 +987,7 @@ l.282 \end{titlepage}
 
  (./ch1.tex
 Capitolul 1.
-<figures/reverse-proxy-02-1.jpg, id=383, 813.0375pt x 288.07625pt>
+<figures/reverse-proxy-02-1.jpg, id=384, 813.0375pt x 288.07625pt>
 File: figures/reverse-proxy-02-1.jpg Graphic file (type jpg)
 <use figures/reverse-proxy-02-1.jpg>
 Package pdftex.def Info: figures/reverse-proxy-02-1.jpg  used on input line 15.
@@ -1057,7 +1057,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\textcommabelow' on input line 33.
 
 [6]
-<figures/fff.png, id=425, 514.92375pt x 259.97125pt>
+<figures/fff.png, id=426, 514.92375pt x 259.97125pt>
 File: figures/fff.png Graphic file (type png)
 <use figures/fff.png>
 Package pdftex.def Info: figures/fff.png  used on input line 48.
@@ -1110,7 +1110,7 @@ rat de c -tre un ata-ca-tor ce inten[]ioneaz 
 
 
 ]
-<figures/ips.png, id=451, 575.14874pt x 316.18124pt>
+<figures/ips.png, id=452, 575.14874pt x 316.18124pt>
 File: figures/ips.png Graphic file (type png)
 <use figures/ips.png>
 Package pdftex.def Info: figures/ips.png  used on input line 47.
@@ -1121,13 +1121,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--53
  []
 
 [10 <./figures/ips.png>] [11] [12]
-<figures/sqli.png, id=476, 364.36125pt x 123.46124pt>
+<figures/sqli.png, id=477, 364.36125pt x 123.46124pt>
 File: figures/sqli.png Graphic file (type png)
 <use figures/sqli.png>
 Package pdftex.def Info: figures/sqli.png  used on input line 95.
 (pdftex.def)             Requested size: 275.4028pt x 93.32097pt.
  [13 <./figures/sqli.png (PNG copy)>]
-<figures/sql_arh.png, id=500, 452.69125pt x 258.9675pt>
+<figures/sql_arh.png, id=501, 452.69125pt x 258.9675pt>
 File: figures/sql_arh.png Graphic file (type png)
 <use figures/sql_arh.png>
 Package pdftex.def Info: figures/sql_arh.png  used on input line 118.
@@ -1145,7 +1145,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ]
 Capitolul 4.
-<figures/rev-proxy.png, id=529, 376.40625pt x 139.27031pt>
+<figures/rev-proxy.png, id=530, 376.40625pt x 139.27031pt>
 File: figures/rev-proxy.png Graphic file (type png)
 <use figures/rev-proxy.png>
 Package pdftex.def Info: figures/rev-proxy.png  used on input line 22.
@@ -1162,7 +1162,7 @@ Overfull \hbox (0.50015pt too wide) in paragraph at lines 40--41
  []
 
 [18]
-<figures/svm-andrew.png, id=543, 937.5025pt x 386.44376pt>
+<figures/svm-andrew.png, id=544, 937.5025pt x 386.44376pt>
 File: figures/svm-andrew.png Graphic file (type png)
 <use figures/svm-andrew.png>
 Package pdftex.def Info: figures/svm-andrew.png  used on input line 53.
@@ -1177,7 +1177,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
-<figures/259px-Sql_Injection_Login.png, id=547, 259.97125pt x 233.87375pt>
+<figures/259px-Sql_Injection_Login.png, id=548, 259.97125pt x 233.87375pt>
 File: figures/259px-Sql_Injection_Login.png Graphic file (type png)
 <use figures/259px-Sql_Injection_Login.png>
 Package pdftex.def Info: figures/259px-Sql_Injection_Login.png  used on input l
@@ -1192,7 +1192,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--78
  []
 
 [19 <./figures/svm-andrew.png>] [20 <./figures/259px-Sql_Injection_Login.png>]
-<figures/can-you-hide-on-Tor-Network.png, id=560, 1302.8675pt x 941.5175pt>
+<figures/can-you-hide-on-Tor-Network.png, id=561, 1302.8675pt x 941.5175pt>
 File: figures/can-you-hide-on-Tor-Network.png Graphic file (type png)
 <use figures/can-you-hide-on-Tor-Network.png>
 Package pdftex.def Info: figures/can-you-hide-on-Tor-Network.png  used on input
@@ -1203,7 +1203,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
-<figures/IPS.png, id=562, 770.88pt x 347.04657pt>
+<figures/IPS.png, id=563, 770.88pt x 347.04657pt>
 File: figures/IPS.png Graphic file (type png)
 <use figures/IPS.png>
 Package pdftex.def Info: figures/IPS.png  used on input line 109.
@@ -1231,7 +1231,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\textcommabelow' on input line 2.
 
 [25] [26]
-<figures/basicflow.png, id=604, 323.70938pt x 552.56438pt>
+<figures/basicflow.png, id=605, 323.70938pt x 552.56438pt>
 File: figures/basicflow.png Graphic file (type png)
 <use figures/basicflow.png>
 Package pdftex.def Info: figures/basicflow.png  used on input line 45.
@@ -1242,7 +1242,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--50
  []
 
 [27 <./figures/basicflow.png>] [28]
-<figures/module.png, id=626, 957.5775pt x 500.87125pt>
+<figures/module.png, id=627, 957.5775pt x 500.87125pt>
 File: figures/module.png Graphic file (type png)
 <use figures/module.png>
 Package pdftex.def Info: figures/module.png  used on input line 83.
@@ -1298,13 +1298,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 113--114
  []
 
 [30]
-<figures/state_diagram.png, id=638, 788.9475pt x 753.81625pt>
+<figures/state_diagram.png, id=639, 788.9475pt x 753.81625pt>
 File: figures/state_diagram.png Graphic file (type png)
 <use figures/state_diagram.png>
 Package pdftex.def Info: figures/state_diagram.png  used on input line 120.
 (pdftex.def)             Requested size: 367.2014pt x 350.843pt.
  [31 <./figures/state_diagram.png>]
-<figures/sequence_diagram.png, id=645, 664.73344pt x 479.54156pt>
+<figures/sequence_diagram.png, id=646, 664.73344pt x 479.54156pt>
 File: figures/sequence_diagram.png Graphic file (type png)
 <use figures/sequence_diagram.png>
 Package pdftex.def Info: figures/sequence_diagram.png  used on input line 131.
@@ -1320,7 +1320,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--139
  []
 
 [32 <./figures/sequence_diagram.png>] [33]
-<figures/deployment.png, id=662, 616.55344pt x 409.53pt>
+<figures/deployment.png, id=663, 616.55344pt x 409.53pt>
 File: figures/deployment.png Graphic file (type png)
 <use figures/deployment.png>
 Package pdftex.def Info: figures/deployment.png  used on input line 164.
@@ -1335,7 +1335,7 @@ Package pdftex.def Info: figures/deployment.png  used on input line 164.
 
 ]
 Capitolul 6.
-<figures/tor_activity_monitor.png, id=678, 596.2275pt x 278.54062pt>
+<figures/tor_activity_monitor.png, id=679, 596.2275pt x 278.54062pt>
 File: figures/tor_activity_monitor.png Graphic file (type png)
 <use figures/tor_activity_monitor.png>
 Package pdftex.def Info: figures/tor_activity_monitor.png  used on input line 1
@@ -1353,7 +1353,7 @@ Overfull \hbox (28.60852pt too wide) in paragraph at lines 24--25
  []
 
 [38]
-<figures/sqli_svm.png, id=689, 666.23906pt x 663.22781pt>
+<figures/sqli_svm.png, id=690, 666.23906pt x 663.22781pt>
 File: figures/sqli_svm.png Graphic file (type png)
 <use figures/sqli_svm.png>
 Package pdftex.def Info: figures/sqli_svm.png  used on input line 38.
@@ -1370,7 +1370,7 @@ Overfull \hbox (0.37178pt too wide) in paragraph at lines 62--63
  []
 
 [40]
-<figures/source_code.png, id=700, 530.73282pt x 509.65407pt>
+<figures/source_code.png, id=701, 530.73282pt x 509.65407pt>
 File: figures/source_code.png Graphic file (type png)
 <use figures/source_code.png>
 Package pdftex.def Info: figures/source_code.png  used on input line 76.
@@ -1401,28 +1401,34 @@ Overfull \hbox (0.34644pt too wide) in paragraph at lines 136--137
 
 
 Overfull \hbox (18.63582pt too wide) in paragraph at lines 141--142
-[]\T1/aer/m/n/12 Rezultatele ru-la-rii fi-si-e-ru-lui Get_new_Tor_ips.py sunt a
-c-tu-a-li-zate in IPs_Tor_activity.txt.
+[]\T1/aer/m/n/12 Rezultatele ru-l -rii fi[]ierului Get_new_Tor_ips.py sunt ac-t
+u-a-li-zate în IPs_Tor_activity.txt.
  []
 
 [43] [44]
-Overfull \hbox (49.58403pt too wide) in paragraph at lines 190--191
-[]\T1/aer/m/n/12 Convertirea URI-urilor in for-ma-tul de mai sus este re-a-li-z
-ata de scrip-tul URI-file_to_features.py.
+Overfull \hbox (39.87614pt too wide) in paragraph at lines 190--191
+[]\T1/aer/m/n/12 Conversia URI-urilor în for-ma-tul de mai sus este re-a-li-zat
+  de scrip-tul URI-file_to_features.py.
  []
 
 [45] [46]
-<figures/ui_home.png, id=794, 581.17125pt x 331.2375pt>
+<figures/ui_home.png, id=795, 581.17125pt x 331.2375pt>
 File: figures/ui_home.png Graphic file (type png)
 <use figures/ui_home.png>
 Package pdftex.def Info: figures/ui_home.png  used on input line 236.
 (pdftex.def)             Requested size: 275.4028pt x 156.96542pt.
 
+Overfull \hbox (4.71684pt too wide) in paragraph at lines 240--241
+[]\T1/aer/m/n/12 Figura  []8.1[] pre-zint  design-ul pa-gi-nii de "Home" din in
+terfa[]a gra-fic  pus  la dispozi[]ie
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 240--241
 
  []
 
-<figures/ui_configure.png, id=796, 581.17125pt x 335.00156pt>
+<figures/ui_configure.png, id=797, 581.17125pt x 335.00156pt>
 File: figures/ui_configure.png Graphic file (type png)
 <use figures/ui_configure.png>
 Package pdftex.def Info: figures/ui_configure.png  used on input line 244.
@@ -1432,7 +1438,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 248--249
 
  []
 
-<figures/ui_monitor.png, id=798, 577.40718pt x 335.75438pt>
+<figures/ui_monitor.png, id=799, 577.40718pt x 335.75438pt>
 File: figures/ui_monitor.png Graphic file (type png)
 <use figures/ui_monitor.png>
 Package pdftex.def Info: figures/ui_monitor.png  used on input line 252.
@@ -1446,7 +1452,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 256--257
  []
 
 [47 <./figures/ui_home.png> <./figures/ui_configure.png>]
-<figures/sqli_respons.png, id=804, 592.46344pt x 236.38312pt>
+<figures/sqli_respons.png, id=805, 592.46344pt x 236.38312pt>
 File: figures/sqli_respons.png Graphic file (type png)
 <use figures/sqli_respons.png>
 Package pdftex.def Info: figures/sqli_respons.png  used on input line 260.
@@ -1457,7 +1463,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 265--266
  []
 
 [48 <./figures/ui_monitor.png> <./figures/sqli_respons.png>]
-<figures/tor_respons.png, id=811, 743.02594pt x 317.68687pt>
+<figures/tor_respons.png, id=812, 743.02594pt x 317.68687pt>
 File: figures/tor_respons.png Graphic file (type png)
 <use figures/tor_respons.png>
 Package pdftex.def Info: figures/tor_respons.png  used on input line 270.
@@ -1484,12 +1490,12 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\textcommabelow' on input line 15.
 
-<figures/test_case_1.png, id=821, 521.95pt x 324.21124pt>
+<figures/test_case_1.png, id=823, 521.95pt x 324.21124pt>
 File: figures/test_case_1.png Graphic file (type png)
 <use figures/test_case_1.png>
 Package pdftex.def Info: figures/test_case_1.png  used on input line 43.
 (pdftex.def)             Requested size: 321.2986pt x 199.5792pt.
-<figures/test_case_2.png, id=822, 647.41875pt x 336.25626pt>
+<figures/test_case_2.png, id=824, 647.41875pt x 336.25626pt>
 File: figures/test_case_2.png Graphic file (type png)
 <use figures/test_case_2.png>
 Package pdftex.def Info: figures/test_case_2.png  used on input line 50.
@@ -1670,11 +1676,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 311.
 Here is how much of TeX's memory you used:
  21203 strings out of 492982
  337061 string characters out of 6134895
- 472290 words of memory out of 5000000
+ 476380 words of memory out of 5000000
  23916 multiletter control sequences out of 15000+600000
  60885 words of font info for 148 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,18n,51p,1443b,1846s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,17n,51p,1443b,1846s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texli
@@ -1686,10 +1692,10 @@ ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb>
-Output written on thesis.pdf (84 pages, 1351216 bytes).
+Output written on thesis.pdf (84 pages, 1356189 bytes).
 PDF statistics:
- 1072 PDF objects out of 1200 (max. 8388607)
- 928 compressed objects within 10 object streams
+ 1074 PDF objects out of 1200 (max. 8388607)
+ 930 compressed objects within 10 object streams
  293 named destinations out of 1000 (max. 500000)
  556 words of extra memory for PDF output out of 10000 (max. 10000000)
 
