@@ -45,7 +45,7 @@
 \BOOKMARK [1][-]{section.9.1}{Privire de ansamblu asupra sistemului}{chapter.9}% 45
 \BOOKMARK [1][-]{section.9.2}{Dezvoltari ulterioare}{chapter.9}% 46
 \BOOKMARK [0][-]{chapter*.3}{Bibliografie}{}% 47
-\BOOKMARK [0][-]{chapter.1}{Diverse anexe}{}% 48
-\BOOKMARK [0][-]{chapter.2}{Demonstratii matematice detaliate \(daca exista\)}{}% 49
-\BOOKMARK [0][-]{chapter.3}{Pseudo-cod sau cod \(daca exista\)}{}% 50
-\BOOKMARK [0][-]{chapter.4}{Articole publicate}{}% 51
+\BOOKMARK [0][-]{chapter.1}{Codul sursa\(principalele fisiere\)}{}% 48
+\BOOKMARK [1][-]{section.1.1}{Reverse proxy}{chapter.1}% 49
+\BOOKMARK [1][-]{section.1.2}{Convertor de URI in trasaturi pentru modelul SVM}{chapter.1}% 50
+\BOOKMARK [1][-]{section.1.3}{Monitorizarea adreselor IP ale retelei Tor}{chapter.1}% 51

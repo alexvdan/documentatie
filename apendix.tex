@@ -1,56 +1,279 @@
 \appendix
 
-\chapter{Diverse anexe}
-
-
-\chapter{Demonstrații matematice detaliate (dacă există)}
-
-
-\chapter{Pseudo-cod sau cod (dacă există)}
-
-% \begin{verbatim}
-%  /** Maps are easy to use in Scala. */
-% object Maps {
-%   val colors = Map("red" -> 0xFF0000,
-%                    "turquoise" -> 0x00FFFF,
-%                    "black" -> 0x000000,
-%                    "orange" -> 0xFF8040,
-%                    "brown" -> 0x804000)
-%   def main(args: Array[String]) {
-%     for (name <- args) println(
-%       colors.get(name) match {
-%         case Some(code) =>
-%           name + " has code: " + code
-%         case None =>
-%           "Unknown color: " + name
-%       }
-%     )
-%   }
-% }
-% \end{verbatim}
-
+\chapter{Codul sursa(principalele fisiere)}
+\section{Reverse proxy}
 
 \begin{lstlisting}
- /** Maps are easy to use in Scala. */
-object Maps {
-  val colors = Map("red" -> 0xFF0000,
-                   "turquoise" -> 0x00FFFF,
-                   "black" -> 0x000000,
-                   "orange" -> 0xFF8040,
-                   "brown" -> 0x804000)
-  def main(args: Array[String]) {
-    for (name <- args) println(
-      colors.get(name) match {
-        case Some(code) =>
-          name + " has code: " + code
-        case None =>
-          "Unknown color: " + name
-      }
-    )
-  }
-}
+class BadURL(Resource):
+  def render(self, request):
+    return ""
+
+class HTTPSReverseProxyResource(proxy.ReverseProxyResource, 
+                                object):
+  def getChild(self, path, request):
+    global m
+
+    features = uri_convertor.uri_to_features(request.uri)
+    x0, max_idx = gen_svm_nodearray(features)
+    label = libsvm.svm_predict(m, x0)
+
+    if int(label) == 1:
+    print('blocked-->sqli:' + request.uri)
+    return BadURL()
+
+    child = super(HTTPSReverseProxyResource, self).
+                              getChild(path, request)
+    return HTTPSReverseProxyResource(child.host, 
+                  child.port, child.path, child.reactor)
+
+def main(args):
+
+  ap = argparse.ArgumentParser()
+  ap.add_argument('-c', type=str, default='./server.crt')
+  ap.add_argument('-k', type=str, default='./server.key')
+  ap.add_argument('-m', type=str, default='./sqli.model')
+  ap.add_argument('--server-ip', type=str,default='localhost')
+  ap.add_argument('--server-port', type=int, default=8080)
+  ap.add_argument('--listen-ip', type=str, default
+  		=['192.168.58.1', 'localhost'])
+  ap.add_argument('--listen-port', type=int, default=443)
+  ns = ap.parse_args(args[1:])
+
+  global m
+  m = svm_load_model(ns.m)
+
+  if type(ns.listen_ip) == str:
+    ns.listen_ip = ast.literal_eval(ns.listen_ip)
+  myProxy = HTTPSReverseProxyResource(ns.server_ip, 
+  			ns.server_port, '')
+  site = server.Site(myProxy)
+  if ns.c:
+    with open(ns.c, 'rb') as fp:
+    ssl_cert = fp.read()
+    if ns.k:
+      with open(ns.k, 'rb') as fp:
+      ssl_key = fp.read()
+      certificate = ssl.PrivateCertificate.load(ssl_cert,
+      	 ssl.KeyPair.load(ssl_key, crypto.FILETYPE_PEM),
+      	 crypto.FILETYPE_PEM)
+    else:
+      certificate = ssl.PrivateCertificate.loadPEM(ssl_cert)
+      for ele in ns.listen_ip:
+        try:
+          reactor.listenSSL(ns.listen_port, site, 
+          	certificate.options(), interface=ele)
+        except error.CannotListenError:
+          print('Error: ' + ele + 
+          ' not a valid interface in this context')
+          exit(0)
+        except Exception as e:
+          print('Error: ' + e.message)
+          exit(0)
+  else:
+    for ele in ns.listen_ip:
+      try:
+        reactor.listenTCP(ns.listen_port, site, interface=ele)
+      except error.CannotListenError:
+        print('Error: ' + ele + 
+       		' not a valid interface in this context')
+        exit(0)
+      except Exception as e:
+        print('Error: ' + e.message)
+        exit(0)
+  reactor.run()
+
+if __name__ == '__main__':
+  main(sys.argv)
 \end{lstlisting}
 
+\section{Convertor de URI in trasaturi pentru modelul SVM}
+\begin{lstlisting}
 
-\chapter{Articole publicate}
+def convert_uri(uri):
+  new_uri = ''
 
+    for index, sub_uri in enumerate(uri.split('%')):
+      if sub_uri:
+        if index == 0:
+          new_uri = sub_uri
+          continue
+      try:
+        hex_val = bytearray.fromhex(sub_uri[:2]).decode()
+      except UnicodeDecodeError:
+        hex_val = ''
+      except ValueError:
+        print(uri + ' --- ' + sub_uri[:2])
+        return ''
+      except Exception as e:
+        print(str(e))
+        print(uri + '---' + sub_uri[:2])
+        exit(0)
+
+      new_uri += hex_val + sub_uri[2:]
+    new_uri = new_uri.upper()
+
+return new_uri
+
+
+def uri_to_features(uri):
+
+  global keywords
+  global keywords_list
+
+  uri = convert_uri(uri)
+
+  keywords_aux = keywords.copy()
+  ok = False
+
+  try:
+    for keys in keywords_aux:
+      if keys in uri:
+        if keywords_list.index(keys) > 184:
+        keywords_aux[keys] = uri.count(keys)
+          if not uri.count(keys) == 0:
+            ok = True
+        else:
+          sub_uri = uri.split(keys)
+          for index, ele in enumerate(sub_uri):
+            if index + 1 < len(sub_uri):
+              if ele and sub_uri[index + 1]:
+                if not ele[-1].isalpha() and not
+                	 sub_uri[index+1][0].isalpha():
+                  keywords_aux[keys] += 1
+                  ok = True
+            else:
+              if not ele and sub_uri[index - 1]:
+                keywords_aux[keys] += 1
+                ok = True
+  except:
+    ok = False
+
+  if ok:
+    features = {}
+    for keys in keywords_list:
+      if not keywords_aux[keys] == 0:
+        features[keywords_list.index(keys)+1] = 
+        			keywords_aux[keys]
+    keywords_aux.clear()
+    return features
+  else:
+    keywords_aux.clear()
+    return {}
+
+
+def main(argv):
+
+  parser = argparse.ArgumentParser()
+  parser.add_argument('-u', type=str, help='uri to convert')
+
+  args = parser.parse_args(argv[1:])
+
+  if not args.u:
+    print('No given string(uri)')
+    exit(0)
+
+  uri = convert_uri(args.u)
+
+  print(uri)
+
+
+if __name__ == '__main__':
+  main(sys.argv)
+\end{lstlisting}
+\section{Monitorizarea adreselor IP ale retelei Tor}
+\begin{lstlisting}
+import re
+import os
+import json
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+
+regex = re.compile(
+  r'^(?:http|ftp)s?://' # http:// or https://
+  r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)
+  	+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|' #domain...
+  r'localhost|' #localhost...
+  r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})' # ...or ip
+  r'(?::\d+)?' # optional port
+  r'(?:/?|[/?]\S+)$', re.IGNORECASE)
+
+all_ip = {}
+
+def isValidUrl(url):
+  if regex.match(url) is not None:
+    return True
+  return False
+  
+
+def sort_ip_list(ip_list):
+
+  from IPy import IP
+  ipl = [(IP(ip).int(), ip for ip in ip_list]
+  ipl.sort()
+  return [ip[1] for ip in ipl]
+
+def init_dictionary():
+
+  all_ip['0.0.0.0'] = []
+
+def pars():
+
+  global all_ip
+  if not os.path.isfile('/home/avid/work/scenarii/bitbucket
+  		/craw_tor/ips_tor_activity'):
+    init_dictionary()
+  else:
+  with open('/home/avid/work/scenarii/bitbucket/craw_tor
+  	     /ips_tor_activity', 'r', encoding='utf8') as fd:
+    all_ip = json.load(fd)
+
+  page = 'https://torstatus.blutmagie.de
+  		/index.php?SR=Uptime&SO=Desc'
+
+  pagesource = urlopen(page)
+  s = pagesource.read()
+  soup = BeautifulSoup(s)
+  table = soup.findAll('table',attrs={'class':'displayTable'})
+  rows = table[0].findAll('tr', attrs={'class': 'r'})
+
+  current_tor_ips = {}
+
+  for row in rows:
+
+    try:
+      time_up = row.findAll('td')[4].contents[0]
+      ip = row.findAll('td', attrs={'class': 'iT'})[0].findAll
+      ('a', attrs={'class': 'who'})[0].contents[0]
+
+      days = time_up.split()[1]
+      if days == 'd':
+        hours = 6
+      else:
+        hours = int(time_up.split()[0])
+        if hours > 6:
+          hours = 6
+    except:
+      continue
+    current_tor_ips[ip] = hours
+
+  for ips in all_ip:
+    if ips == '0.0.0.0':
+      continue
+    if ips not in current_tor_ips:
+      all_ip[ips].append(0)
+      continue
+    all_ip[ips].append(current_tor_ips[ips])
+    del current_tor_ips[ips]
+
+  for ips in current_tor_ips:
+    all_ip[ips] = all_ip['0.0.0.0'].copy()
+    all_ip[ips].append(current_tor_ips[ips])
+
+  all_ip['0.0.0.0'].append(0)
+
+  with open('/home/avid/work/scenarii/bitbucket/craw_tor/
+  	ips_tor_activity', 'w', encoding='utf8') as fd:
+    json.dump(all_ip, fd)
+
+pars()
+\end{lstlisting}

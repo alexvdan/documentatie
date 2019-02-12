@@ -46,7 +46,7 @@
 \contentsline {section}{\numberline {9.1}Privire de ansamblu asupra sistemului}{59}{section.9.1}
 \contentsline {section}{\numberline {9.2}Dezvoltari ulterioare}{59}{section.9.2}
 \contentsline {chapter}{Bibliografie}{61}{chapter*.3}
-\contentsline {chapter}{\numberline {A}Diverse anexe}{65}{chapter.1}
-\contentsline {chapter}{\numberline {B}Demonstra\IeC {{\textcommabelow t}}ii matematice detaliate (dac\IeC {\u a} exist\IeC {\u a})}{67}{chapter.2}
-\contentsline {chapter}{\numberline {C}Pseudo-cod sau cod (dac\IeC {\u a} exist\IeC {\u a})}{69}{chapter.3}
-\contentsline {chapter}{\numberline {D}Articole publicate}{71}{chapter.4}
+\contentsline {chapter}{\numberline {A}Codul sursa(principalele fisiere)}{65}{chapter.1}
+\contentsline {section}{\numberline {A.1}Reverse proxy}{65}{section.1.1}
+\contentsline {section}{\numberline {A.2}Convertor de URI in trasaturi pentru modelul SVM}{67}{section.1.2}
+\contentsline {section}{\numberline {A.3}Monitorizarea adreselor IP ale retelei Tor}{69}{section.1.3}
