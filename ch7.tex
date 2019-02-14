@@ -16,7 +16,7 @@
  
 În testarea sistemului s-a pus accentul pe testare celor două funcționalități de protecție împotrivă atacurilor de SQL injection și a utilizatorilor de Tor. 
 
-Pentru testarea modelului folosit în prevenirea atacurilor de SQL injection s-a folosit setul de date de test specificat și în capitolul ~\ref{cap:implementare}. Acest set a fost obținut din setul inițial de date de antrenare, acesta fiind împărțit în 2 seturi separate cu proporția de 70\%(set antrenaere) și respectiv 30\%(set testare). 
+Pentru testarea modelului folosit în prevenirea atacurilor de SQL injection s-a folosit setul de date de test specificat și în capitolul ~\ref{cap:implementare}. Acest set a fost obținut din setul inițial de date de antrenare, acesta fiind împărțit în 2 seturi separate cu proporția de 70\%(set antrenare) și respectiv 30\%(set testare). 
  
 \begin{center}
 	\begin{tabular}{||c c c c||} 
@@ -32,11 +32,11 @@ Pentru testarea modelului folosit în prevenirea atacurilor de SQL injection s-a
 	\end{tabular}
 \end{center}
 
-Pe baza tabelului de mai sus se pot observa diferențe majore de porformanta între detecția pe setul "Clean" și pe "Infected". Aceste diferențe, respectiv scăderi de performanță în cazul setului Clean, se datorează dimensiunii mult mai mici a setuli de Clean folosit și în antrenarea modelului. 
+Pe baza tabelului de mai sus se pot observa diferențe majore de performanta între detecția pe setul "Clean" și pe "Infected". Aceste diferențe, respectiv scăderi de performanță în cazul setului Clean, se datorează dimensiunii mult mai mici a setului de Clean folosit și în antrenarea modelului. 
 
 Pentru testarea eficienței sistemului de blocare a adreselor IP ale rețelei Tor, s-a realizat o referință între datele colectate de modulul de monitorizare a activității rețelei Tor. 
 
-În prima diagrama este prezentată diferența procentuală dintre adresele IP cu un uptime mai mare de 7 zile în ultima lună și cele cu un uptime mai mic. În cea de a doua diagramă este evidențiată diferența dintre uptime-ul total ale acestor adrese IP din ultima lună. Printr-o analiză simplă în paralel a datelor din cele două diagrame, se poate observa că deși doar 20.31\% din IP-urile folosite de rețeaua Tor sunt bloacate, din timpul total de uptime din ultima lună, 75.6\% aparține acestor adrese IP .
+În prima diagrama este prezentată diferența procentuală dintre adresele IP cu un uptime mai mare de 7 zile în ultima lună și cele cu un uptime mai mic. În cea de a doua diagramă este evidențiată diferența dintre uptime-ul total ale acestor adrese IP din ultima lună. Printr-o analiză simplă în paralel a datelor din cele două diagrame, se poate observa că deși doar 20.31\% din IP-urile folosite de rețeaua Tor sunt blocate, din timpul total de uptime din ultima lună, 75.6\% aparține acestor adrese IP .
 
 \begin{figure}
 	\centering
@@ -48,7 +48,7 @@ Pentru testarea eficienței sistemului de blocare a adreselor IP ale rețelei To
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{test_case_2.png}
-	\caption{ Raportul dintre uptime-ul IP-urile de pe Blacklist și Whitelist din aceași lună }
+	\caption{ Raportul dintre uptime-ul IP-urile de pe Blacklist și Whitelist din aceeași lună }
 	\label{fig:test_2}
 \end{figure}
 
@@ -57,4 +57,4 @@ Pentru testarea eficienței sistemului de blocare a adreselor IP ale rețelei To
 %\section{Performance Tests}
  \section{Teste de performanță}
 
-Sitemul propus a fost testat pe două configurații diferite pentru PC-ul gazdă: Intel Core i7-6600U CPU cu 4 nuclee și o frecvență de 2.6 GHz, cu 16 GB RAM DDR4 și i7-4790k CPU cu 4 nuclee și o frecvență maximă de 4.0 GHz, cu 16 GB RAM DDR4. Ambele sisteme furnizând mult mai multe resure decât cele necesare unei funcționari optime. În cea ce privește resursele minime necesare, acestea trebuie să fie cele necesare rulării unui sistem de operare Windows 10: un procesor cu o frecvență mai mare de 1.0 GHz și o memorie mai mare sau egală cu 2 GB de RAM. În cea ce privește capacitățile sistemului de a suporta conexiuni exterioare, acesta nu a fost testat decât manual, prin intermediul unor mașini virtuale. 
+Sistemul propus a fost testat pe două configurații diferite pentru PC-ul gazdă: Intel Core i7-6600U CPU cu 4 nuclee și o frecvență de 2.6 GHz, cu 16 GB RAM DDR4 și i7-4790k CPU cu 4 nuclee și o frecvență maximă de 4.0 GHz, cu 16 GB RAM DDR4. Ambele sisteme furnizând mult mai multe resurse decât cele necesare unei funcționari optime. În cea ce privește resursele minime necesare, acestea trebuie să fie cele necesare rulării unui sistem de operare Windows 10: un procesor cu o frecvență mai mare de 1.0 GHz și o memorie mai mare sau egală cu 2 GB de RAM. În cea ce privește capacitățile sistemului de a suporta conexiuni exterioare, acesta nu a fost testat decât manual, prin intermediul unor mașini virtuale. 
