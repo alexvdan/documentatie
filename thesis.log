@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.8)  14 FEB 2019 21:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.8)  14 FEB 2019 22:02
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1497,8 +1497,8 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\u' on input line 225.
 
-[46] [47]
-<figures/ui_home.png, id=794, 581.17125pt x 331.2375pt>
+[46]
+<figures/ui_home.png, id=790, 581.17125pt x 331.2375pt>
 File: figures/ui_home.png Graphic file (type png)
 <use figures/ui_home.png>
 Package pdftex.def Info: figures/ui_home.png  used on input line 236.
@@ -1514,7 +1514,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 240--241
 
  []
 
-<figures/ui_configure.png, id=796, 581.17125pt x 335.00156pt>
+<figures/ui_configure.png, id=792, 581.17125pt x 335.00156pt>
 File: figures/ui_configure.png Graphic file (type png)
 <use figures/ui_configure.png>
 Package pdftex.def Info: figures/ui_configure.png  used on input line 244.
@@ -1524,21 +1524,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 248--249
 
  []
 
+[47 <./figures/ui_home.png> <./figures/ui_configure.png>]
 <figures/ui_monitor.png, id=798, 577.40718pt x 335.75438pt>
 File: figures/ui_monitor.png Graphic file (type png)
 <use figures/ui_monitor.png>
 Package pdftex.def Info: figures/ui_monitor.png  used on input line 252.
 (pdftex.def)             Requested size: 367.2014pt x 213.52954pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 256--257
 
  []
 
-[48 <./figures/ui_home.png> <./figures/ui_configure.png>]
-<figures/sqli_respons.png, id=805, 592.46344pt x 236.38312pt>
+<figures/sqli_respons.png, id=800, 592.46344pt x 236.38312pt>
 File: figures/sqli_respons.png Graphic file (type png)
 <use figures/sqli_respons.png>
 Package pdftex.def Info: figures/sqli_respons.png  used on input line 260.
@@ -1548,21 +1545,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 265--266
 
  []
 
-[49 <./figures/ui_monitor.png> <./figures/sqli_respons.png>]
-<figures/tor_respons.png, id=811, 743.02594pt x 317.68687pt>
+[48 <./figures/ui_monitor.png> <./figures/sqli_respons.png>]
+<figures/tor_respons.png, id=807, 743.02594pt x 317.68687pt>
 File: figures/tor_respons.png Graphic file (type png)
 <use figures/tor_respons.png>
-Package pdftex.def Info: figures/tor_respons.png  used on input line 270.
+Package pdftex.def Info: figures/tor_respons.png  used on input line 269.
 (pdftex.def)             Requested size: 367.2014pt x 157.00098pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--275
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
 
  []
 
-) [50 <./figures/tor_respons.png>]
+) [49 <./figures/tor_respons.png>]
 \openout2 = `ch7.aux'.
 
- (ch7.tex
+ (ch7.tex [50
+
+
+
+]
 Capitolul 7.
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
@@ -1582,12 +1583,8 @@ File: figures/test_case_2.png Graphic file (type png)
 <use figures/test_case_2.png>
 Package pdftex.def Info: figures/test_case_2.png  used on input line 50.
 (pdftex.def)             Requested size: 321.2986pt x 166.87578pt.
-[51
-
-
-
-] [52 <./figures/test_case_1.png (PNG copy)> <./figures/test_case_2.png (PNG co
-py)>]
+[51] [52 <./figures/test_case_1.png (PNG copy)> <./figures/test_case_2.png (PNG
+ copy)>]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\textcommabelow' on input line 58.
@@ -1758,7 +1755,7 @@ public/amsfonts/cm/cmti12.pfb><C:/Users/Vdi/AppData/Local/Programs/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmti7.pfb><C:/Users/Vdi/AppData/Local/Programs/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/Vdi/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on thesis.pdf (82 pages, 1545267 bytes).
+Output written on thesis.pdf (82 pages, 1544909 bytes).
 PDF statistics:
  1342 PDF objects out of 1440 (max. 8388607)
  523 named destinations out of 1000 (max. 500000)
