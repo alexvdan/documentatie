@@ -29,7 +29,7 @@ Figura ~\ref{fig:rev-proxy} prezintă modalitatea de integrare a unui reverse pr
 Cele mai obișnuite caracteristici ce pot fi oferite de utilizarea unui reverse proxy sunt: 
 \begin{itemize}
 	\item Load balancing-un reverse proxy poate să distribuie request-urile primite de la clienți, astfel încât nici un server să nu fie copleșit ce reqesturi. În cazul în care un server este supraîncărcat cu reqest-uri sau este căzut, acesta poate să redirecționeze traficul carea alte servere funcționale. 
-	\item Web acceleration - un reverse proxy poate să realizeze compresia datelor sau să memoreze în memoria cache conținut ce este frecvent accesat sau poate să realizeze operațiile de criptare SSL executate în mod normal de server, îmbunătățind astfel în mod considerabil viteza de comunicare dintra client și serverul destinație. 
+	\item Web acceleration - un reverse proxy poate să realizeze compresia datelor sau să memoreze în memoria cache conținut ce este frecvent accesat sau poate să realizeze operațiile de criptare SSL executate în mod normal de server, îmbunătățind astfel în mod considerabil viteza de comunicare dintre client și serverul destinație. 
 	\item  Securitate și anonimitate-prin interceptarea request-urilor primite de către server, acesta asigură anonimitatea serverului acționând că un nivel extra de securitate. De asemenea se asigură că mai multe servere pot fi accesate prin intermediul unui punct comun, indiferent de structura rețelei interne. 
 \end{itemize}
 
@@ -39,7 +39,7 @@ Cele mai obișnuite caracteristici ce pot fi oferite de utilizarea unui reverse 
 
 Algoritmul de machine learning, support vector machine reprezintă un model obținut prin folosirea de diverși algoritmi pentru antrenarea acestuia, folosit pentru a clasifica date. Acest model intră în categoria de învățare supravegheată('supervised learning'), întrucât pentru obținerea lui se folosește un set de date că și exemplu, date pe care modelul le va folosi ca referință pentru clasificarea noilor evenimente. 
   
-Realizarea unui astfel de model se obține în urma executării unui proces elaborat ce implică mai mulți păși: 
+Realizarea unui astfel de model se obține în urma executării unui proces elaborat ce implică mai mulți pași: 
 \begin{itemize}
 	\item  Primul pas reprezintă identificarea datelor relevante în cea ce privește problema tratată(setul de antrenare). În conformitate cu scopul clasificării unor evenimente/ date, în două(sau mai multe) categorii, inițial trebuie identificate o serie de astfel de evenimente și categorizate de către utilizator în evenimente ce sigur aparțin fiecărei dintre categoriile țintă. 
 	\item  După  obținerea datelor de antrenare, trebuie identificate toate trăsăturile relevante din aceste date, trăsături care să fie cât se poate de specifice fiecărei categorii în parte. Fiind recomandată evitarea trăsăturilor ce sunt prezente în mare parte din date sub aceeași formă (ex:caracterul '=' sau'?' într-un URI folosit pentru clasificarea atacurilor SQL injection), indiferent de categoria din care acestea fac parte. 
@@ -118,7 +118,7 @@ Un sistem de prevenire a intruziunilor poate să efectueze oricare din următoar
 %	Terminates the TCP session that is being exploited by an outsider for the attack. It blocks the offending user account or source IP address that attempts to access the target host, application, or other resources unethically.
 	\item  Să întrerupă sesiunea dintre client și server, în cazul în care clientul desfășoară sau încearcă să desfășoare activități malițioase în rețeaua protejată de sistem. Acest lucru se poate realiza prin blocarea anumitor credentiale asociate cu utilizatorul respectiv sau prin blocarea adresei IP a acestuia. 
 	\item  În condițiile în care un sistem de prevenire a intruziunilor detectează/clasifica o activitate ca fiind malițioasă, acesta poate să ia măsuri automat pentru a preveni un astfel de atac pe viitor(ex: în momentul detectării unei tentative de atac prin SQL injection, sistemul de prevenire a intruziunilor poate să blocheze în mod automat adresa IP a utilizatorului ce încearcă să facă atacul, nepermițându-i acestuia să se mai conecteze la serverul destinație pentru un anumit interval de timp sau până la intervenția unui administrator). 
-	\item  O alata abordare posibilă în momentul declanșării unui eveniment malițios este alterarea traficului astfel încât să elimine conținutul malițios din acesta. Pentru realizarea acestui lucru, un sistem de prevenire a intruziunilor poate să șteargă atașamente infectate din interiorul unui mail, să altereze conținutul unui pachet sau să omită transmiterea mai departe a unor pachete. 
+	\item  O altă abordare posibilă în momentul declanșării unui eveniment malițios este alterarea traficului astfel încât să elimine conținutul malițios din acesta. Pentru realizarea acestui lucru, un sistem de prevenire a intruziunilor poate să șteargă atașamente infectate din interiorul unui mail, să altereze conținutul unui pachet sau să omită transmiterea mai departe a unor pachete. 
 	
 \end{itemize}
 

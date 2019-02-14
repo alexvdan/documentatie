@@ -80,11 +80,11 @@ Figura ~\ref{fig:sqli_svm}  prezintă care sunt fișierele utilizate pentru proc
 Figura ~\ref{fig:source_code}  prezintă care sunt fișierele, specific fiecărui modul, care sunt accesate în mod direct de către interfață sau indirect de alte fișiere, în timpul rulării și relațiile dintre acestea. \\
 
 
-\textbf{User Interface}  reprezintă întreaga componentă ce realizează interfața de utilizator cu toate fișierele necesare realizării ei incorporate în compoziția sa. Aceasta a fost realizată ca un proiect dezvoltat în .Net implicând multe fișiere cu scopul realizării elementelor grafice. Aceste elementu nu vor fi tratate în această secțiune. 
+\textbf{User Interface}  reprezintă întreaga componentă ce realizează interfața de utilizator cu toate fișierele necesare realizării ei incorporate în compoziția sa. Aceasta a fost realizată ca un proiect dezvoltat în .Net implicând multe fișiere cu scopul realizării elementelor grafice. Aceste elemente nu vor fi tratate în această secțiune. 
 
 \textbf{Proxy.py}  reprezintă fișierul ce încorporează, respectiv leagă, tot codul ce constituie partea de "back end" a proiectului. În acest script de python se realizează instanțierea elementului de reverse proxy cu parametri de adrese IP și porturi aferente, precum și furnizarea metodelor de detecție componentei de reverse proxy. 
 
-\textbf{Twisted library}  este o bibliotecă open source scrisă în Python, ce oferă suport pentru diferite protocoale(TCP, UDP, SSL/TLS). Biblioteca a fost folosită pentru partea de cod ce oferă implementarea unui reverse proxy. Mare parte din fișierele oferite de acesta bibliotecă au fost folosite fără a fi suprascrise sau a li se aduce modificări ulterioare, însă în vederea atingeri scopului propus, asupra unor fișiere sursă au fost aduse mici modificări(internet.tcp.py).
+\textbf{Twisted library}  este o bibliotecă open source scrisă în Python, ce oferă suport pentru diferite protocoale (TCP, UDP, SSL/TLS). Biblioteca a fost folosită pentru partea de cod ce oferă implementarea unui reverse proxy. Mare parte din fișierele oferite de acesta bibliotecă au fost folosite fără a fi suprascrise sau a li se aduce modificări ulterioare, însă în vederea atingerii scopului propus, asupra unor fișiere sursă au fost aduse mici modificări (internet.tcp.py).
 
 \textbf{internet.tcp.py} este scriptul din biblioteca twisted ce oferă suportul pentru protocolul TCP. Acest fișier a fost modificat pentru introducerea detecției împotriva utilizatorilor de Tor. Script-ul integrează lista realizată de proiectul "Tor activity monitor" pentru verificarea adresei utilizatorilor ce doresc să stabilească o conexiune TCP. 
 
@@ -93,7 +93,7 @@ Figura ~\ref{fig:source_code}  prezintă care sunt fișierele, specific fiecăru
 
 \section{Algoritmi, metode si API-uri}
 
-În acesta secțiune se urmărește descrierea codului sursă folosit la realizarea sistemului propus și explicarea amănunțită a codului/metodelor considerate mai relevante, precum și a principalelor api-uri utilizate în implementarea acestuia. Abordarea codului sursă se realizează conform sub-proiectelor prezentate în secțiunea anterioară(Tor activity monitor, AQLi SVM, Interfața utilizator). 
+În acesta secțiune se urmărește descrierea codului sursă folosit la realizarea sistemului propus și explicarea amănunțită a codului/metodelor considerate mai relevante, precum și a principalelor api-uri utilizate în implementarea acestuia. Abordarea codului sursă se realizează conform sub-proiectelor prezentate în secțiunea anterioară (Tor activity monitor, AQLi SVM, Interfața utilizator). 
 
 \subsection{Tor activity monitor}
 
@@ -112,7 +112,7 @@ ip = row.findAll('td', attrs={'class':'iT'})[0].findAll('a',
 
 \end{lstlisting}
 
-Pentru prelucrarea conținutului paginii, acesta a fost download-at în memoria programului, iar codul HTML rezultant a fost prelucrat cu ajutorul bibliotecii de python open source, BeautifulSoup. Codul de mai sus reprezintă extragerea valori de timp(uptime) și adresa IP căreia aceasta corespunde. Variabila "row" fiind un element din obiectul iterabil rezultat din inițializarea bibliotecii BeautifulSoup cu codul HTML al paginii. 
+Pentru prelucrarea conținutului paginii, acesta a fost download-at în memoria programului, iar codul HTML rezultant a fost prelucrat cu ajutorul bibliotecii de python open source, BeautifulSoup. Codul de mai sus reprezintă extragerea valori de timp (uptime) și adresa IP căreia aceasta corespunde. Variabila "row" fiind un element din obiectul iterabil rezultat din inițializarea bibliotecii BeautifulSoup cu codul HTML al paginii. 
 
 \lstset{language=python,frame=single, showstringspaces=false}
 \begin{lstlisting}
@@ -136,14 +136,14 @@ soup = BeautifulSoup(pagesource.read())
 table = soup.findAll('table', attrs={'class': 'displayTable'})
 \end{lstlisting}
 
-Pentru procesarea  conținutului unei pagini web("Tor Network Status" \cite{tot_status}) s-au folosit bibliotecile de python, open source, urllib și BeautifulSoup \cite{btf_soup}.  Biblioteca urllib oferă funcții și clase ce pot fi folosite pentru deschiderea de URL-uri(urlopen). Funcția folosită în codul de mai sus primește ca parametru "page" adresa sub formă de string a paginii ce se dorește a fi citită. Biblioteca BeautifulSoup este o bibliotecă de python folosită pentru extragerea de date din fișiere de HTML sau XML. Acesta este inițializată cu un document HTML/XML și că rezultat oferă un obiect ce permite navigarea prin codul sursă asemeni unei structuri de date imbricate. Astfel, spre exemplu, pentru identificarea structurii corespunzătoare tabelei de adrese IP din codul sursă al paginii s-a folosit o singură linie de cod, în care s-au specificat numele și atributele specifice acesteia. 
+Pentru procesarea  conținutului unei pagini web("Tor Network Status" \cite{tot_status}) s-au folosit bibliotecile de python, open source, urllib și BeautifulSoup \cite{btf_soup}.  Biblioteca urllib oferă funcții și clase ce pot fi folosite pentru deschiderea de URL-uri (urlopen). Funcția folosită în codul de mai sus primește ca parametru "page" adresa sub formă de string a paginii ce se dorește a fi citită. Biblioteca BeautifulSoup este o bibliotecă de python folosită pentru extragerea de date din fișiere de HTML sau XML. Acesta este inițializată cu un document HTML/XML și că rezultat oferă un obiect ce permite navigarea prin codul sursă asemeni unei structuri de date imbricate. Astfel, spre exemplu, pentru identificarea structurii corespunzătoare tabelei de adrese IP din codul sursă al paginii s-a folosit o singură linie de cod, în care s-au specificat numele și atributele specifice acesteia. 
 
-Rezultatele rulării fișierului  Get\_new\_Tor\_ips.py sunt  actualizate în  IPs\_Tor\_activity.txt.  Acest fișier este de fapt un json în care se realizează dump la noul dicționar obținut de   Get\_new\_Tor\_ips.py.  Dicționarul este constituit din adresa IP ca și cheie și o listă .Structura acestor liste este realizată dintr-o serie de numere între 0 și 6 ce reprezintă timpul total de uptime corespunzător sfertului respectiv de zi. Dimensiunea acestei liste este fixată la 30(zile)*4(sferturi de zi), pe măsură ce un element nou este adăugat, primul element din lista fiind scos. 
+Rezultatele rulării fișierului  Get\_new\_Tor\_ips.py sunt  actualizate în  IPs\_Tor\_activity.txt.  Acest fișier este de fapt un json în care se realizează dump la noul dicționar obținut de   Get\_new\_Tor\_ips.py.  Dicționarul este constituit din adresa IP ca și cheie și o listă .Structura acestor liste este realizată dintr-o serie de numere între 0 și 6 ce reprezintă timpul total de uptime corespunzător sfertului respectiv de zi. Dimensiunea acestei liste este fixată la 30 (zile) *4 (sferturi de zi), pe măsură ce un element nou este adăugat, primul element din lista fiind scos. 
 
 Următorul pas este filtrarea tuturor adreselor IP ce au un uptime mai mare de 7 zile. Acest lucru este realizat de scriptul  Get\_ips\_blacklist.py, iar rezultatele sunt stocate în Tor\_ips.txt, o adresă IP pe linie. 
 
 \subsection{SQLi SVM}
-Desfășurarea proiectului începe de la cele două fișiere SQLi\_URLs si Clean\_URLs.  În aceste două fișiere se află URL-uri complete din categoria conformă cu numele fiecărui fișier. Aceste fișiere sunt procesate de scriptul  URI\_processor.py  care are rolul de a uniformiza datele în aceeași encodare. Următoarea bucată de cod prezintă secvența ce transformă valorile hexa dintr-un URI în caractere și modul în care erorile de encodare sunt tratate(sunt afișate pentru a fi tratate manual de către programator): 
+Desfășurarea proiectului începe de la cele două fișiere SQLi\_URLs si Clean\_URLs.  În aceste două fișiere se află URL-uri complete din categoria conformă cu numele fiecărui fișier. Aceste fișiere sunt procesate de scriptul  URI\_processor.py  care are rolul de a uniformiza datele în aceeași encodare. Următoarea bucată de cod prezintă secvența ce transformă valorile hexa dintr-un URI în caractere și modul în care erorile de encodare sunt tratate (sunt afișate pentru a fi tratate manual de către programator): 
 
 \lstset{language=python,frame=single, showstringspaces=false}
 \begin{lstlisting}
@@ -160,10 +160,10 @@ for index, sub_uri in enumerate(uri.split('%')):
         new_uri += hex_val + sub_uri[2:]
 \end{lstlisting}
 
-Întrucât într-un URL caracterul '\%' nu poate să apăra decât dacă acesta este encodat('\%25'- valoarea pentru encodarea caracterului '\%'), identificarea tuturor caracterelor encodate a fost făcută prin identificarea tuturor caracterelor de tipul '\%' în URI. În cazul în care un astfel de caracter este găsit, se încearcă conversia următoarelor două caractere(așteptându-se, conform convenției, să fie cifre sau litere de la A la F), din valoarea în hexa corespunzătoare unui anumit caracter în caracterul în sine. 
+Întrucât într-un URL caracterul '\%' nu poate să apăra decât dacă acesta este encodat ('\%25'- valoarea pentru encodarea caracterului '\%'), identificarea tuturor caracterelor encodate a fost făcută prin identificarea tuturor caracterelor de tipul '\%' în URI. În cazul în care un astfel de caracter este găsit, se încearcă conversia următoarelor două caractere (așteptându-se, conform convenției, să fie cifre sau litere de la A la F), din valoarea în hexa corespunzătoare unui anumit caracter în caracterul în sine. 
 
   
-În urma procesării datelor, rezultă cele două fișiere  SQLi\_URIs si Clean\_URIs,  acestea având același conținut ca cele anterioare însă în aceeași encodare. În urma obținerii acestor două fișiere, a fost realizată completarea listei de trăsături(lista inițială este constituită din toate cuvintele cheie a limbajului SQL) cu caracterele speciale întâlnite în acest limbaj. Scriptul  Get\_secial\_chars\_frequency.py  are rolul de a determina frecvența de apariție a fiecărui caracter special în cele două seturi de date, iar pe baza unei observații umane, a fost realizată determinarea caracterelor ce constituie trăsături rentabile. Următoarea bucată de cod este din scriptul Get\_secial\_chars\_frequency.py  și realizează numărarea URI-urilor(pentru comparare) din setul de date și frecvența caracterelor speciale("dict" este un dicționar cu cheile fiind caracterele speciale utilizate în limbaj): 
+În urma procesării datelor, rezultă cele două fișiere  SQLi\_URIs si Clean\_URIs,  acestea având același conținut ca cele anterioare însă în aceeași encodare. În urma obținerii acestor două fișiere, a fost realizată completarea listei de trăsături (lista inițială este constituită din toate cuvintele cheie a limbajului SQL) cu caracterele speciale întâlnite în acest limbaj. Scriptul  Get\_secial\_chars\_frequency.py  are rolul de a determina frecvența de apariție a fiecărui caracter special în cele două seturi de date, iar pe baza unei observații umane, a fost realizată determinarea caracterelor ce constituie trăsături rentabile. Următoarea bucată de cod este din scriptul Get\_secial\_chars\_frequency.py  și realizează numărarea URI-urilor(pentru comparare) din setul de date și frecvența caracterelor speciale("dict" este un dicționar cu cheile fiind caracterele speciale utilizate în limbaj): 
 \lstset{language=python,frame=single, showstringspaces=false}
 \begin{lstlisting}
 with open(args.f, 'r') as fd:
@@ -176,9 +176,9 @@ with open(args.f, 'r') as fd:
                 
 \end{lstlisting}
 
-Pentru identificarea caracterelor relevante din limbajul SQL în comparație cu cele folosite într-un URL obișnuit, s-a ales numărarea frecvenței de apariție a acestora în URL-uri normale, dar și în URL-uri ce conțin atacuri de SQL injection. Numărarea se face alternativ, rezultatele fiind furnizate că două seturi de date separate, bucata anterioară de cod reprezentând procesul doar pentru una dintre cele două categorii. Dicționarul referit în cod este alcătuit dintr-un dicționar ce are că și chei valoarea caracterelor speciale căutate, iar ca valoare, acestea sunt inițializate pe zero pentru a fi incrementate o data cu numărul de apariții ale caracterelor căutate. Pentru uniformizarea setului de date, întrucât distribuția acestor caractere nu este tot timpul uniformă, se ține cont și de numărul de linii(pe fiecare linie se află un URI distinct) în care au fost identificate frecvențele lor de apariție. 
+Pentru identificarea caracterelor relevante din limbajul SQL în comparație cu cele folosite într-un URL obișnuit, s-a ales numărarea frecvenței de apariție a acestora în URL-uri normale, dar și în URL-uri ce conțin atacuri de SQL injection. Numărarea se face alternativ, rezultatele fiind furnizate că două seturi de date separate, bucata anterioară de cod reprezentând procesul doar pentru una dintre cele două categorii. Dicționarul referit în cod este alcătuit dintr-un dicționar ce are că și chei valoarea caracterelor speciale căutate, iar ca valoare, acestea sunt inițializate pe zero pentru a fi incrementate o data cu numărul de apariții ale caracterelor căutate. Pentru uniformizarea setului de date, întrucât distribuția acestor caractere nu este tot timpul uniformă, se ține cont și de numărul de linii (pe fiecare linie se află un URI distinct) în care au fost identificate frecvențele lor de apariție. 
 
-După determinarea caracterelor relevante, acestea au fost completate manual în fișierul key\_features, fișier ce însumează toate trăsăturile ce sunt folosite în antrenarea modelului(fiecare linie conține o trăsătură, numărul liniei fiind și indicele de referință a trăsăturii). 
+După determinarea caracterelor relevante, acestea au fost completate manual în fișierul key\_features, fișier ce însumează toate trăsăturile ce sunt folosite în antrenarea modelului (fiecare linie conține o trăsătură, numărul liniei fiind și indicele de referință a trăsăturii). 
 
 Pentru obținerea datelor într-un format ce poate fi procesat de biblioteca libsvm \cite{libsvm} a fost necesară transformarea acestora într-un anumit format: 
 
@@ -187,7 +187,7 @@ Pentru obținerea datelor într-un format ce poate fi procesat de biblioteca lib
 -1 54:1 77:1
 \end{lstlisting}
 
-Conversia URI-urilor în formatul de mai sus este realizată de scriptul  URI-file\_to\_features.py.  Formatul de mai sus este reprezentarea fiecărui URL în funcție de tipul acestuia și indicele trăsăturii găsite în interiorul sau precum și frecvența de apariție a acestora(tip trăsătură : trăsătură : frecvență). Următoarele bucăți de cod sunt extrasă din fișieru l URI-file\_to\_features.py  și realizează conversia unui URI în echivalentul sau în trăsături: 
+Conversia URI-urilor în formatul de mai sus este realizată de scriptul  URI-file\_to\_features.py.  Formatul de mai sus este reprezentarea fiecărui URL în funcție de tipul acestuia și indicele trăsăturii găsite în interiorul sau precum și frecvența de apariție a acestora (tip trăsătură : trăsătură : frecvență). Următoarele bucăți de cod sunt extrasă din fișieru l URI-file\_to\_features.py  și realizează conversia unui URI în echivalentul sau în trăsături: 
 
 \begin{lstlisting}
 if keys in uri:
@@ -197,7 +197,7 @@ if keys in uri:
     ok = True
 \end{lstlisting}
 
-În lista cu trăsături, primele 184 de poziții corespund cuvintelor cheie ale limbajului SQL, următoarele 8 poziții aparținând trăsăturilor de tipul caracter special(determinate la pasul anterior de script-ul "Get\_special\_chars\_frequency.py"). În cazul în care o astfel de trăsătură este găsită într-un URI, pur și simplu se găsește numărul total de apariții a caracterului respectiv în URI. 
+În lista cu trăsături, primele 184 de poziții corespund cuvintelor cheie ale limbajului SQL, următoarele 8 poziții aparținând trăsăturilor de tipul caracter special (determinate la pasul anterior de script-ul "Get\_special\_chars\_frequency.py"). În cazul în care o astfel de trăsătură este găsită într-un URI, pur și simplu se găsește numărul total de apariții a caracterului respectiv în URI. 
 
 
 \begin{lstlisting}
@@ -211,9 +211,9 @@ for index, ele in enumerate(sub_uri):
       keywords_aux[keys] += 1
 \end{lstlisting}
 
-Pentru trăsăturile de pe primele 184 de poziții, adică cuvintele cheie ale limbajului SQL, s-a abordat o logică mai complexă de procesare. O data ce un cuvânt este găsit într-un URI, pentru fiecare apariție a acestui cuvânt se verifică ca primul caracter anterior cuvântului și primul următor cuvântului să nu fie literă, astfel eliminându-se cazurile în care unele cuvinte sunt incluse în altele(ex:  \textbf{all} și de\textbf{all}ocate).
+Pentru trăsăturile de pe primele 184 de poziții, adică cuvintele cheie ale limbajului SQL, s-a abordat o logică mai complexă de procesare. O data ce un cuvânt este găsit într-un URI, pentru fiecare apariție a acestui cuvânt se verifică ca primul caracter anterior cuvântului și primul următor cuvântului să nu fie literă, astfel eliminându-se cazurile în care unele cuvinte sunt incluse în altele (ex:  \textbf{all} și de\textbf{all}ocate).
 
-În urma procesării fișierelor de date, rezultă un fișier (all\_URI\_features)  ce însumează toate datele utilizate în antrenarea modelului(exemple atât pozitive cât și negative), însă sub formă prezentată anterior(tip trăsătură :  trăsătură : frecvență). Acest fișier este împărțit în două fișiere cu proporția  de 70\% pentru Train\_set și 30\% Tes\_set de scriptul get\_Trainset\_Testset.py.  cu scopul de a obține un grup de date atât pentru antrenarea modelului cât și pentru testarea ulterioară a acestuia. 
+În urma procesării fișierelor de date, rezultă un fișier  (all\_URI\_features)  ce însumează toate datele utilizate în antrenarea modelului(exemple atât pozitive cât și negative), însă sub formă prezentată anterior (tip trăsătură :  trăsătură : frecvență). Acest fișier este împărțit în două fișiere cu proporția  de 70\% pentru Train\_set și 30\% Tes\_set de scriptul get\_Trainset\_Testset.py.  cu scopul de a obține un grup de date atât pentru antrenarea modelului cât și pentru testarea ulterioară a acestuia. 
 
 Pentru antrenarea modelului, s-a folosit biblioteca open sourece libsvm. Această bibliotecă furnizează fișierele necesare antrenării modelului de svm și de prezicere a unui rezultat pe un model existent. Apelul către executabilul "svm-train.exe" se face prin intermediul scriptului de python  Train\_SQLi\_model.py.
 Executabilul de windows furnizat de biblioteca libsvm poate fi apelat conform exemplului următor: 
@@ -226,7 +226,7 @@ svm-train.exe [options] training_set_file [model_file]
 
  Componenta de interfață reprezintă atât proiectul în .net în care a fost realizată interfață sistemului, dar și fișierele/script-urile ce au rolul de a interconecta rezultatele celor două proiecte anterioare cu acesta. 
 
-Scriptul Proxy.py încapsulează toate elementele, din partea de back end, a proiectului propus. Acesta de asemenea furnizează ca output într-un format specific(format ce este cunoscut și interpretat de interfața grafică) toate evenimentele ce apar în timpiul rulării sistemului. În acest script se realizează instanțierea elementului de reverse proxy cu parametri de adrese IP și porturi aferente, precum și furnizarea metodelor de detecție componenței de reverse proxy. Inițializarea elementului de reverse proxy se realizează cu ajutorul codului oferit de biblioteca twisted. Acest cod este prezentat în "Anexa A" a acestei lucrări. 
+Scriptul Proxy.py încapsulează toate elementele, din partea de back end, a proiectului propus. Acesta de asemenea furnizează ca output într-un format specific (format ce este cunoscut și interpretat de interfața grafică) toate evenimentele ce apar în timpiul rulării sistemului. În acest script se realizează instanțierea elementului de reverse proxy cu parametri de adrese IP și porturi aferente, precum și furnizarea metodelor de detecție componenței de reverse proxy. Inițializarea elementului de reverse proxy se realizează cu ajutorul codului oferit de biblioteca twisted. Acest cod este prezentat în "Anexa A" a acestei lucrări. 
 
 În următoarele imagini sunt prezentate posibilele pagini ale interfeței utilizator precum și o scurtă descriere ce ilustrează funcționalitățile oferite de paginile respective pentru utilizator. 
 \newpage]

@@ -1,5 +1,5 @@
 \babel@toc {romanian}{}
-\contentsline {chapter}{List\u {a} de figuri}{iii}{chapter*.2}
+\contentsline {chapter}{List\u {a} de figuri}{III}{chapter*.2}
 \contentsline {chapter}{\numberline {1}Introducere}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Context}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Motiva\IeC {{\textcommabelow t}}ie}{2}{section.1.2}
@@ -34,7 +34,7 @@
 \contentsline {section}{\numberline {6.1}Structura codului sursa}{37}{section.6.1}
 \contentsline {section}{\numberline {6.2}Algoritmi, metode si API-uri}{42}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}Tor activity monitor}{42}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}SQLi SVM}{43}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.2}SQLi SVM}{44}{subsection.6.2.2}
 \contentsline {subsection}{\numberline {6.2.3}Interfa\IeC {{\textcommabelow t}}\IeC {\u a} utilizator}{46}{subsection.6.2.3}
 \contentsline {chapter}{\numberline {7}Teste \IeC {{\textcommabelow s}}i rezultate experimentale}{51}{chapter.7}
 \contentsline {section}{\numberline {7.1}Teste de func\IeC {{\textcommabelow t}}ionalitate}{51}{section.7.1}

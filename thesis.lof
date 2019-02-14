@@ -23,11 +23,11 @@
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Modulul pentru monitorizarea activit\IeC {\u a}\IeC {{\textcommabelow t}}ii re\IeC {{\textcommabelow t}}elei Tor}}{37}{figure.6.1}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Modulul pentru prevenirea atacurilor SQL injection}}{39}{figure.6.2}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Interac\IeC {{\textcommabelow t}}iunea dintre interfa\IeC {{\textcommabelow t}}a grafic\IeC {\u a} \IeC {{\textcommabelow s}}i celelalte module }}{41}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Meniul "Home" in interfata grafica}}{47}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Meniul "Configure" in interfa\IeC {{\textcommabelow t}}a grafica}}{47}{figure.6.5}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Meniul "Monitor" in interfa\IeC {{\textcommabelow t}}a grafica}}{48}{figure.6.6}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Raspunsul pentru SQL injection URL}}{48}{figure.6.7}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Principalele module ale sistemului propus}}{49}{figure.6.8}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Meniul "Home" in interfata grafica}}{48}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Meniul "Configure" in interfa\IeC {{\textcommabelow t}}a grafica}}{48}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Meniul "Monitor" in interfa\IeC {{\textcommabelow t}}a grafica}}{49}{figure.6.6}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Raspunsul pentru SQL injection URL}}{49}{figure.6.7}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Principalele module ale sistemului propus}}{50}{figure.6.8}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Raportul dintre num\IeC {\u a}rul IP-urilor de pe Blacklist \IeC {{\textcommabelow s}}i Whitelist dintr-o lun\IeC {\u a} }}{52}{figure.7.1}
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Raportul dintre uptime-ul IP-urile de pe Blacklist \IeC {{\textcommabelow s}}i Whitelist din aceea\IeC {{\textcommabelow s}}i lun\IeC {\u a} }}{52}{figure.7.2}
