@@ -255,7 +255,7 @@ Cluj-Napoca & {\thesissignatureromanian}\\
 
 % ABSTRACT
 \begin{abstract}
-\textit{\thesistitle}  încapsulează trăsăturile normale ale unui reverse proxy oferind în plus protecție împotriva posibilelor atacuri la nivel de rețea. Produsul oferă protecție prin implementarea a două tipuri de prevenire a atacurilor: listă neagră pentru adresele IP și  blocarea unor request-uri pe baza URL-urilor prin analiza conținutului lor. Pentru demonstrarea fiecărei metode în parte, s-a folosit: blocarea adreselor IP utilizate de rețeaua Tor pentru lista de IP-uri "negre" și detectarea atacurilor de SQL injection pentru protecția împotriva URL-urilor cu conținut malițios. Detecția atacurilor de tipul SQL injection se realizează prin analiza URI-urilor trimise de către clienți, în relație cu un model antrenat anterior folosind machine learning. Ambele implementări asigură adăugarea cu ușurință de noi detecții, lista de ip-uri blocate fiind acesibila utilizatorului atât pentru vizualizare cât și pentru editare. 
+\textit{\thesistitle}  încapsulează trăsăturile normale ale unui reverse proxy oferind în plus protecție împotriva posibilelor atacuri la nivel de rețea. Produsul oferă protecție prin implementarea a două tipuri de prevenire a atacurilor: listă neagră pentru adresele IP și  blocarea unor request-uri pe baza URL-urilor prin analiza conținutului lor. Pentru demonstrarea fiecărei metode în parte, s-a folosit: blocarea adreselor IP utilizate de rețeaua Tor pentru lista de IP-uri "negre" și detectarea atacurilor de SQL injection pentru protecția împotriva URL-urilor cu conținut malițios. Detecția atacurilor de tipul SQL injection se realizează prin analiza URI-urilor trimise de către clienți, în relație cu un model antrenat anterior folosind machine learning. Ambele implementări asigură adăugarea cu ușurință de noi detecții, lista de IP-uri blocate fiind accesibilă utilizatorului atât pentru vizualizare cât și pentru editare. 
 \end{abstract}
 
 \begin{titlepage}
@@ -276,11 +276,16 @@ Cluj-Napoca & {\thesissignatureromanian}\\
 %\listoftables
 
 \listoffigures
+\newpage
+\newpage
 
 \begin{titlepage}
 \phantom{1}
 \end{titlepage}
 
+\begin{titlepage}
+	\phantom{1}
+\end{titlepage}
 % \clearpage
 \newpage
 
@@ -290,7 +295,6 @@ Cluj-Napoca & {\thesissignatureromanian}\\
 \pagestyle{normalpagestyle}
 \renewcommand{\chaptermark}[1]{ \markboth{\thechapter. #1}{} }
 \renewcommand{\sectionmark}[1]{ \markright{\thesection. #1}{} }
-
 
 \include{ch1}
 \include{ch2}

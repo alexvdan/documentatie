@@ -112,10 +112,10 @@ Pentru realizarea sistemului propus s-au folosit două limbaje de programare: Py
 Motivul utilizării atât a limbajului Python3 cât și Python2 este datorat diferențelor de module și librării open-source disponibile pentru cele două limbaje dar și a faptului că suportul pentru Python2 se încheie în anul 2020. Conform documentațiilor oficiale  \cite{python3_doc} și \cite{python2_doc}, dar și articolului \textit{Python 2 to python 3: why, and how hard can it be?} de Tim Grey \cite{why_python3},  între cele două versiuni nu sunt modificări majore, însă în anumite cazuri pot exista librării care să ofere doar suport pentru una dintre acestea. 
 
 În realizarea modulului pentru clasificarea request-urilor împotriva atacurilor SQL injection s-a folosit o colecție de date reale atât de atacuri cât și de trafic curat. Pentru uniformizarea acestor date și pentru a trata tentativele de păcălire a clasificatorului prin codarea unor caractere în valoarea lor în cod hexadecimal (exemplu 'https://www.google.ro /search?q=a' echivalent cu 'https://www.google.ro/search?q=\%61') datele au fost preprocesate și transformate în întregime în coduri hexadecimale  \cite{ascii}.  În procesarea datelor, pentru identificarea trăsăturilor relevant, s-au identificat caracterele specifice limbajului \cite{char_sql} si cuvintele cheie rezervare \cite{key_sql}. Ulterior, pentru antrenarea modelului de support vector machine și pentru clasificarea noilor request-uri s-a folosit software-ul open-source libsvm \cite{libsvm_class}. 
-
+%\newpage
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.6\textwidth]{sql_arh.png}
+	\includegraphics[width=0.5\textwidth]{sql_arh.png}
 	\caption{Arhitectura unui sistem de clasificare a request-urilor HTTP}
 	\label{fig:sql-arh}
 \end{figure}

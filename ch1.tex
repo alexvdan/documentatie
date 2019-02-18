@@ -1,5 +1,6 @@
 
 %\chapter{Introduction}
+
 \chapter{Introducere}
 \label{cap:Introducere}
 
@@ -8,7 +9,7 @@
 
 În general, tentativele de exploatare a vulnerabilităților unei aplicații vin sub formă de input către aceasta, input generat de către un atacator care intenționează să întrerupă activitatea sau să preia controlul aplicației. Un sistem de prevenire a intruziunilor (IPS) este poziționat între aplicație și clienții acesteia, și previne exploatarea unor astfel de vulnerabilități. 
 
-Prin folosirea unui reverse proxy pentru accesarea resurselor unui server de către clienți, poate să se aducă numeroase beneficii procesului de administrare a serverului \cite{top_8}. Spre deosebire de un forward proxy care e un intermediar pentru o serie de clienți prestabiliți, pentru a accesa orice server, un reverse proxy e un intermediar pentru o serie de servere prestabilite pentru a fi accesate de orice client. Unul dintre avantajele folosirii unui reverse proxy este centralizarea întregului trafic al serverului/serverelor într-un singur punct de acces, aceasta fiind și principala caracteristică exploatată de acest proiect pentru filtrarea IP-urilor nedorite (în cazul nostru cele utilizate de rețeaua Tor) și verificarea conţinutului URI-urilor pentru posibile atacuri (SQL injection).
+Prin folosirea unui reverse proxy pentru accesarea resurselor unui server de către clienți, se poate să se aducă numeroase beneficii procesului de administrare a serverului \cite{top_8}. Spre deosebire de un forward proxy care e un intermediar pentru o serie de clienți prestabiliți, pentru a accesa orice server, un reverse proxy e un intermediar pentru o serie de servere prestabilite pentru a fi accesate de orice client. Unul dintre avantajele folosirii unui reverse proxy este centralizarea întregului trafic al serverului/serverelor într-un singur punct de acces, aceasta fiind și principala caracteristică exploatată de acest proiect pentru filtrarea IP-urilor nedorite (în cazul nostru cele utilizate de rețeaua Tor) și verificarea conţinutului URI-urilor pentru posibile atacuri (SQL injection).
 
 \begin{figure}[h]
 	\centering
@@ -21,7 +22,7 @@ Figura ~\ref{fig:reverse-proxy}  ilustrează modul de funcționare al unui rever
 
  
 
-Conform topului alcătuit de fundația OWASP cu cele mai mari 10 riscuri ale aplicațiilor în 2017 \cite{owasp}, SQL injection e considerat a fi cea mai mare vulnerabilitate a aplicațiilor web. Acest lucru se datorează faptului că mare parte din aceste aplicații se bazează pe procesarea conținutului furnizat de către utilizatori. Atacurile de tipul SQL injection constau în faptul că datele furnizate de către utilizator sunt introduse în interogări SQL, unde acestea sunt tratate că și cod executabil \cite{classification_and_countermeasures}. Aplicațiile web vulnerabile la SQLi injection pot permite unor utilizatori neautorizați să facă interogări într-o bază de date asupra unor date la care nu ar avea acces în mod normal. Folosind acest tip de comportament neautorizat, un astfel de utilizator poate să obțină accesul la informații sensibile ale clienților, dar și a administratorilor aplicației, precum credențiale sau date personale. Această vulnerabilitate poate să ducă la furt de identitate sau fraudă.  
+Conform topului alcătuit de fundația OWASP cu cele mai mari 10 riscuri ale aplicațiilor în 2017 \cite{owasp}, SQL injection e considerat a fi cea mai mare vulnerabilitate a aplicațiilor web. Acest lucru se datorează faptului că mare parte din aceste aplicații se bazează pe procesarea conținutului furnizat de către utilizatori. Atacurile de tipul SQL injection constau în faptul că datele furnizate de către utilizator sunt introduse în interogări SQL, unde acestea sunt tratate că și cod executabil \cite{classification_and_countermeasures}. Aplicațiile web vulnerabile la SQLi injection pot permite unor utilizatori neautorizați să facă interogări într-o bază de date, asupra unor date la care nu ar avea acces în mod normal. Folosind acest tip de comportament neautorizat, un astfel de utilizator poate să obțină accesul la informații sensibile ale clienților, dar și a administratorilor aplicației, precum credențiale sau date personale. Această vulnerabilitate poate să ducă la furt de identitate sau fraudă.  
  
 În cazul rețelei Tor, aceasta le permite utilizatorilor să navigheze pe internet anonim. Anonimitatea online este importantă însă în multe cazuri aplicațiile web trebuie să știe cine se conectează la aceasta pentru a le putea determina intențiile. Numele de Tor vine de la "the onion router" care sugerează modul de operare al rețelei. Fiecare participant la rețea devine un nod de transfer, iar traficul rețelei traversează o serie de astfel noduri până să ajungă la nodul de ieșire ce creează conexiunea cu destinația dorită. Pachetele sunt criptate în mai multe "straturi", fiecare nod decriptand un singur strat de unde poate afla doar destinația nodului următor. Când pachetul ajunge la ultimul nod, acesta trimite conținutul la destinație fără să dezvăluie identitatea sursei. Această anonimitate ușurează desfășurarea atacurilor online. Conform datelor din rețeaua organizației CloudFlare 94\% din traficul provenit din rețeaua Tor este alcătuit din request-uri automate de origine malițioasă \cite{tor_trouble}. 
 
@@ -40,7 +41,7 @@ Prin oferirea utilizatorilor posibilitatea de a configura modul de funcționare 
 
 Primul \textbf{capitol} ~\ref{cap:Introducere},  prezintă o scurtă introducere despre proiect, contextul acestuia și motivația pentru implementarea sistemului propus. 
 
-\textbf{Capitolul}~\ref{cap:obiective-specificatii}  prezintă obiectivele lucrării, specificațiile sistemului, motivând deciziile luate în implementarea sistemului, cerințele funcționale și nonfunctionale necesare implementării sistemului. 
+\textbf{Capitolul}~\ref{cap:obiective-specificatii}  prezintă obiectivele lucrării, specificațiile sistemului, motivând deciziile luate în implementarea sistemului, cerințele funcționale și non-funcționale necesare implementării sistemului. 
 
 \textbf{Capitolul}~\ref{cap:studiu-bibliografic}  descrie alte abordări similare ale problemelor tratate de proiectul propus, prin evidențierea asemănărilor și diferențelor dintre acestea și se explică tehnologiile și metodele folosite de proiect. 
  

@@ -6,10 +6,10 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Administrarea securit\IeC {\u a}\IeC {{\textcommabelow t}}ii unei aplica\IeC {{\textcommabelow t}}ii }}{10}{figure.3.1}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Tipuri de tr\IeC {\u a}s\IeC {\u a}turi ale limbajului SQL }}{13}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Arhitectura unui sistem de clasificare a request-urilor HTTP}}{15}{figure.3.3}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Arhitectura unui sistem de clasificare a request-urilor HTTP}}{14}{figure.3.3}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Folosirea unui reverse proxy \IeC {\^\i }n arhitectura unei aplica\IeC {{\textcommabelow t}}ii.}}{17}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Influen\IeC {{\textcommabelow t}}ele aduse algoritmului de modificarea parametrului sigma \IeC {\^\i }n algoritmul de antrenare. }}{19}{figure.4.2}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Influen\IeC {{\textcommabelow t}}ele aduse algoritmului de modificarea parametrului sigma \IeC {\^\i }n algoritmul de antrenare.}}{19}{figure.4.2}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Exemplu de atac realizat prin SQL injection.}}{20}{figure.4.3}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Exemplu de trafic realizat prin re\IeC {{\textcommabelow t}}eaua Tor. }}{21}{figure.4.4}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Integrarea unui sistem de prevenire a intruziunilor \IeC {\^\i }ntr-o re\IeC {{\textcommabelow t}}ea. }}{22}{figure.4.5}
